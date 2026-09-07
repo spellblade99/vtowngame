@@ -7,14 +7,14 @@
       "image": "assets/world-map.png",
       "pins": [
         {
-          "id": "fuixviu04c8",
+          "id": "ws6hnqy1dws",
           "x": 29.5,
           "y": 81,
           "label": "NC",
           "target": "neon_city"
         },
         {
-          "id": "dxzp1f404c8",
+          "id": "ag4oiw01dws",
           "x": 33,
           "y": 13.5,
           "label": "V-TOWN",
@@ -64,15 +64,15 @@
           "updatedAt": 1
         },
         {
-          "id": "1sqfqy40uji",
-          "x": 79.8159200967955,
-          "y": 32.80344918378094,
-          "title": "TEST",
+          "id": "5pzycpc2osy",
+          "x": 74.67524421803763,
+          "y": 19.88546603475514,
+          "title": "test",
           "author": "Unknown",
           "text": "",
           "tags": [],
-          "ts": 1788747409566,
-          "updatedAt": 1788747409566
+          "ts": 1788747495442,
+          "updatedAt": 1788747495442
         }
       ],
       "layers": [
@@ -539,5 +539,5 @@
   "quests": [],
   "journal": [],
   "mapImages": {},
-  "exportedAt": 1788747414157
+  "exportedAt": 1788747501115
 }
