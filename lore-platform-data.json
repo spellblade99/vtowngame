@@ -1,0 +1,518 @@
+{
+  "maps": {
+    "world": {
+      "id": "world",
+      "name": "WEST COAST GRID",
+      "parent": null,
+      "image": "assets/world-map.png",
+      "pins": [
+        {
+          "id": "8ui61ookb1d",
+          "x": 29.5,
+          "y": 81,
+          "label": "NC",
+          "target": "neon_city"
+        },
+        {
+          "id": "995sgr2kb1d",
+          "x": 33,
+          "y": 13.5,
+          "label": "V-TOWN",
+          "target": "v_town"
+        }
+      ],
+      "notes": [
+        {
+          "id": "note_georgiastrait",
+          "x": 31,
+          "y": 47,
+          "title": "Georgia Strait Drone Chase",
+          "author": "Campaign Notes",
+          "text": "Mid-flight between NC and V-Town, Jester's HELO is run down by Kaiser Drones. He drops Prez and Elise via low pass; Floaters on watch try to shoot the drones down with an RPG, but a hacked rocket takes out the HELO itself instead. Jester survives; Emilda is later asked to try to recover the wreck.",
+          "tags": [
+            {
+              "type": "character",
+              "id": "char_dax",
+              "label": "Dax Valmont"
+            },
+            {
+              "type": "character",
+              "id": "char_prez",
+              "label": "Michelle"
+            },
+            {
+              "type": "character",
+              "id": "char_elise",
+              "label": "Elise Lagdon"
+            }
+          ],
+          "ts": 1,
+          "updatedAt": 1
+        }
+      ],
+      "layers": [
+        {
+          "id": "lyr_dist",
+          "name": "DISTRICTS",
+          "color": "#2de2e6",
+          "visible": true
+        },
+        {
+          "id": "lyr_fac",
+          "name": "FACTIONS",
+          "color": "#ff3d9a",
+          "visible": true
+        }
+      ],
+      "shapes": []
+    },
+    "neon_city": {
+      "id": "neon_city",
+      "name": "NC",
+      "parent": "world",
+      "image": "assets/neon-city.png",
+      "pins": [],
+      "notes": [
+        {
+          "id": "note_neoncourt",
+          "x": 70,
+          "y": 35,
+          "title": "Neon Court",
+          "author": "Campaign Notes",
+          "text": "NC nightclub in one of the city's more populous, less upscale boroughs. DJ booth run by “Prez.” Where Elise first slips in using netrunner tricks, and where Jester's HELO later picks her up off the rooftop pad as NC police raid the club below.",
+          "tags": [
+            {
+              "type": "character",
+              "id": "char_prez",
+              "label": "Michelle"
+            },
+            {
+              "type": "character",
+              "id": "char_elise",
+              "label": "Elise Lagdon"
+            }
+          ],
+          "ts": 1,
+          "updatedAt": 1
+        },
+        {
+          "id": "note_casino",
+          "x": 56,
+          "y": 60,
+          "title": "The Casino",
+          "author": "Campaign Notes",
+          "text": "Where Elise worked as a blackjack dealer. A Conquistador fixer pulled her mid-shift into a private VIP game that ended with a rogue Waiter Bot massacring the room — the inciting incident of the whole story.",
+          "tags": [
+            {
+              "type": "character",
+              "id": "char_elise",
+              "label": "Elise Lagdon"
+            },
+            {
+              "type": "faction",
+              "id": "fac_conquistador",
+              "label": "Conquistador"
+            }
+          ],
+          "ts": 1,
+          "updatedAt": 1
+        }
+      ],
+      "layers": [
+        {
+          "id": "lyr_dist2",
+          "name": "DISTRICTS",
+          "color": "#2de2e6",
+          "visible": true
+        },
+        {
+          "id": "lyr_fac2",
+          "name": "FACTIONS",
+          "color": "#ff3d9a",
+          "visible": true
+        },
+        {
+          "id": "lyr_dgr2",
+          "name": "DANGER ZONES",
+          "color": "#ffb020",
+          "visible": true
+        }
+      ],
+      "shapes": []
+    },
+    "v_town": {
+      "id": "v_town",
+      "name": "V-TOWN",
+      "parent": "world",
+      "image": "assets/vtown.png",
+      "pins": [],
+      "notes": [
+        {
+          "id": "note_thefloat",
+          "x": 30,
+          "y": 80,
+          "title": "The Float",
+          "author": "Campaign Notes",
+          "text": "A floating slum of harborless boats and dinghies spanning dozens of square kilometers in the Georgia Strait, born from the first-world refugee crisis after the Seattle food disaster. Home to Nathaniel's anti-Lighthouse resistance and old Emilda's salvage know-how. Jester is a trusted ally here, even though his own crew is based elsewhere.",
+          "tags": [
+            {
+              "type": "character",
+              "id": "char_nathaniel",
+              "label": "Nathaniel"
+            },
+            {
+              "type": "character",
+              "id": "char_emilda",
+              "label": "Emilda"
+            },
+            {
+              "type": "faction",
+              "id": "fac_lighthouse",
+              "label": "Lighthouse"
+            }
+          ],
+          "ts": 1,
+          "updatedAt": 1
+        },
+        {
+          "id": "note_thedeckhq",
+          "x": 66,
+          "y": 52,
+          "title": "The Deck (Jester's HQ)",
+          "author": "Campaign Notes",
+          "text": "Dax Valmont's crew HQ, deliberately kept apart from The Float itself. Where the crew holes up for six weeks digging into the recovered data chip, running VV analysis, and building the case against Lighthouse, the Conquistador and Haven Tech.",
+          "tags": [
+            {
+              "type": "character",
+              "id": "char_dax",
+              "label": "Dax Valmont"
+            },
+            {
+              "type": "faction",
+              "id": "fac_thedeck",
+              "label": "The Deck"
+            }
+          ],
+          "ts": 1,
+          "updatedAt": 1
+        },
+        {
+          "id": "note_galleontower",
+          "x": 44,
+          "y": 24,
+          "title": "Galleon Tech Tower",
+          "author": "Campaign Notes",
+          "text": "Corporate HQ and R&D facility. Site of Prez and Elise's heist to tap the financial mainframe — they get the data but get caught by Jill Galleon herself, who offers Elise an experimental VV-sense upgrade instead of calling security further.",
+          "tags": [
+            {
+              "type": "faction",
+              "id": "fac_galleon",
+              "label": "Galleon Tech"
+            },
+            {
+              "type": "character",
+              "id": "char_jillgalleon",
+              "label": "Jill Galleon"
+            }
+          ],
+          "ts": 1,
+          "updatedAt": 1
+        },
+        {
+          "id": "note_concerthall",
+          "x": 54,
+          "y": 29,
+          "title": "Concert Hall (The Neon Gambit)",
+          "author": "Campaign Notes",
+          "text": "Venue for Victor Kane's concert and Pete Bromsfield's VIP box — and for the story's climax. Prez confronts Pete here before the Waiter Bot ambushes her; the finale spills out onto the rooftop helipad where Dax finally learns “Esteban” and Pete are the same man.",
+          "tags": [
+            {
+              "type": "character",
+              "id": "char_pete",
+              "label": "Peter Bromsfield"
+            },
+            {
+              "type": "character",
+              "id": "char_prez",
+              "label": "Michelle"
+            },
+            {
+              "type": "character",
+              "id": "char_dax",
+              "label": "Dax Valmont"
+            }
+          ],
+          "ts": 1,
+          "updatedAt": 1
+        }
+      ],
+      "layers": [
+        {
+          "id": "lyr_dist3",
+          "name": "DISTRICTS",
+          "color": "#2de2e6",
+          "visible": true
+        },
+        {
+          "id": "lyr_fac3",
+          "name": "FACTIONS",
+          "color": "#ff3d9a",
+          "visible": true
+        }
+      ],
+      "shapes": []
+    }
+  },
+  "characters": [
+    {
+      "id": "char_dax",
+      "name": "Dax Valmont",
+      "aka": "Jester",
+      "role": "Fixer / Pilot / Crew Leader, The Deck",
+      "status": "alive",
+      "factionId": "fac_thedeck",
+      "bio": "39, caucasian male, 5'10\", 190 lbs, light brown/gray hair, dark green eyes. A falling deck of cards tattooed from the back of his neck down to the middle of his back. In great shape but discreet about it — tactical-casual clothes, a large handgun, electroshock gloves, no cyberware. Calm, passionate, strategic and intuitive as a leader.\n\nLeft NC ten years ago after a relationship with Michelle ended; runs V-Town operations as “Jester” now. Called back into NC by an old friend, Esteban, to retrieve an asset (Elise) — not realizing Esteban and his old rival Pete Bromsfield are the same person, or that the call was a setup. His history with Michelle (“Prez”) is unresolved.",
+      "tags": [
+        {
+          "type": "character",
+          "id": "char_elise",
+          "label": "Elise Lagdon"
+        },
+        {
+          "type": "character",
+          "id": "char_prez",
+          "label": "Michelle"
+        },
+        {
+          "type": "character",
+          "id": "char_pete",
+          "label": "Peter Bromsfield"
+        },
+        {
+          "type": "faction",
+          "id": "fac_thedeck",
+          "label": "The Deck"
+        }
+      ],
+      "updatedAt": 1
+    },
+    {
+      "id": "char_elise",
+      "name": "Elise Lagdon",
+      "aka": "Rook",
+      "role": "Netrunner / Former Casino Dealer, The Deck",
+      "status": "alive",
+      "factionId": "fac_thedeck",
+      "bio": "Nineteen, with a weathered intensity in large stormy gray-green eyes. Vivid electric-teal hair, jagged and self-cut. Forest-green ex-military rain-slick hoodie over layered techwear — carbon-weave straps, a data-port bandolier, a shoulder rig for her deck. Reads the world in code before emotion; beautiful like glitch art, like a corrupted file more fascinating than the original.\n\nA casino dealer in NC who witnessed a private VIP game turn into a Waiter Bot massacre. A security bug let her extract the bot's memory chip on her own biometrics. Fled to The Link forums for help, was routed through the mysterious Diamond Queen to the Neon Court, and got swept up with Prez and Jester into V-Town — where she took the runner name “Rook.” Her VV-analysis work on the murder chip is what unravels the Lighthouse/Conquistador/Haven Tech conspiracy. Ends the story choosing to stay with Jester and grow The Deck's operations.",
+      "tags": [
+        {
+          "type": "character",
+          "id": "char_dax",
+          "label": "Dax Valmont"
+        },
+        {
+          "type": "character",
+          "id": "char_diamondqueen",
+          "label": "The Diamond Queen"
+        }
+      ],
+      "updatedAt": 1
+    },
+    {
+      "id": "char_prez",
+      "name": "Michelle",
+      "aka": "Prez",
+      "role": "Neon Court DJ / NC Operative",
+      "status": "alive",
+      "factionId": null,
+      "bio": "Goes by “Prez” as the Neon Court's DJ and as an online persona on The Link forums — not to be confused with the Diamond Queen, despite Elise's early assumption. Ex-lover of Dax Valmont (“Jester”), separated from him ten years ago on a rain-soaked NC pedestrian bridge. Briefly and disastrously married Peter Bromsfield in 2076, a fact she hid from both Dax and Elise for most of the story. Runs her own NC-side operations and intel network (including an asset named Bangz), and rejoins Jester's crew to help track down what Pete/Esteban is really planning. Reunites intimately with Jester mid-story; ultimately returns to NC with Bangz in the epilogue, promising Jester they won't be strangers.",
+      "tags": [
+        {
+          "type": "character",
+          "id": "char_dax",
+          "label": "Dax Valmont"
+        },
+        {
+          "type": "character",
+          "id": "char_pete",
+          "label": "Peter Bromsfield"
+        },
+        {
+          "type": "character",
+          "id": "char_bangz",
+          "label": "Bangz"
+        }
+      ],
+      "updatedAt": 1
+    },
+    {
+      "id": "char_pete",
+      "name": "Peter Bromsfield",
+      "aka": "Esteban",
+      "role": "Haven Tech Fixer / Conquistador Contact",
+      "status": "deceased",
+      "factionId": "fac_haven",
+      "bio": "Publicly a Haven Tech representative brokering Haven's V-Town expansion; privately “Esteban,” a Conquistador-tattooed fixer and Dax Valmont's old friend and rival — the two only ever met once, years ago, and lost track of what the other looked like since. Briefly married to Michelle in 2076. Orchestrated the entire plot: used an old favor to lure Dax (“Jester”) back to NC and into V-Town, all to get at Michelle again and destabilize Lighthouse's bargaining position. Cold, manipulative, and fully aware of exactly what he was doing to both Dax and Michelle. Shot dead by Elise at the Neon Gambit finale, on the concert hall rooftop helipad, before he could finish explaining himself to Dax.",
+      "tags": [
+        {
+          "type": "faction",
+          "id": "fac_conquistador",
+          "label": "Conquistador"
+        },
+        {
+          "type": "character",
+          "id": "char_prez",
+          "label": "Michelle"
+        },
+        {
+          "type": "character",
+          "id": "char_dax",
+          "label": "Dax Valmont"
+        },
+        {
+          "type": "character",
+          "id": "char_valerie",
+          "label": "Valerie Aubin"
+        }
+      ],
+      "updatedAt": 1
+    },
+    {
+      "id": "char_bangz",
+      "name": "Bangz",
+      "aka": "",
+      "role": "Security / Conquistador Infiltrator",
+      "status": "alive",
+      "factionId": null,
+      "bio": "Prez's on-call asset, previously infiltrated the Conquistador and used the Neon Court's network to land a spot on the security detail for the Neon Gambit finale. Steady, dryly funny (“I wonder why you even hired me sometimes”), and reliably shows up right when Prez needs backup — including stopping the Waiter Bot from finishing her off. Leaves for NC with Prez in the epilogue.",
+      "tags": [],
+      "updatedAt": 1
+    },
+    {
+      "id": "char_nathaniel",
+      "name": "Nathaniel",
+      "aka": "",
+      "role": "Anti-Lighthouse Guerrilla Leader, The Float",
+      "status": "alive",
+      "factionId": null,
+      "bio": "An influential guerrilla leader among the Floaters, openly opposed to Lighthouse. Gives Jester's group safe, untraceable shelter on The Float and helps interrogate Elise about the casino massacre. Later helps partially unlock the Waiter Bot's data chip using Elise's biometrics, recovering images (but no audio) of the gang leaders in the room.",
+      "tags": [],
+      "updatedAt": 1
+    },
+    {
+      "id": "char_emilda",
+      "name": "Emilda",
+      "aka": "",
+      "role": "Floater / Boat & Salvage Specialist",
+      "status": "alive",
+      "factionId": null,
+      "bio": "An old woman living on The Float who Jester trusts to try to recover his HELO after it's shot down in the Georgia Strait. A quiet, practical presence among the Floaters.",
+      "tags": [],
+      "updatedAt": 1
+    },
+    {
+      "id": "char_jillgalleon",
+      "name": "Jill Galleon",
+      "aka": "",
+      "role": "Founder & CEO, Galleon Tech",
+      "status": "alive",
+      "factionId": "fac_galleon",
+      "bio": "A brilliant inventor (creator of the Skinshield nano-bots) so absorbed in her work that she's neglected the business side of her own company — letting her C-suite cut shady deals in her name, including supplying Lighthouse with a nerve agent. Knew Dax back in “St-Lo” and calls him out directly when he and Elise are caught breaking into her R&D servers. Offers Elise an experimental cybertech upgrade to enhance her VV senses. By the end, confronts Lighthouse's Nan'h Tucket directly and starts actually running her company — axing deals “that weren't in the company's best interest.”",
+      "tags": [],
+      "updatedAt": 1
+    },
+    {
+      "id": "char_tucket",
+      "name": "Nan'h Tucket",
+      "aka": "",
+      "role": "Founder & CEO, Lighthouse",
+      "status": "alive",
+      "factionId": "fac_lighthouse",
+      "bio": "Former small-business owner (uniform services) who saw the refugee crisis at The Float as the opportunity of a lifetime and rebranded into Lighthouse. Holds a mysterious, secretive city deed making Lighthouse the sole legal employer of Floaters — a glorified slave trade dressed up as staffing services. Cracked the world's top-10 richest list within a few years. Secretly buying a dangerous nerve agent from Galleon Tech, and entangled in a deal with Haven Tech via Pete Bromsfield.",
+      "tags": [],
+      "updatedAt": 1
+    },
+    {
+      "id": "char_valerie",
+      "name": "Valerie Aubin",
+      "aka": "",
+      "role": "CEO, Haven Tech",
+      "status": "alive",
+      "factionId": "fac_haven",
+      "bio": "Pete Bromsfield's boss at Haven Tech, introduced only at the very end, sitting down with Jill Galleon after Pete's death. Cool, dismissive of her “lackey's” failure, and clearly the real architect above him — seen with a nano-tattoo of a glowing Queen of Diamonds, hinting she may be connected to, or even is, the mysterious online “Diamond Queen” who first routed Elise to the Neon Court.",
+      "tags": [],
+      "updatedAt": 1
+    },
+    {
+      "id": "char_diamondqueen",
+      "name": "The Diamond Queen",
+      "aka": "Netrunner alias",
+      "role": "Mysterious Netrunner Contact, The Link",
+      "status": "unknown",
+      "factionId": null,
+      "bio": "A trusted “usual” on The Link netrunner forums who Elise turns to in a panic after the casino massacre. Arranges Elise's passage to the Neon Court and, by extension, into Jester and Prez's orbit — for reasons that are never fully explained. Not to be confused with Prez, despite Elise's first guess. The glowing Queen-of-Diamonds nano-tattoo seen on Valerie Aubin in the closing pages strongly suggests a connection.",
+      "tags": [
+        {
+          "type": "character",
+          "id": "char_valerie",
+          "label": "Valerie Aubin"
+        }
+      ],
+      "updatedAt": 1
+    }
+  ],
+  "factions": [
+    {
+      "id": "fac_lighthouse",
+      "name": "Lighthouse",
+      "color": "#ffb020",
+      "leader": "Nan'h Tucket",
+      "description": "Marketed as a staffing partner — “guiding you home safely.” In truth, Lighthouse is a corporate-sanctioned kidnapping and forced-labor racket built on the backs of Floaters. Tucket holds the only legal deed to employ people from The Float, and behind the recruitment ads is an industry that snatches the poor and weak and puts them to work across V-Town. Associates (grey jumpsuits, white conical sleeve markings) are Floaters working off desperation; Partners (red-and-white suits) are V-Town citizens who transport, monitor and guard them. The Bulbs — Lighthouse's top execs — are now among the city's elite; Tucket himself broke the world's top-10 richest list.",
+      "updatedAt": 1
+    },
+    {
+      "id": "fac_roca",
+      "name": "R.O.C.A.",
+      "color": "#2de2e6",
+      "leader": "",
+      "description": "“The only line in.” A mainstream media, comms, cyber-surveillance and satellite conglomerate — flagship product The Rookie, the world's first cell-phone consumer-grade implant. R.O.C.A. controls the comms towers across the region; nearly every call gets traced and routed through their network. Their network has never been successfully hacked. Access beyond their firewalls requires biometric codes tied to randomly-selected, secretly-identified executive staff who may double as the company's administrative council — rumor holds there's a physical master-list somewhere deep in the R.O.C.A. vaults.",
+      "updatedAt": 1
+    },
+    {
+      "id": "fac_galleon",
+      "name": "Galleon Tech",
+      "color": "#3ddc84",
+      "leader": "Jill Galleon",
+      "description": "Medical supplies manufacturer behind the Skinshield — nano-bots that densify human skin on command, rendering it almost bullet-proof, sold (often without certification or oversight) to PMCs, armed forces and civilian authorities alike. Founder Jill Galleon is a brilliant, business-averse inventor who built Skinshield to prevent injury, not to arm anyone — she may not even know her tech got militarized, and her neglect of the corporate side has let her C-suite run shady side deals in her name, including supplying Lighthouse with a dangerous nerve agent.",
+      "updatedAt": 1
+    },
+    {
+      "id": "fac_conquistador",
+      "name": "Conquistador",
+      "color": "#ff5555",
+      "leader": "",
+      "description": "An NC-rooted gang/cartel operating across the criminal underworld, marked by a distinctive tattoo worn by its fixers and members. Entangled in a shady, high-value deal with Lighthouse (and by extension Haven Tech) involving The Float. Their business was being run out of a private VIP casino game the night Elise dealt cards — a meeting that ended in a Waiter Bot massacre.",
+      "updatedAt": 1
+    },
+    {
+      "id": "fac_haven",
+      "name": "Haven Tech",
+      "color": "#7b5cff",
+      "leader": "Valerie Aubin",
+      "description": "An NC corporation quietly expanding into V-Town, using Galleon Tech as an unwitting bio-weapon supplier as part of a deal brokered through Lighthouse — apparently at The Float's expense. Publicly fronted in V-Town by Peter “Pete” Bromsfield; run from the top by CEO Valerie Aubin, who is considerably sharper and colder than her “lackey.”",
+      "updatedAt": 1
+    },
+    {
+      "id": "fac_thedeck",
+      "name": "The Deck",
+      "color": "#ff3d9a",
+      "leader": "Dax Valmont (\"Jester\")",
+      "description": "Dax Valmont's small, independent fixer crew, operating out of a hidden HQ away from The Float itself (even though Dax is a trusted ally of the Floaters). Runs recon, extraction and investigative jobs — currently digging into the Waiter Bot data chip, Lighthouse, and the Conquistador/Haven Tech connection.",
+      "updatedAt": 1
+    }
+  ],
+  "quests": [],
+  "journal": [],
+  "mapImages": {},
+  "exportedAt": 1788746875840
+}
