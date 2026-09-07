@@ -48,6 +48,17 @@
           ],
           "ts": 1,
           "updatedAt": 1
+        },
+        {
+          "id": "kajtexm7nzd",
+          "x": 80.63842823739674,
+          "y": 30.993285939968406,
+          "title": "rtests",
+          "author": "test",
+          "text": "test",
+          "tags": [],
+          "ts": 1788747727657,
+          "updatedAt": 1788747727657
         }
       ],
       "layers": [
@@ -521,5 +532,5 @@
   "quests": [],
   "journal": [],
   "mapImages": {},
-  "exportedAt": 1788747679619
+  "exportedAt": 1788747743118
 }
