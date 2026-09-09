@@ -1,0 +1,2571 @@
+<?xml version="1.0" encoding="utf-8"?>
+<root version="5.1" dataversion="20260124" release="11.22|CoreRPG:7">
+	<character>
+		<addictions />
+		<armorBodySp type="number">11</armorBodySp>
+		<armorHeadSp type="number">0</armorHeadSp>
+		<audioCyberware />
+		<audioGroupActive type="number">0</audioGroupActive>
+		<audioLink type="windowreference">
+			<class />
+			<recordname />
+		</audioLink>
+		<bodyBase type="number">7</bodyBase>
+		<bodyCurrent type="number">7</bodyCurrent>
+		<bodyFrame type="number">0</bodyFrame>
+		<bodyLock type="number">0</bodyLock>
+		<borgware />
+		<borgwareGroupActive type="number">0</borgwareGroupActive>
+		<childhoodEnv type="string">In a huge "megastructure" building controlled by a Corp or the City.</childhoodEnv>
+		<chipware />
+		<chipwareGroupActive type="number">0</chipwareGroupActive>
+		<classes>
+			<id-00001>
+				<abilities />
+				<abilityName type="string">Ability: Maker</abilityName>
+				<abilityNameBase type="string">Maker</abilityNameBase>
+				<classLink type="windowreference">
+					<class>class</class>
+					<recordname />
+				</classLink>
+				<classNotes type="formattedtext">
+					<p />
+				</classNotes>
+				<classType type="string">class_tech</classType>
+				<extraBenefits />
+				<fabExpNotes type="formattedtext">
+					<p>Fabricate an existing item or one invented by the Tech using Invention Expertise from materials. The Tech must purchase materials of one price category lower than the price category of the item being fabricated. (Except for Super Luxury items, which require materials equal to half their Price to fabricate.)</p>
+					<p>The DV you roll against and the time it takes to make the item is based on the price category of the item you are making. On a failed Check, halfway through the fabrication process, you realize that you'll have to start again from scratch. The materials purchased to make the item are uninjured.</p>
+				</fabExpNotes>
+				<fabExpRank type="number">1</fabExpRank>
+				<features />
+				<fieldExpActive type="number">1</fieldExpActive>
+				<fieldExpNotes type="formattedtext">
+					<p>As long as you have at least 1 Rank in this specialty, instead of attempting a lengthy full repair you can elect to instead temporarily repair your target (at the same DV of a typical repair for the item) to perfect condition as an Action (with full SP and HP, if applicable). You add your Rank in Field Expertise to this Check. This jury-rigging holds for 10 minutes for each Rank you have in this specialty, after which the item returns to the state it was in before you jury-rigged it, except that it cannot be jury-rigged again until it has been fully repaired.</p>
+				</fieldExpNotes>
+				<fieldExpRank type="number">4</fieldExpRank>
+				<fieldsUpdated type="number">0</fieldsUpdated>
+				<gearLink type="windowreference">
+					<class>item</class>
+					<recordname />
+				</gearLink>
+				<hideFabNotes type="number">0</hideFabNotes>
+				<hideFieldNotes type="number">0</hideFieldNotes>
+				<hideInvNotes type="number">0</hideInvNotes>
+				<hideUpgNotes type="number">0</hideUpgNotes>
+				<invExpNotes type="formattedtext">
+					<p>Invent an upgrade to an existing item or invent an entirely new item. To invent an item/upgrade, you'll need to describe to your GM the desired function of your item/upgrade, as precisely as you can in the language of already existing technologies in the setting, making sure to include the mechanism by which your invention might accomplish its function. It is suggested that you draw up a simple schematic for illustrative purposes. Your GM and fellow Players will certainly appreciate it.</p>
+					<p>If your GM is satisfied with your explanation and is okay with it in their game, they will write how the proposed invention would operate rules-wise, being careful not to create an imbalanced item. The upgrades presented earlier in Upgrade Expertise are a good guideline for balanced Tech upgrades. Based on the item or upgrade's value if it were to be sold on the open market, the GM will set the Price Category of the item as close to other items/upgrades of a similar &#34;power level&#34; as possible, although the lowest category they can select is Expensive.</p>
+					<p>The DV you roll against and the time it takes to make the item is based on the price category of the item you are making. On a failed Check, you realize halfway through your process that you need to go back to the drawing board. Once invented, you (or another Tech who you show the blueprints to) can make your invented item/upgrade real using Fabrication or Upgrade Expertise!</p>
+					<p>It's worth mentioning that nobody will give your invention a second thought before you have a working prototype. Of course, that's when they'll try to steal it. Don't bother with the courts.</p>
+					<p>More than any ability in the game, this ability can result in game imbalance. Your GM might need to retroactively change the way your invention operates rules-wise (or, in extreme circumstances, even replace it with another invention of an equal price category that you collaborate on together) several times before you find a version that works well at your table and doesn't negatively impact game balance.</p>
+				</invExpNotes>
+				<invExpRank type="number">1</invExpRank>
+				<name type="string">Tech</name>
+				<order type="number">1</order>
+				<priceCat type="string">costlyDV</priceCat>
+				<priceCat1 type="string">premiumDV</priceCat1>
+				<priceCat2 type="string">costlyDV</priceCat2>
+				<rank type="number">4</rank>
+				<repairSkill type="string">landvehicletech</repairSkill>
+				<repairSkill1 type="string">basictech</repairSkill1>
+				<repairSkill2 type="string">airvehicletech</repairSkill2>
+				<repairSkill3 type="string">cybertech</repairSkill3>
+				<techDvCostList>
+					<id-00001>
+						<cost type="string">Costly</cost>
+						<dv type="number">13</dv>
+						<time type="string">6 hours</time>
+					</id-00001>
+					<id-00002>
+						<cost type="string">Luxury</cost>
+						<dv type="number">29</dv>
+						<time type="string">1 month</time>
+					</id-00002>
+					<id-00003>
+						<cost type="string">Very Expensive</cost>
+						<dv type="number">24</dv>
+						<time type="string">2 weeks</time>
+					</id-00003>
+					<id-00004>
+						<cost type="string">Expensive</cost>
+						<dv type="number">21</dv>
+						<time type="string">1 week</time>
+					</id-00004>
+					<id-00005>
+						<cost type="string">Premium</cost>
+						<dv type="number">17</dv>
+						<time type="string">1 day</time>
+					</id-00005>
+					<id-00006>
+						<cost type="string">Cheap/Everyday</cost>
+						<dv type="number">9</dv>
+						<time type="string">1 hour</time>
+					</id-00006>
+					<id-00007>
+						<cost type="string">Super Luxury</cost>
+						<dv type="number">29</dv>
+						<time type="string">1 month per 10,000eb of Cost</time>
+					</id-00007>
+				</techDvCostList>
+				<text type="formattedtext">
+					<p>You can't leave anything alone&#8212;if it sits near you for more than five minutes, you've disassembled it and made it into something new. You've always got at least two screwdrivers and a wrench in your pockets. Computer down? No problem. Hydrogen burner out in your Metrocar? No problem. Can't get the video to run or your interface glitching? No problem. You make your living building, fixing, and modifying&#8212;a crucial occupation in a technological world recovering from a War that broke the back of the supply chain. You can make some good bucks fixing everyday stuff, but for the serious money you need to tackle the big jobs. Illegal weapons. Illegal or stolen cybertech. Corporate espionage and counter-espionage gear for &#34;black operations.&#34; If you're any good, you're making a lot of money. And that money goes into new gadgets, hardware, and information. Your black market work isn't just making you friends&#8212;it's also racking you up an impressive number of enemies as well&#8212;so you invest a lot in defense systems and, if really pushed to the wall, call in a few markers on a Solo or two. You've fixed up tech for everybody from black ops Corporate samurai to Ms. Zepada down the block. No one's ever come back to you with a complaint but that might be because of the turrets guarding your front door. You're addicted to technology in all its forms and that's what makes you a Tech.</p>
+					<h>Role Ability: Maker</h>
+					<p>The Tech's Role Ability is Maker. Using the Maker Role Ability, the Tech can fix, improve, modify, make, and invent new items. Whenever a Tech increases their Maker Rank by one, they gain one rank in two different Maker Specialties of their choice, including repairing, upgrading, fabricating, and inventing.</p>
+					<p>A Tech can fix, improve, modify, make, and invent new items using Maker, their Role Ability. <b>Whenever a Tech increases their Maker Rank by 1, they gain 1 Rank in two different Maker Specialties (Field Expertise, Upgrade Expertise, Fabrication Expertise, or Invention Expertise) of their choice.</b></p>
+					<linklist>
+						<link class="referencemanualpage" recordname="reference.refmanualdata.id-00098@CPRed">Maker (Tech Role Ability)</link>
+					</linklist>
+					<p>
+						<b>Upgrade/Fabricate/Invent DV/Time</b>
+					</p>
+					<table>
+						<tr>
+							<td>
+								<b>Cost</b>
+							</td>
+							<td>
+								<b>DV</b>
+							</td>
+							<td>
+								<b>Time</b>
+							</td>
+						</tr>
+						<tr>
+							<td>Cheap/Everday</td>
+							<td>9</td>
+							<td>1 hour</td>
+						</tr>
+						<tr>
+							<td>Costly</td>
+							<td>13</td>
+							<td>6 hours</td>
+						</tr>
+						<tr>
+							<td>Premium</td>
+							<td>17</td>
+							<td>1 day</td>
+						</tr>
+						<tr>
+							<td>Expensive</td>
+							<td>21</td>
+							<td>1 week</td>
+						</tr>
+						<tr>
+							<td>Very Expensive</td>
+							<td>24</td>
+							<td>2 weeks</td>
+						</tr>
+						<tr>
+							<td>Luxury</td>
+							<td>29</td>
+							<td>1 month</td>
+						</tr>
+						<tr>
+							<td>Super Luxury</td>
+							<td>29</td>
+							<td>1 month per 10,000eb of Cost</td>
+						</tr>
+					</table>
+				</text>
+				<unallocatedPoints type="number">1</unallocatedPoints>
+				<unallocatedRanks type="number">0</unallocatedRanks>
+				<upgExpNotes type="formattedtext">
+					<p>Improves an item in one of the following ways. An item can only benefit from 1 upgrade granted by this specialty.</p>
+					<list>
+						<li>Lower the Humanity Loss of non-borgware cyberware by 1d6 if its typical humanity loss would be 2d6 or greater.</li>
+						<li>Increase the number slots of a type an item already has for options, attachments, Programs/Hardware, etc. by one.</li>
+						<li>Simplify the item, halving the time it takes to make any future full repair to the item.</li>
+						<li>Grant a typically non-concealable onehanded weapon the ability to be concealed.</li>
+						<li>Increase an Average Quality Weapon to an Excellent Quality Weapon.</li>
+						<li>Grant a weapon Attachment Slot to an Exotic Weapon.</li>
+						<li>Allow an Exotic Weapon to fire one variety of Non-Basic Ammunition of its ammunition type.</li>
+						<li>Increase an item's SP by 1, but only if it had any to begin with.</li>
+						<li>Upgrade a vehicle with an upgrade that only requires a Nomad Role Ability Rank of 1.</li>
+						<li>Install an upgrade invented by the Tech using Invention Expertise. Requires additional materials equal to the Price Category assigned to the item by the GM when it was invented.</li>
+					</list>
+					<p>The Tech must purchase materials of the same price category of the item being upgraded, which installing the upgrade consumes. The DV you roll against and the time it takes to install the upgrade is based on the price category of the item you are upgrading. The one exception is vehicle upgrades, which are treated as being 1,000eb (Very Expensive) for this purpose.</p>
+					<p>On a failed Check, halfway through the upgrade, you realize that you'll have to start again from scratch. The materials purchased to make the upgrade and the item to be upgraded are both uninjured.</p>
+				</upgExpNotes>
+				<upgExpRank type="number">2</upgExpRank>
+				<upgNotes type="formattedtext">
+					<p />
+				</upgNotes>
+			</id-00001>
+		</classes>
+		<clothingStyle type="string">Gang Colors (Dangerous, Violent, Rebellious)</clothingStyle>
+		<coins>
+			<slot1>
+				<amount type="number">80</amount>
+				<name type="string">eb</name>
+			</slot1>
+		</coins>
+		<coolBase type="number">4</coolBase>
+		<coolCurrent type="number">4</coolCurrent>
+		<coolLock type="number">0</coolLock>
+		<criticalInjuries />
+		<culturalOrigins type="string">Sub-Saharan African</culturalOrigins>
+		<deathSave type="number">7</deathSave>
+		<dexBase type="number">7</dexBase>
+		<dexCurrent type="number">7</dexCurrent>
+		<dexLock type="number">0</dexLock>
+		<dmg type="dice"></dmg>
+		<dodgeMelee type="number">1</dodgeMelee>
+		<dodgeRanged type="number">0</dodgeRanged>
+		<dv0to6 type="number">16</dv0to6>
+		<dv13to25 type="number">15</dv13to25>
+		<dv7to12 type="number">15</dv7to12>
+		<empBase type="number">6</empBase>
+		<empCurrent type="number">6</empCurrent>
+		<empLock type="number">0</empLock>
+		<empMax type="number">6</empMax>
+		<encumbrance>
+			<load type="number">0</load>
+		</encumbrance>
+		<enemy1WhatHappen type="string">Backstab them indirectly.</enemy1WhatHappen>
+		<enemy1WhatThrow type="string">A powerful gang lord or small Corporation.</enemy1WhatThrow>
+		<enemy2WhatHappen type="string">Go into a murderous rage and try to physically rip their face off.</enemy2WhatHappen>
+		<enemy2WhatThrow type="string">Just themselves.</enemy2WhatThrow>
+		<externalCyberware />
+		<externalCyGroupActive type="number">0</externalCyGroupActive>
+		<familyBackground type="string">Corporate Technicians - Middle-middle class, with comfortable conapts or Beaverville suburban homes, minivans and corporate-run technical schools. Kind of like living 1950s America crossed with 1984.</familyBackground>
+		<familyCrisis type="string">You are the inheritor of a family debt; you must honor this debt before moving on with your life.</familyCrisis>
+		<fashionCyGroupActive type="number">0</fashionCyGroupActive>
+		<fashionware>
+			<id-00001>
+				<baseHL type="number">0</baseHL>
+				<cost type="number">100</cost>
+				<cyberActive type="number">1</cyberActive>
+				<cyberEffect type="string">IFCOUNT(Light Tattoo, 3); SKILL: Wardrobe &amp; Style 2</cyberEffect>
+				<cyberLink type="windowreference">
+					<class>cyberware</class>
+					<recordname />
+				</cyberLink>
+				<description type="formattedtext">
+					<p>Subdermal patches store light and project colored tattoos under the skin. The larger the piece, the more installations of this fashionware you need to complete it. <b>A user with a three or more Light Tattoo installations adds +2 to their Wardrobe &#38; Style Skill. (This bonus only applies once.)</b></p>
+				</description>
+				<hlDice type="dice"></hlDice>
+				<installLocation type="string">Mall</installLocation>
+				<isHalved type="number">0</isHalved>
+				<linkCyberware type="windowreference">
+					<class>cyberware</class>
+					<recordname />
+				</linkCyberware>
+				<name type="string">Light Tattoo</name>
+				<refreshCw type="number">0</refreshCw>
+				<slotsRequired type="number">1</slotsRequired>
+				<weapLink type="windowreference">
+					<class />
+					<recordname />
+				</weapLink>
+			</id-00001>
+			<id-00002>
+				<baseHL type="number">0</baseHL>
+				<cost type="number">100</cost>
+				<cyberActive type="number">1</cyberActive>
+				<cyberEffect type="string">IFCOUNT(Light Tattoo, 3); SKILL: Wardrobe &amp; Style 2</cyberEffect>
+				<cyberLink type="windowreference">
+					<class>cyberware</class>
+					<recordname />
+				</cyberLink>
+				<description type="formattedtext">
+					<p>Subdermal patches store light and project colored tattoos under the skin. The larger the piece, the more installations of this fashionware you need to complete it. <b>A user with a three or more Light Tattoo installations adds +2 to their Wardrobe &#38; Style Skill. (This bonus only applies once.)</b></p>
+				</description>
+				<hlDice type="dice"></hlDice>
+				<installLocation type="string">Mall</installLocation>
+				<isHalved type="number">0</isHalved>
+				<linkCyberware type="windowreference">
+					<class>cyberware</class>
+					<recordname />
+				</linkCyberware>
+				<name type="string">Light Tattoo</name>
+				<refreshCw type="number">0</refreshCw>
+				<slotsRequired type="number">1</slotsRequired>
+				<weapLink type="windowreference">
+					<class />
+					<recordname />
+				</weapLink>
+			</id-00002>
+		</fashionware>
+		<feelingsPeople type="string">I stay neutral.</feelingsPeople>
+		<formattedNotes type="formattedtext">
+			<p>Germain the cousin, Fixer Scrap : point de rencontre, wastleland, village dustfall </p>
+			<p>The death circle tavern</p>
+			<p>Oba : Fat Black with lot of bling bling</p>
+			<p />
+		</formattedNotes>
+		<friend1 type="string">Someone you know from The Street.</friend1>
+		<friend2 type="string">An old childhood friend.</friend2>
+		<gearCyberware />
+		<gearFilter type="string">_default</gearFilter>
+		<gearFilterVis type="string">All</gearFilterVis>
+		<gearwareGroupActive type="number">0</gearwareGroupActive>
+		<hairstyle type="string">Long and ratty</hairstyle>
+		<hasAudioSuite type="number">0</hasAudioSuite>
+		<hasLCyberarm type="number">0</hasLCyberarm>
+		<hasLCybereye type="number">1</hasLCybereye>
+		<hasLCyberfoot type="number">0</hasLCyberfoot>
+		<hasLCyberhand type="number">0</hasLCyberhand>
+		<hasLCyberleg type="number">0</hasLCyberleg>
+		<hasNeuralLink type="number">0</hasNeuralLink>
+		<hasRCyberarm type="number">0</hasRCyberarm>
+		<hasRCybereye type="number">0</hasRCybereye>
+		<hasRCyberfoot type="number">0</hasRCyberfoot>
+		<hasRCyberhand type="number">0</hasRCyberhand>
+		<hasRCyberleg type="number">0</hasRCyberleg>
+		<housing type="string">Cargo Container</housing>
+		<hpCurrent type="number">45</hpCurrent>
+		<hpMax type="number">45</hpMax>
+		<hpSerious type="number">23</hpSerious>
+		<humanityCurrent type="number">60</humanityCurrent>
+		<humanityMax type="number">54</humanityMax>
+		<impPointsCurr type="number">0</impPointsCurr>
+		<impPointsDiff type="number">0</impPointsDiff>
+		<impPointsMax type="number">0</impPointsMax>
+		<intBase type="number">5</intBase>
+		<intCurrent type="number">5</intCurrent>
+		<internalCyberware />
+		<internalCyGroupActive type="number">0</internalCyGroupActive>
+		<intLock type="number">0</intLock>
+		<inventorylist>
+			<id-00001>
+				<btnGearDD type="number">0</btnGearDD>
+				<carried type="number">0</carried>
+				<cost type="number">100</cost>
+				<count type="number">1</count>
+				<effect type="string">ACTIONEFFECT(SKILL: Wardrobe &amp; Style 2; SKILL: Library Search 2, inf)</effect>
+				<gearLink type="windowreference">
+					<class>item</class>
+					<recordname />
+				</gearLink>
+				<groupingState type="number">0</groupingState>
+				<isIdd type="number">1</isIdd>
+				<isidentified type="number">1</isidentified>
+				<locked type="number">1</locked>
+				<name type="string">Agent</name>
+				<nonid_notes type="formattedtext">
+					<p />
+				</nonid_notes>
+				<notes type="formattedtext">
+					<p>Self-adaptive-AI powered smartphone; that &#34;learns&#34; how best to fit your needs simply by interacting with you. While not a true AI, it is more than capable of replacing any need for a secretary. When you sit back and allow your Agent to manage your life, everything is easier, including making sure you have time to do what you need to do (crimes, killing people, getting away with it, and so forth) instead of going to the store to get something you forgot. There are many reasons why almost everyone has one.</p>
+					<p>Things your Agent can do:</p>
+					<list>
+						<li>Make phone calls in voice or video and record them, forward them, or send them to voicemail, which pretty much only Agents actually end up listening to nowadays.</li>
+						<li>Surf the Data Pool.</li>
+						<li>Scan the Data Pool to locate a known location and bring up directions.</li>
+						<li>Keep your schedule for you and act independently on events, like ordering a gift and having it delivered to the recipient.</li>
+						<li>Maintain a personality complete with name voice, and virtual body. Some particularly lonely individuals reprogram their Agents to act as surrogate lovers or friends.</li>
+						<li>Suggest clothes for you to buy.</li>
+						<li>Record audio and video to the Agent's standard Memory Chip.</li>
+						<li>Link to your Cyberware to share data storage with them and the Agent's Memory Chip.</li>
+						<li>Link to most appliances in your living space.</li>
+						<li>Monitor your use of easily acquired resources (Cheap, Everyday, or Costly) and automatically reorder them when you get low at market price.</li>
+						<li>Recommend a future course of action based on your personal goals. AI may suggest unwise actions.</li>
+					</list>
+					<p>In addition to all this, <b>an Agent gives the user +2 to their Library Search Skill and +2 to their Wardrobe &#38; Style Skill, </b>but only if you wear the clothes your Agent suggests for you, which change every season. Multiple Agents don't multiply these bonuses.</p>
+				</notes>
+				<penalty type="number">0</penalty>
+				<priceCatLinked type="number">0</priceCatLinked>
+				<sp type="number">0</sp>
+				<StringField1 type="string">Unidentified Item</StringField1>
+			</id-00001>
+			<id-00002>
+				<ammoAmt type="number">10</ammoAmt>
+				<btnGearDD type="number">0</btnGearDD>
+				<carried type="number">0</carried>
+				<cost type="number">100</cost>
+				<count type="number">2</count>
+				<dmg type="dice"></dmg>
+				<durNum type="number">0</durNum>
+				<equippedState type="string">Equipped</equippedState>
+				<gearLink type="windowreference">
+					<class>item</class>
+					<recordname />
+				</gearLink>
+				<gearType type="string">item_ammo</gearType>
+				<groupingState type="number">0</groupingState>
+				<isIdd type="number">1</isIdd>
+				<isidentified type="number">1</isidentified>
+				<isNew type="number">0</isNew>
+				<isShell type="number">0</isShell>
+				<linkItem type="windowreference">
+					<class>item</class>
+					<recordname />
+				</linkItem>
+				<locked type="number">1</locked>
+				<name type="string">Armor-Piercing Grenade</name>
+				<nonid_notes type="formattedtext">
+					<p />
+				</nonid_notes>
+				<notes type="formattedtext">
+					<p>When using this ammunition, you ablate armor by 2 instead of 1 whenever you would ablate armor.</p>
+				</notes>
+				<numGear type="number">1</numGear>
+				<pEffect type="string">EXPLOSIVES; BONUSABLATE: 1</pEffect>
+				<penalty type="number">0</penalty>
+				<saveDV type="number">0</saveDV>
+				<softCount type="number">0</softCount>
+				<sp type="number">0</sp>
+				<types type="string">All except Shotgun Shells</types>
+				<units type="number">1</units>
+			</id-00002>
+			<id-00003>
+				<btnGearDD type="number">0</btnGearDD>
+				<carried type="number">0</carried>
+				<cost type="number">100</cost>
+				<count type="number">1</count>
+				<gearLink type="windowreference">
+					<class>item</class>
+					<recordname />
+				</gearLink>
+				<gearType type="string">item_fashion</gearType>
+				<groupingState type="number">0</groupingState>
+				<isIdd type="number">1</isIdd>
+				<locked type="number">1</locked>
+				<name type="string">Asia Pop Glasses</name>
+				<nonid_notes type="formattedtext" />
+				<notes type="formattedtext">
+					<p>Bright, Costume-like, Youthful</p>
+				</notes>
+				<penalty type="number">0</penalty>
+				<sp type="number">0</sp>
+			</id-00003>
+			<id-00004>
+				<ammoAmt type="number">10</ammoAmt>
+				<btnGearDD type="number">0</btnGearDD>
+				<carried type="number">0</carried>
+				<cost type="number">10</cost>
+				<count type="number">22</count>
+				<dmg type="dice"></dmg>
+				<durNum type="number">0</durNum>
+				<equippedState type="string">Equipped</equippedState>
+				<gearLink type="windowreference">
+					<class>item</class>
+					<recordname />
+				</gearLink>
+				<gearType type="string">item_ammo</gearType>
+				<groupingState type="number">0</groupingState>
+				<isIdd type="number">1</isIdd>
+				<isidentified type="number">1</isidentified>
+				<isNew type="number">0</isNew>
+				<isShell type="number">0</isShell>
+				<linkItem type="windowreference">
+					<class>item</class>
+					<recordname />
+				</linkItem>
+				<locked type="number">1</locked>
+				<name type="string">Basic H Pistol</name>
+				<nonid_notes type="formattedtext">
+					<p />
+				</nonid_notes>
+				<notes type="formattedtext">
+					<p>This is the standard ammunition for the weapon. It has no special features.</p>
+				</notes>
+				<numGear type="number">1</numGear>
+				<penalty type="number">0</penalty>
+				<saveDV type="number">0</saveDV>
+				<softCount type="number">0</softCount>
+				<sp type="number">0</sp>
+				<types type="string">All except Grenades and Rockets</types>
+				<units type="number">10</units>
+			</id-00004>
+			<id-00005>
+				<ammoAmt type="number">10</ammoAmt>
+				<btnGearDD type="number">0</btnGearDD>
+				<carried type="number">0</carried>
+				<cost type="number">10</cost>
+				<count type="number">16</count>
+				<dmg type="dice"></dmg>
+				<durNum type="number">0</durNum>
+				<equippedState type="string">Equipped</equippedState>
+				<gearLink type="windowreference">
+					<class>item</class>
+					<recordname />
+				</gearLink>
+				<gearType type="string">item_ammo</gearType>
+				<groupingState type="number">0</groupingState>
+				<isIdd type="number">1</isIdd>
+				<isidentified type="number">1</isidentified>
+				<isNew type="number">0</isNew>
+				<isShell type="number">0</isShell>
+				<linkItem type="windowreference">
+					<class>item</class>
+					<recordname />
+				</linkItem>
+				<locked type="number">1</locked>
+				<name type="string">Basic Slug</name>
+				<nonid_notes type="formattedtext">
+					<p />
+				</nonid_notes>
+				<notes type="formattedtext">
+					<p>This is the standard ammunition for the weapon. It has no special features.</p>
+				</notes>
+				<numGear type="number">1</numGear>
+				<penalty type="number">0</penalty>
+				<saveDV type="number">0</saveDV>
+				<softCount type="number">0</softCount>
+				<sp type="number">0</sp>
+				<types type="string">All except Grenades and Rockets</types>
+				<units type="number">10</units>
+			</id-00005>
+			<id-00006>
+				<btnGearDD type="number">0</btnGearDD>
+				<carried type="number">0</carried>
+				<cost type="number">100</cost>
+				<count type="number">1</count>
+				<gearLink type="windowreference">
+					<class>item</class>
+					<recordname />
+				</gearLink>
+				<groupingState type="number">0</groupingState>
+				<isIdd type="number">1</isIdd>
+				<locked type="number">1</locked>
+				<name type="string">Techtool</name>
+				<nonid_notes type="formattedtext">
+					<p />
+				</nonid_notes>
+				<notes type="formattedtext">
+					<p>An all-in-one tool. The various parts, including a small utility blade, pliers, various screwdrivers, files, and clippers all fold up into a compact and easy to carry package.</p>
+				</notes>
+				<penalty type="number">0</penalty>
+				<priceCatLinked type="number">0</priceCatLinked>
+				<sp type="number">0</sp>
+			</id-00006>
+			<id-00007>
+				<ammoAmt type="number">1</ammoAmt>
+				<appEffect type="string">Damaged Eye; Damaged Ear</appEffect>
+				<btnGearDD type="number">0</btnGearDD>
+				<carried type="number">0</carried>
+				<cost type="number">100</cost>
+				<count type="number">1</count>
+				<dmg type="dice"></dmg>
+				<durMod type="string">min</durMod>
+				<durNum type="number">1</durNum>
+				<equippedState type="string">Equipped</equippedState>
+				<gearLink type="windowreference">
+					<class>item</class>
+					<recordname />
+				</gearLink>
+				<gearType type="string">item_ammo</gearType>
+				<groupingState type="number">0</groupingState>
+				<isIdd type="number">1</isIdd>
+				<isNew type="number">0</isNew>
+				<isShell type="number">0</isShell>
+				<linkItem type="windowreference">
+					<class>item</class>
+					<recordname />
+				</linkItem>
+				<locked type="number">1</locked>
+				<name type="string">Flashbang Grenade</name>
+				<nonid_notes type="formattedtext">
+					<p />
+				</nonid_notes>
+				<notes type="formattedtext">
+					<p>When using this ammunition, you deal no damage with your attack. Anyone hit by your attack must instead attempt to beat a DV15 Resist Torture/Drugs Check. Anyone who fails suffers the Damaged Eye and Damaged Ear Critical Injuries for the next minute. You do not take the Bonus Damage fromthe Critical Injuries.</p>
+					<linklist>
+						<link class="referencemanualpage" recordname="reference.refmanualdata.id-00114@CPRed">
+							<b>Reference Manual: </b>When Armor Doesn't Cut It</link>
+					</linklist>
+				</notes>
+				<numGear type="number">1</numGear>
+				<penalty type="number">0</penalty>
+				<saveDV type="number">15</saveDV>
+				<saveSkill type="string">Resist Torture/Drugs</saveSkill>
+				<softCount type="number">0</softCount>
+				<sp type="number">0</sp>
+				<types type="string">Grenades only</types>
+				<units type="number">1</units>
+			</id-00007>
+			<id-00008>
+				<btnGearDD type="number">0</btnGearDD>
+				<carried type="number">0</carried>
+				<cost type="number">50</cost>
+				<count type="number">1</count>
+				<gearLink type="windowreference">
+					<class>item</class>
+					<recordname />
+				</gearLink>
+				<gearType type="string">item_fashion</gearType>
+				<groupingState type="number">0</groupingState>
+				<isIdd type="number">1</isIdd>
+				<locked type="number">1</locked>
+				<name type="string">Gang Colors Jewelry</name>
+				<nonid_notes type="formattedtext" />
+				<notes type="formattedtext">
+					<p>Dangerous, Violent, Rebellious</p>
+				</notes>
+				<penalty type="number">0</penalty>
+				<sp type="number">0</sp>
+			</id-00008>
+			<id-00009>
+				<af0to6 type="number">0</af0to6>
+				<af13to25 type="number">0</af13to25>
+				<af26to50 type="number">0</af26to50>
+				<af51to100 type="number">0</af51to100>
+				<af7to12 type="number">0</af7to12>
+				<afAtkDiff type="number">1</afAtkDiff>
+				<afDamage type="dice">2d6</afDamage>
+				<ammo type="number">8</ammo>
+				<ammoCycler type="string">id-00004</ammoCycler>
+				<ammoType type="string">hPistol</ammoType>
+				<autofireMult type="number">3</autofireMult>
+				<btnGearDD type="number">0</btnGearDD>
+				<carried type="number">0</carried>
+				<cost type="number">100</cost>
+				<count type="number">1</count>
+				<ddIsDown type="number">0</ddIsDown>
+				<dmg type="dice">3d6</dmg>
+				<dv0to6 type="number">13</dv0to6>
+				<dv101to200 type="number">30</dv101to200>
+				<dv13to25 type="number">20</dv13to25>
+				<dv201to400 type="number">0</dv201to400>
+				<dv26to50 type="number">25</dv26to50>
+				<dv401to800 type="number">0</dv401to800>
+				<dv51to100 type="number">30</dv51to100>
+				<dv7to12 type="number">15</dv7to12>
+				<gearLink type="windowreference">
+					<class>item</class>
+					<recordname />
+				</gearLink>
+				<gearType type="string">item_ranged</gearType>
+				<groupingState type="number">0</groupingState>
+				<hands type="number">1</hands>
+				<hasArrows type="number">0</hasArrows>
+				<hasAutofire type="number">0</hasAutofire>
+				<hasAutofired type="number">0</hasAutofired>
+				<hasExplosives type="number">0</hasExplosives>
+				<hasShotgunShells type="number">0</hasShotgunShells>
+				<hasSuppFire type="number">0</hasSuppFire>
+				<isIdd type="number">1</isIdd>
+				<locked type="number">1</locked>
+				<magSize type="number">8</magSize>
+				<name type="string">Heavy Pistol</name>
+				<nonid_notes type="formattedtext">
+					<p />
+				</nonid_notes>
+				<notes type="formattedtext">
+					<p />
+				</notes>
+				<penalty type="number">0</penalty>
+				<rez type="number">0</rez>
+				<rof type="number">2</rof>
+				<saveDV type="number">0</saveDV>
+				<sp type="number">0</sp>
+				<updateWeapon type="number">0</updateWeapon>
+				<weaponMods />
+				<weaponSkill type="string">handgun</weaponSkill>
+			</id-00009>
+			<id-00010>
+				<afDamage type="dice">2d6</afDamage>
+				<armorType type="string">Body</armorType>
+				<btnGearDD type="number">0</btnGearDD>
+				<carried type="number">0</carried>
+				<cost type="number">100</cost>
+				<count type="number">1</count>
+				<gearLink type="windowreference">
+					<class>item</class>
+					<recordname />
+				</gearLink>
+				<gearType type="string">item_armor</gearType>
+				<groupingState type="number">0</groupingState>
+				<isIdd type="number">1</isIdd>
+				<locked type="number">1</locked>
+				<name type="string">Light Armorjack (body)</name>
+				<nonid_name type="string">Unidentified Item</nonid_name>
+				<nonid_notes type="formattedtext">
+					<p />
+				</nonid_notes>
+				<notes type="formattedtext">
+					<p>A combination of Kevlar&#174; and plastic meshes inserted into the weave of the fabric. Armorjack provides superior protection, especially against high-velocity bullets.</p>
+				</notes>
+				<penalty type="number">0</penalty>
+				<sp type="number">11</sp>
+				<spBase type="number">11</spBase>
+			</id-00010>
+			<id-00011>
+				<afDamage type="dice">2d6</afDamage>
+				<btnGearDD type="number">0</btnGearDD>
+				<carried type="number">0</carried>
+				<cost type="number">100</cost>
+				<count type="number">1</count>
+				<gearLink type="windowreference">
+					<class>item</class>
+					<recordname />
+				</gearLink>
+				<gearType type="string">item_armor</gearType>
+				<groupingState type="number">0</groupingState>
+				<isIdd type="number">1</isIdd>
+				<locked type="number">1</locked>
+				<name type="string">Light Armorjack (head)</name>
+				<nonid_name type="string">Unidentified Item</nonid_name>
+				<nonid_notes type="formattedtext">
+					<p />
+				</nonid_notes>
+				<notes type="formattedtext">
+					<p>A combination of Kevlar&#174; and plastic meshes inserted into the weave of the fabric. Armorjack provides superior protection, especially against high-velocity bullets.</p>
+				</notes>
+				<penalty type="number">0</penalty>
+				<sp type="number">11</sp>
+				<spBase type="number">11</spBase>
+			</id-00011>
+			<id-00012>
+				<allowGearChange type="number">1</allowGearChange>
+				<btnGearDD type="number">0</btnGearDD>
+				<carried type="number">0</carried>
+				<cost type="number">20</cost>
+				<count type="number">1</count>
+				<gearLink type="windowreference">
+					<class>item</class>
+					<recordname />
+				</gearLink>
+				<groupingState type="number">0</groupingState>
+				<isIdd type="number">1</isIdd>
+				<locked type="number">1</locked>
+				<name type="string">Lock Picking Set</name>
+				<newCreation type="number">0</newCreation>
+				<nonid_notes type="formattedtext">
+					<p />
+				</nonid_notes>
+				<notes type="formattedtext">
+					<p>A small pouch of tools for cracking mechanical locks.</p>
+				</notes>
+				<penalty type="number">0</penalty>
+				<priceCatLinked type="number">0</priceCatLinked>
+				<sp type="number">0</sp>
+			</id-00012>
+			<id-00013>
+				<btnGearDD type="number">0</btnGearDD>
+				<carried type="number">0</carried>
+				<cost type="number">20</cost>
+				<count type="number">1</count>
+				<gearLink type="windowreference">
+					<class>item</class>
+					<recordname />
+				</gearLink>
+				<groupingState type="number">0</groupingState>
+				<isIdd type="number">1</isIdd>
+				<locked type="number">1</locked>
+				<name type="string">Rope (60m/yds)</name>
+				<nonid_notes type="formattedtext">
+					<p />
+				</nonid_notes>
+				<notes type="formattedtext">
+					<p>Nylon rope. Can come in colors if desired. Holds up to 800lbs (360kg).</p>
+				</notes>
+				<penalty type="number">0</penalty>
+				<sp type="number">0</sp>
+			</id-00013>
+			<id-00014>
+				<btnGearDD type="number">0</btnGearDD>
+				<carried type="number">0</carried>
+				<cost type="number">100</cost>
+				<count type="number">1</count>
+				<gearLink type="windowreference">
+					<class>item</class>
+					<recordname />
+				</gearLink>
+				<gearType type="string">item_fashion</gearType>
+				<groupingState type="number">0</groupingState>
+				<isIdd type="number">1</isIdd>
+				<locked type="number">1</locked>
+				<name type="string">Nomad Leathers Bottoms</name>
+				<nonid_notes type="formattedtext" />
+				<notes type="formattedtext">
+					<p>Western, Rugged, Tribal</p>
+				</notes>
+				<penalty type="number">0</penalty>
+				<sp type="number">0</sp>
+			</id-00014>
+			<id-00015>
+				<btnGearDD type="number">0</btnGearDD>
+				<carried type="number">0</carried>
+				<cost type="number">100</cost>
+				<count type="number">1</count>
+				<gearLink type="windowreference">
+					<class>item</class>
+					<recordname />
+				</gearLink>
+				<gearType type="string">item_fashion</gearType>
+				<groupingState type="number">0</groupingState>
+				<isIdd type="number">1</isIdd>
+				<locked type="number">1</locked>
+				<name type="string">Nomad Leathers Footwear</name>
+				<nonid_notes type="formattedtext" />
+				<notes type="formattedtext">
+					<p>Western, Rugged, Tribal</p>
+				</notes>
+				<penalty type="number">0</penalty>
+				<sp type="number">0</sp>
+			</id-00015>
+			<id-00016>
+				<btnGearDD type="number">0</btnGearDD>
+				<carried type="number">0</carried>
+				<cost type="number">50</cost>
+				<count type="number">1</count>
+				<gearLink type="windowreference">
+					<class>item</class>
+					<recordname />
+				</gearLink>
+				<gearType type="string">item_fashion</gearType>
+				<groupingState type="number">0</groupingState>
+				<isIdd type="number">1</isIdd>
+				<locked type="number">1</locked>
+				<name type="string">Nomad Leathers Glasses</name>
+				<nonid_notes type="formattedtext" />
+				<notes type="formattedtext">
+					<p>Western, Rugged, Tribal</p>
+				</notes>
+				<penalty type="number">0</penalty>
+				<sp type="number">0</sp>
+			</id-00016>
+			<id-00017>
+				<btnGearDD type="number">0</btnGearDD>
+				<carried type="number">0</carried>
+				<cost type="number">100</cost>
+				<count type="number">1</count>
+				<gearLink type="windowreference">
+					<class>item</class>
+					<recordname />
+				</gearLink>
+				<gearType type="string">item_fashion</gearType>
+				<groupingState type="number">0</groupingState>
+				<isIdd type="number">1</isIdd>
+				<locked type="number">1</locked>
+				<name type="string">Nomad Leathers Hat</name>
+				<nonid_notes type="formattedtext" />
+				<notes type="formattedtext">
+					<p>Western, Rugged, Tribal</p>
+				</notes>
+				<penalty type="number">0</penalty>
+				<sp type="number">0</sp>
+			</id-00017>
+			<id-00018>
+				<btnGearDD type="number">0</btnGearDD>
+				<carried type="number">0</carried>
+				<cost type="number">100</cost>
+				<count type="number">1</count>
+				<gearLink type="windowreference">
+					<class>item</class>
+					<recordname />
+				</gearLink>
+				<gearType type="string">item_fashion</gearType>
+				<groupingState type="number">0</groupingState>
+				<isIdd type="number">1</isIdd>
+				<locked type="number">1</locked>
+				<name type="string">Nomad Leathers Jacket</name>
+				<nonid_notes type="formattedtext" />
+				<notes type="formattedtext">
+					<p>Western, Rugged, Tribal</p>
+				</notes>
+				<penalty type="number">0</penalty>
+				<sp type="number">0</sp>
+			</id-00018>
+			<id-00019>
+				<af0to6 type="number">0</af0to6>
+				<af13to25 type="number">0</af13to25>
+				<af26to50 type="number">0</af26to50>
+				<af51to100 type="number">0</af51to100>
+				<af7to12 type="number">0</af7to12>
+				<afAtkDiff type="number">1</afAtkDiff>
+				<afDamage type="dice">2d6</afDamage>
+				<ammo type="number">4</ammo>
+				<ammoCycler type="string">id-00005</ammoCycler>
+				<ammoType type="string">slug</ammoType>
+				<autofireMult type="number">3</autofireMult>
+				<btnGearDD type="number">0</btnGearDD>
+				<carried type="number">0</carried>
+				<concealable type="string">no</concealable>
+				<cost type="number">500</cost>
+				<count type="number">1</count>
+				<ddIsDown type="number">0</ddIsDown>
+				<dmg type="dice">5d6</dmg>
+				<dv0to6 type="number">13</dv0to6>
+				<dv101to200 type="number">35</dv101to200>
+				<dv13to25 type="number">20</dv13to25>
+				<dv201to400 type="number">0</dv201to400>
+				<dv26to50 type="number">25</dv26to50>
+				<dv401to800 type="number">0</dv401to800>
+				<dv51to100 type="number">30</dv51to100>
+				<dv7to12 type="number">15</dv7to12>
+				<gearLink type="windowreference">
+					<class>item</class>
+					<recordname />
+				</gearLink>
+				<gearType type="string">item_ranged</gearType>
+				<groupingState type="number">0</groupingState>
+				<hands type="number">2</hands>
+				<hasArrows type="number">0</hasArrows>
+				<hasAutofire type="number">0</hasAutofire>
+				<hasAutofired type="number">0</hasAutofired>
+				<hasExplosives type="number">0</hasExplosives>
+				<hasShotgunShells type="number">1</hasShotgunShells>
+				<hasSuppFire type="number">0</hasSuppFire>
+				<isIdd type="number">1</isIdd>
+				<locked type="number">1</locked>
+				<magSize type="number">4</magSize>
+				<name type="string">Shotgun</name>
+				<nonid_notes type="formattedtext">
+					<p />
+				</nonid_notes>
+				<notes type="formattedtext">
+					<p />
+				</notes>
+				<penalty type="number">0</penalty>
+				<rez type="number">0</rez>
+				<rof type="number">1</rof>
+				<saveDV type="number">0</saveDV>
+				<sp type="number">0</sp>
+				<updateWeapon type="number">0</updateWeapon>
+				<weaponMods />
+				<weaponSkill type="string">shoulderarms</weaponSkill>
+			</id-00019>
+			<id-00020>
+				<ammoAmt type="number">1</ammoAmt>
+				<btnGearDD type="number">0</btnGearDD>
+				<carried type="number">0</carried>
+				<cost type="number">50</cost>
+				<count type="number">2</count>
+				<dmg type="dice"></dmg>
+				<durNum type="number">0</durNum>
+				<equippedState type="string">Equipped</equippedState>
+				<gearLink type="windowreference">
+					<class>item</class>
+					<recordname />
+				</gearLink>
+				<gearType type="string">item_ammo</gearType>
+				<groupingState type="number">0</groupingState>
+				<isIdd type="number">1</isIdd>
+				<isNew type="number">0</isNew>
+				<isShell type="number">0</isShell>
+				<linkItem type="windowreference">
+					<class>item</class>
+					<recordname />
+				</linkItem>
+				<locked type="number">1</locked>
+				<name type="string">Smoke Grenade</name>
+				<nonid_notes type="formattedtext">
+					<p />
+				</nonid_notes>
+				<notes type="formattedtext">
+					<p>Obscures a 10m/yd by 10m/yd area with smoke for a minute on impact. The typical penalty for trying to perform a task obscured by smoke is -4.</p>
+				</notes>
+				<numGear type="number">1</numGear>
+				<penalty type="number">0</penalty>
+				<saveDV type="number">0</saveDV>
+				<softCount type="number">0</softCount>
+				<sp type="number">0</sp>
+				<types type="string">Grenades only.</types>
+				<units type="number">1</units>
+			</id-00020>
+			<id-00021>
+				<btnGearDD type="number">0</btnGearDD>
+				<carried type="number">0</carried>
+				<cost type="number">50</cost>
+				<count type="number">2</count>
+				<gearLink type="windowreference">
+					<class>item</class>
+					<recordname />
+				</gearLink>
+				<groupingState type="number">0</groupingState>
+				<isIdd type="number">1</isIdd>
+				<locked type="number">1</locked>
+				<name type="string">Disposable Cell Phone</name>
+				<nonid_notes type="formattedtext">
+					<p />
+				</nonid_notes>
+				<notes type="formattedtext">
+					<p>There are still billions of the things around. A good choice for Fixers and other people who don't want to be tracked.</p>
+				</notes>
+				<penalty type="number">0</penalty>
+				<priceCatLinked type="number">0</priceCatLinked>
+				<sp type="number">0</sp>
+			</id-00021>
+			<id-00022>
+				<allowGearChange type="number">1</allowGearChange>
+				<btnGearDD type="number">0</btnGearDD>
+				<carried type="number">0</carried>
+				<cost type="number">20</cost>
+				<count type="number">1</count>
+				<gearLink type="windowreference">
+					<class>item</class>
+					<recordname />
+				</gearLink>
+				<groupingState type="number">0</groupingState>
+				<isIdd type="number">1</isIdd>
+				<locked type="number">1</locked>
+				<name type="string">Duct Tape</name>
+				<newCreation type="number">0</newCreation>
+				<nonid_notes type="formattedtext">
+					<p />
+				</nonid_notes>
+				<notes type="formattedtext">
+					<p>Comes in many colors and optionally can glow in the dark. Glowing duct tape is often used to mark tunnels, dead drops, or caches. It glows in the dark even if there has been no light exposure.</p>
+				</notes>
+				<penalty type="number">0</penalty>
+				<priceCatLinked type="number">0</priceCatLinked>
+				<sp type="number">0</sp>
+			</id-00022>
+			<id-00023>
+				<af0to6 type="number">0</af0to6>
+				<af13to25 type="number">0</af13to25>
+				<af26to50 type="number">0</af26to50>
+				<af51to100 type="number">0</af51to100>
+				<af7to12 type="number">0</af7to12>
+				<afAtkDiff type="number">1</afAtkDiff>
+				<afDamage type="dice">2d6</afDamage>
+				<ammo type="number">0</ammo>
+				<ammoType type="string">hPistol</ammoType>
+				<autofireMult type="number">3</autofireMult>
+				<btnGearDD type="number">0</btnGearDD>
+				<carried type="number">1</carried>
+				<cost type="number">50</cost>
+				<count type="number">1</count>
+				<ddIsDown type="number">0</ddIsDown>
+				<dmg type="dice">3d6</dmg>
+				<dv0to6 type="number">13</dv0to6>
+				<dv101to200 type="number">30</dv101to200>
+				<dv13to25 type="number">20</dv13to25>
+				<dv201to400 type="number">0</dv201to400>
+				<dv26to50 type="number">25</dv26to50>
+				<dv401to800 type="number">0</dv401to800>
+				<dv51to100 type="number">30</dv51to100>
+				<dv7to12 type="number">15</dv7to12>
+				<gearLink type="windowreference">
+					<class>item</class>
+					<recordname />
+				</gearLink>
+				<gearType type="string">item_ranged</gearType>
+				<groupingState type="number">0</groupingState>
+				<hands type="number">1</hands>
+				<hasArrows type="number">0</hasArrows>
+				<hasAutofire type="number">0</hasAutofire>
+				<hasAutofired type="number">0</hasAutofired>
+				<hasExplosives type="number">0</hasExplosives>
+				<hasShotgunShells type="number">0</hasShotgunShells>
+				<hasSuppFire type="number">0</hasSuppFire>
+				<isIdd type="number">1</isIdd>
+				<locked type="number">1</locked>
+				<magSize type="number">8</magSize>
+				<name type="string">Heavy Pistol, Poor Quality</name>
+				<nonid_notes type="formattedtext">
+					<p />
+				</nonid_notes>
+				<notes type="formattedtext">
+					<p />
+				</notes>
+				<penalty type="number">0</penalty>
+				<quality type="string">poor</quality>
+				<rez type="number">0</rez>
+				<rof type="number">2</rof>
+				<saveDV type="number">0</saveDV>
+				<sp type="number">0</sp>
+				<updateWeapon type="number">0</updateWeapon>
+				<weaponMods />
+				<weaponSkill type="string">handgun</weaponSkill>
+			</id-00023>
+			<id-00024>
+				<allowGearChange type="number">1</allowGearChange>
+				<btnGearDD type="number">0</btnGearDD>
+				<carried type="number">0</carried>
+				<cost type="number">10</cost>
+				<count type="number">1</count>
+				<gearLink type="windowreference">
+					<class>item</class>
+					<recordname />
+				</gearLink>
+				<groupingState type="number">0</groupingState>
+				<isIdd type="number">1</isIdd>
+				<locked type="number">1</locked>
+				<name type="string">Kibble Pack</name>
+				<newCreation type="number">0</newCreation>
+				<nonid_notes type="formattedtext">
+					<p />
+				</nonid_notes>
+				<notes type="formattedtext">
+					<p>One foil package of dry, pet food-like cereal or wafers equivalent to a single meal. Usually identified by number rather than the fake appetizing label and description.</p>
+				</notes>
+				<penalty type="number">0</penalty>
+				<priceCatLinked type="number">0</priceCatLinked>
+				<sp type="number">0</sp>
+			</id-00024>
+			<id-00025>
+				<btnGearDD type="number">0</btnGearDD>
+				<carried type="number">0</carried>
+				<cost type="number">500</cost>
+				<count type="number">1</count>
+				<gearLink type="windowreference">
+					<class>item</class>
+					<recordname />
+				</gearLink>
+				<groupingState type="number">0</groupingState>
+				<isIdd type="number">1</isIdd>
+				<locked type="number">1</locked>
+				<name type="string">Tech Bag</name>
+				<nonid_notes type="formattedtext">
+					<p />
+				</nonid_notes>
+				<notes type="formattedtext">
+					<p>Small bag of tools for fixing electronics and machines. Includes a Techtool, electrical parts like tape and wire wraps, asst. screws and bolts, plug in modules for repairs, heat torch, 2 small prybars, and hammer.</p>
+				</notes>
+				<penalty type="number">0</penalty>
+				<priceCatLinked type="number">0</priceCatLinked>
+				<sp type="number">0</sp>
+			</id-00025>
+			<id-00026>
+				<btnGearDD type="number">0</btnGearDD>
+				<carried type="number">0</carried>
+				<cost type="number">20</cost>
+				<count type="number">1</count>
+				<gearLink type="windowreference">
+					<class>item</class>
+					<recordname />
+				</gearLink>
+				<groupingState type="number">0</groupingState>
+				<isIdd type="number">1</isIdd>
+				<locked type="number">1</locked>
+				<name type="string">Flashlight</name>
+				<nonid_notes type="formattedtext">
+					<p />
+				</nonid_notes>
+				<notes type="formattedtext">
+					<p>Rechargeable. 100m/yd beam, lasts up to 10 hours on a charge.</p>
+				</notes>
+				<penalty type="number">0</penalty>
+				<priceCatLinked type="number">0</priceCatLinked>
+				<sp type="number">0</sp>
+			</id-00026>
+			<id-00028>
+				<allowGearChange type="number">1</allowGearChange>
+				<btnGearDD type="number">0</btnGearDD>
+				<carried type="number">0</carried>
+				<cost type="number">0</cost>
+				<count type="number">1</count>
+				<gearLink type="windowreference">
+					<class>item</class>
+					<recordname />
+				</gearLink>
+				<groupingState type="number">0</groupingState>
+				<name type="string">Broken Land Drone\n</name>
+				<newCreation type="number">0</newCreation>
+				<nonid_notes type="formattedtext">
+					<p>Repair Land 14 : remove plating</p>
+					<p>Repair electronics 15 : know what need to repair (need scrapyard for piece)</p>
+					<p />
+				</nonid_notes>
+				<notes type="formattedtext">
+					<p />
+				</notes>
+				<penalty type="number">0</penalty>
+				<priceCatLinked type="number">0</priceCatLinked>
+				<sp type="number">0</sp>
+			</id-00028>
+		</inventorylist>
+		<ipExpended />
+		<languagelist>
+			<id-00017>
+				<name type="string">English</name>
+			</id-00017>
+			<id-00018>
+				<name type="string">Streetslang</name>
+			</id-00018>
+		</languagelist>
+		<lArmCyberware />
+		<lCyberarmGroupActive type="number">0</lCyberarmGroupActive>
+		<lCyberarmLink type="windowreference">
+			<class />
+			<recordname />
+		</lCyberarmLink>
+		<lCybereyeGroupActive type="number">0</lCybereyeGroupActive>
+		<lCybereyeLink type="windowreference">
+			<class>cyberware</class>
+			<recordname>..linkedLCybereye</recordname>
+		</lCybereyeLink>
+		<lCyberfingers />
+		<lCyberfingersGroupActive type="number">0</lCyberfingersGroupActive>
+		<lCyberfootLink type="windowreference">
+			<class />
+			<recordname />
+		</lCyberfootLink>
+		<lCyberhandLink type="windowreference">
+			<class />
+			<recordname />
+		</lCyberhandLink>
+		<lCyberlegGroupActive type="number">0</lCyberlegGroupActive>
+		<lCyberlegLink type="windowreference">
+			<class />
+			<recordname />
+		</lCyberlegLink>
+		<lEyeCyberware>
+			<id-00001>
+				<baseHL type="number">2</baseHL>
+				<cost type="number">100</cost>
+				<cyberActive type="number">1</cyberActive>
+				<cyberEffect type="string">400x magnification</cyberEffect>
+				<cyberLink type="windowreference">
+					<class>cyberware</class>
+					<recordname />
+				</cyberLink>
+				<description type="formattedtext">
+					<p>Cybereye Option. Microscope providing user up to 400x magnification. <b>Requires a Cybereye.</b></p>
+				</description>
+				<hlDice type="dice">d6</hlDice>
+				<installLocation type="string">Clinic</installLocation>
+				<installSlot type="string">Optics</installSlot>
+				<isHalved type="number">1</isHalved>
+				<linkCyberware type="windowreference">
+					<class>cyberware</class>
+					<recordname />
+				</linkCyberware>
+				<name type="string">MicroOptics</name>
+				<refreshCw type="number">0</refreshCw>
+				<slotsRequired type="number">1</slotsRequired>
+				<weapLink type="windowreference">
+					<class />
+					<recordname />
+				</weapLink>
+			</id-00001>
+		</lEyeCyberware>
+		<lifeGoals type="string">Hunt down those responsible for your miserable life and make them pay.</lifeGoals>
+		<lifestyle type="string">Kibble (100eb)</lifestyle>
+		<linkedLCybereye>
+			<baseHL type="number">7</baseHL>
+			<cost type="number">100</cost>
+			<cyberActive type="number">1</cyberActive>
+			<description type="formattedtext">
+				<p>Artificial Eye. Each Cybereye has 3 Option Slots. Some options must be paired (purchased twice and installed in two different Cybereyes on a user. HL must be paid for each).</p>
+			</description>
+			<foundationalReq type="string">hasLCybereye</foundationalReq>
+			<hlDice type="dice">2d6</hlDice>
+			<installLocation type="string">Clinic</installLocation>
+			<installSlot type="string">Foundational</installSlot>
+			<isHalved type="number">0</isHalved>
+			<linkCyberware type="windowreference">
+				<class>cyberware</class>
+				<recordname />
+			</linkCyberware>
+			<name type="string">Cybereye, Left</name>
+			<slotsRequired type="number">1</slotsRequired>
+			<weapLink type="windowreference">
+				<class />
+				<recordname />
+			</weapLink>
+		</linkedLCybereye>
+		<lLegCyberware />
+		<luckBase type="number">5</luckBase>
+		<luckBonus type="number">0</luckBonus>
+		<luckCurrent type="number">4</luckCurrent>
+		<luckLock type="number">0</luckLock>
+		<luckMax type="number">5</luckMax>
+		<miscOptions>
+			<id-00001>
+				<bonusAblation type="number">0</bonusAblation>
+				<dmg type="dice">3d6</dmg>
+				<durNum type="number">0</durNum>
+				<dv type="number">0</dv>
+				<focusLost type="number">1</focusLost>
+				<fromEffect type="number">0</fromEffect>
+				<halfArmor type="number">0</halfArmor>
+				<ignoresArmor type="number">0</ignoresArmor>
+				<isAttack type="number">1</isAttack>
+				<isFlatDamage type="number">0</isFlatDamage>
+				<link type="windowreference">
+					<class>reference_move</class>
+					<recordname />
+				</link>
+				<name type="string">Brawling</name>
+				<notes type="formattedtext">
+					<p>Brawling uses the <b>Brawling Skill </b>to attack, and the damage dealt with each blow scales with the attacker's BODY STAT, with one exception: <b>with a Cyberarm, your damage for a Brawling Attack is always at least 2d6 (but higher if your BODY is 7+). </b>Brawling is also the Skill used for initiating and defending against a Grapple. <b>When dealing damage, a Brawling attack does not ignore half the Defender's armor.</b></p>
+					<table>
+						<tr>
+							<td>
+								<b>Body</b>
+							</td>
+							<td>
+								<b>4 or Under</b>
+							</td>
+							<td>
+								<b>5 to 6 (or &#8804; 4 w/ Cyberarm)</b>
+							</td>
+							<td>
+								<b>7 to 10</b>
+							</td>
+							<td>
+								<b>11 or Higher</b>
+							</td>
+						</tr>
+						<tr>
+							<td>
+								<b>Damage</b>
+							</td>
+							<td>1d6</td>
+							<td>2d6</td>
+							<td>3d6</td>
+							<td>4d6</td>
+						</tr>
+					</table>
+				</notes>
+				<selectedSkill type="string">Brawling</selectedSkill>
+			</id-00001>
+			<id-00002>
+				<bonusAblation type="number">0</bonusAblation>
+				<critDmg type="number">0</critDmg>
+				<defenseSkill type="string">Brawling</defenseSkill>
+				<dmg type="dice"></dmg>
+				<durNum type="number">0</durNum>
+				<dv type="number">0</dv>
+				<effectPattern type="string">Grappled</effectPattern>
+				<focusLost type="number">1</focusLost>
+				<fromEffect type="number">0</fromEffect>
+				<halfArmor type="number">0</halfArmor>
+				<ignoresArmor type="number">0</ignoresArmor>
+				<isAttack type="number">1</isAttack>
+				<isFlatDamage type="number">0</isFlatDamage>
+				<link type="windowreference">
+					<class>reference_move</class>
+					<recordname />
+				</link>
+				<name type="string">Grab</name>
+				<notes type="formattedtext">
+					<p>As an Action you can grab and hold someone, take an object they are carrying, or escape a grapple. You need a free hand to initiate a Grab, which cannot be used to do anything else for the duration of any Grapple that results from the Grab.</p>
+					<p>To determine the outcome of a Grab, both you and your target within your reach roll <b>DEX + Brawling Skill + 1d10. </b>If you win, you can choose to either grab hold of the Defender or take one object the Defender is holding in their hands into a free hand. If you win and choose to grab hold of the Defender instead of their stuff, both of you are now considered to be in a Grapple and take a -2 to all Actions for as long as you both remain in a Grapple.</p>
+					<p>While Grappled, the Defender cannot use their Move Action, and is dragged with the Attacker whenever the Attacker takes their Move Action. No Character in the Grapple can make use of a weapon that requires them to use two hands, even if they have more than two arms. The Attacker can end the Grapple at any time without using an Action, but the Defender, or any other Character, must use this Action to roll a successful Grab against the Attacker to break the Grapple, which ends the Grapple for everyone involved. Grabbing a person is a prerequisite for Choking or Throwing them.</p>
+				</notes>
+				<selectedSkill type="string">Brawling</selectedSkill>
+			</id-00002>
+			<id-00003>
+				<bonusAblation type="number">0</bonusAblation>
+				<critDmg type="number">0</critDmg>
+				<dmg type="dice"></dmg>
+				<durNum type="number">0</durNum>
+				<dv type="number">0</dv>
+				<effectPattern type="string">Grappling</effectPattern>
+				<focusLost type="number">1</focusLost>
+				<fromEffect type="number">0</fromEffect>
+				<halfArmor type="number">0</halfArmor>
+				<ignoresArmor type="number">0</ignoresArmor>
+				<isAttack type="number">0</isAttack>
+				<isFlatDamage type="number">0</isFlatDamage>
+				<isSave type="number">0</isSave>
+				<link type="windowreference">
+					<class>reference_move</class>
+					<recordname />
+				</link>
+				<name type="string">Grab (Self)</name>
+				<notes type="formattedtext">
+					<p>
+						<b>Note: </b>Use this effect to mark yourself as Grappling.</p>
+					<p>As an Action you can grab and hold someone, take an object they are carrying, or escape a grapple. You need a free hand to initiate a Grab, which cannot be used to do anything else for the duration of any Grapple that results from the Grab.</p>
+					<p>To determine the outcome of a Grab, both you and your target within your reach roll <b>DEX + Brawling Skill + 1d10. </b>If you win, you can choose to either grab hold of the Defender or take one object the Defender is holding in their hands into a free hand. If you win and choose to grab hold of the Defender instead of their stuff, both of you are now considered to be in a Grapple and take a -2 to all Actions for as long as you both remain in a Grapple.</p>
+					<p>While Grappled, the Defender cannot use their Move Action, and is dragged with the Attacker whenever the Attacker takes their Move Action. No Character in the Grapple can make use of a weapon that requires them to use two hands, even if they have more than two arms. The Attacker can end the Grapple at any time without using an Action, but the Defender, or any other Character, must use this Action to roll a successful Grab against the Attacker to break the Grapple, which ends the Grapple for everyone involved. Grabbing a person is a prerequisite for Choking or Throwing them.</p>
+				</notes>
+				<targeting type="string">self</targeting>
+			</id-00003>
+			<id-00004>
+				<bonusAblation type="number">0</bonusAblation>
+				<critDmg type="number">0</critDmg>
+				<dmg type="dice"></dmg>
+				<durNum type="number">0</durNum>
+				<dv type="number">0</dv>
+				<effectPattern type="string">Prone</effectPattern>
+				<focusLost type="number">0</focusLost>
+				<fromEffect type="number">0</fromEffect>
+				<halfArmor type="number">0</halfArmor>
+				<ignoresArmor type="number">1</ignoresArmor>
+				<isAttack type="number">0</isAttack>
+				<isFlatDamage type="number">1</isFlatDamage>
+				<link type="windowreference">
+					<class>reference_move</class>
+					<recordname />
+				</link>
+				<name type="string">Throw</name>
+				<notes type="formattedtext">
+					<p>Throw a person you are Grappling or an object you are holding. If you are currently the Attacker in a Grapple, you can use an Action to Throw them onto the ground, dealing your BODY STAT directly to their Hit Points in damage. This damage ignores the Defender's armor and doesn't ablate it. Throwing your target ends your Grapple with them (freeing you both of the -2 to all Actions imposed by being either participant in a Grapple), and leaves them Prone, unable to use their Move Action until they use the Get Up Action.</p>
+					<p>
+						<b>Fantasy Grounds</b>
+					</p>
+					<p>Use this Move for throwing a Grappled target. For thrown objects, use the Throw functionality on the Actions tab of the Character Sheet.</p>
+				</notes>
+			</id-00004>
+			<id-00005>
+				<bonusAblation type="number">0</bonusAblation>
+				<dmg type="dice"></dmg>
+				<durNum type="number">0</durNum>
+				<dv type="number">0</dv>
+				<effectPattern type="string">Unconscious</effectPattern>
+				<focusLost type="number">0</focusLost>
+				<fromEffect type="number">0</fromEffect>
+				<halfArmor type="number">0</halfArmor>
+				<ignoresArmor type="number">1</ignoresArmor>
+				<isAttack type="number">0</isAttack>
+				<isFlatDamage type="number">1</isFlatDamage>
+				<link type="windowreference">
+					<class>reference_move</class>
+					<recordname />
+				</link>
+				<name type="string">Choke</name>
+				<notes type="formattedtext">
+					<p>If you are currently the Attacker in a Grapple, you can use an Action to Choke the Defender you are grappling, dealing your BODY STAT directly to their Hit Points in damage. If damage dealt by a Choke would reduce a target with more than 1 HP to less than 0 HP, they are instead left at 1 HP and are Unconscious. This damage ignores the Defender's armor and doesn't ablate it. Additionally, if you Choke the same target for 3 successive Rounds, they go Unconscious regardless of their Hit Point total.</p>
+				</notes>
+				<pEffect type="string">NONLETHAL:1</pEffect>
+			</id-00005>
+			<id-00016>
+				<bonusAblation type="number">0</bonusAblation>
+				<dmg type="dice"></dmg>
+				<durNum type="number">0</durNum>
+				<dv type="number">0</dv>
+				<effectPattern type="string">SKILL: Wardrobe &amp; Style 2;SKILL: Library Search 2</effectPattern>
+				<fromEffect type="number">1</fromEffect>
+				<halfArmor type="number">0</halfArmor>
+				<ignoresArmor type="number">0</ignoresArmor>
+				<isAttack type="number">0</isAttack>
+				<link type="windowreference">
+					<class>reference_move</class>
+					<recordname />
+				</link>
+				<locked type="number">1</locked>
+				<name type="string">Agent</name>
+				<targeting type="string">self</targeting>
+			</id-00016>
+		</miscOptions>
+		<moveBase type="number">7</moveBase>
+		<moveCurrent type="number">7</moveCurrent>
+		<moveLock type="number">0</moveLock>
+		<name type="string">Joshua Bellington</name>
+		<neuralCyberware />
+		<neuralGroupActive type="number">0</neuralGroupActive>
+		<neuralLinkLink type="windowreference">
+			<class />
+			<recordname />
+		</neuralLinkLink>
+		<neuroportNetLink type="windowreference">
+			<class />
+			<recordname />
+		</neuroportNetLink>
+		<personality type="string">Stable and serious</personality>
+		<playstylePrimary type="string">Primary Playstyle</playstylePrimary>
+		<playstyleSecondary type="string">Secondary Playstyle</playstyleSecondary>
+		<portrait type="token">campaign/portraits/id-00002</portrait>
+		<rArmCyberware>
+			<id-00001>
+				<baseHL type="number">3</baseHL>
+				<cost type="number">100</cost>
+				<cyberActive type="number">1</cyberActive>
+				<cyberLink type="windowreference">
+					<class>cyberware</class>
+					<recordname />
+				</cyberLink>
+				<description type="formattedtext">
+					<p>Cyberarm Option. Fingers contain screwdriver, wrench, small drill, etc. Never be without your Techtool! Can be installed as the only piece of Cyberware in a meat arm.</p>
+				</description>
+				<hlDice type="dice">d6</hlDice>
+				<installLocation type="string">Clinic</installLocation>
+				<installSlot type="string">Arms</installSlot>
+				<isHalved type="number">0</isHalved>
+				<linkCyberware type="windowreference">
+					<class>cyberware</class>
+					<recordname />
+				</linkCyberware>
+				<name type="string">Tool Hand</name>
+				<refreshCw type="number">0</refreshCw>
+				<slotsRequired type="number">1</slotsRequired>
+				<weapLink type="windowreference">
+					<class />
+					<recordname />
+				</weapLink>
+			</id-00001>
+		</rArmCyberware>
+		<rCyberarmGroupActive type="number">0</rCyberarmGroupActive>
+		<rCyberarmLink type="windowreference">
+			<class />
+			<recordname />
+		</rCyberarmLink>
+		<rCybereyeGroupActive type="number">0</rCybereyeGroupActive>
+		<rCybereyeLink type="windowreference">
+			<class />
+			<recordname />
+		</rCybereyeLink>
+		<rCyberfingers />
+		<rCyberfingersGroupActive type="number">0</rCyberfingersGroupActive>
+		<rCyberfootLink type="windowreference">
+			<class />
+			<recordname />
+		</rCyberfootLink>
+		<rCyberhandLink type="windowreference">
+			<class />
+			<recordname />
+		</rCyberhandLink>
+		<rCyberlegGroupActive type="number">0</rCyberlegGroupActive>
+		<rCyberlegLink type="windowreference">
+			<class />
+			<recordname />
+		</rCyberlegLink>
+		<refBase type="number">7</refBase>
+		<refCurrent type="number">7</refCurrent>
+		<refLock type="number">0</refLock>
+		<refreshCW type="number">0</refreshCW>
+		<rent type="string">1,000eb</rent>
+		<repEvents />
+		<reputation type="number">0</reputation>
+		<rEyeCyberware />
+		<rLegCyberware />
+		<roleLifepath type="string">What Kind of Tech are You? Weaponsmith\nGot a Partner, or Do You Work Alone? \nIf You Have a Partner, Who are They? \nWhat's Your Workspace Like? \nWho are Your Main Clients? Local Solos or other combat types who use you for weapon upkeep.\nWhere Do You Get Your Supplies? \nWho's Gunning For You? </roleLifepath>
+		<rolesLevelsString type="string">Tech 4 </rolesLevelsString>
+		<saveDV type="number">0</saveDV>
+		<shieldSp type="number">0</shieldSp>
+		<shieldUp type="number">1</shieldUp>
+		<skillsCol>
+			<id-00001>
+				<groupField type="string">Body Skills</groupField>
+				<inColumn type="string">col1</inColumn>
+				<isBase type="number">1</isBase>
+				<listSkillSpecifics>
+					<id-00001>
+						<hasSubskills type="number">0</hasSubskills>
+						<isBase type="number">1</isBase>
+						<isBold type="number">0</isBold>
+						<listSubSkillSpecifics />
+						<skillAbility type="string">DEX</skillAbility>
+						<skillBase type="number">7</skillBase>
+						<skillEffMod type="number">0</skillEffMod>
+						<skillLvl type="number">0</skillLvl>
+						<skillLvlMod type="number">0</skillLvlMod>
+						<skillName type="string">Contortionist</skillName>
+						<skillNodePath type="string">reference.skills.id-00018@CPRed</skillNodePath>
+					</id-00001>
+					<id-00002>
+						<hasSubskills type="number">0</hasSubskills>
+						<isBase type="number">1</isBase>
+						<isBold type="number">1</isBold>
+						<listSubSkillSpecifics />
+						<skillAbility type="string">DEX</skillAbility>
+						<skillBase type="number">11</skillBase>
+						<skillEffMod type="number">0</skillEffMod>
+						<skillLvl type="number">4</skillLvl>
+						<skillLvlMod type="number">0</skillLvlMod>
+						<skillName type="string">Athletics</skillName>
+						<skillNodePath type="string">reference.skills.id-00008@CPRed</skillNodePath>
+					</id-00002>
+					<id-00003>
+						<hasSubskills type="number">0</hasSubskills>
+						<isBase type="number">1</isBase>
+						<isBold type="number">0</isBold>
+						<listSubSkillSpecifics />
+						<skillAbility type="string">WILL</skillAbility>
+						<skillBase type="number">6</skillBase>
+						<skillEffMod type="number">0</skillEffMod>
+						<skillLvl type="number">0</skillLvl>
+						<skillLvlMod type="number">0</skillLvlMod>
+						<skillName type="string">Resist Torture/Drugs</skillName>
+						<skillNodePath type="string">reference.skills.id-00056@CPRed</skillNodePath>
+					</id-00003>
+					<id-00004>
+						<hasSubskills type="number">0</hasSubskills>
+						<isBase type="number">1</isBase>
+						<isBold type="number">1</isBold>
+						<listSubSkillSpecifics />
+						<skillAbility type="string">DEX</skillAbility>
+						<skillBase type="number">11</skillBase>
+						<skillEffMod type="number">0</skillEffMod>
+						<skillLvl type="number">4</skillLvl>
+						<skillLvlMod type="number">0</skillLvlMod>
+						<skillName type="string">Stealth</skillName>
+						<skillNodePath type="string">reference.skills.id-00061@CPRed</skillNodePath>
+					</id-00004>
+					<id-00005>
+						<hasSubskills type="number">0</hasSubskills>
+						<isBase type="number">1</isBase>
+						<isBold type="number">0</isBold>
+						<listSubSkillSpecifics />
+						<skillAbility type="string">DEX</skillAbility>
+						<skillBase type="number">7</skillBase>
+						<skillEffMod type="number">0</skillEffMod>
+						<skillLvl type="number">0</skillLvl>
+						<skillLvlMod type="number">0</skillLvlMod>
+						<skillName type="string">Dance</skillName>
+						<skillNodePath type="string">reference.skills.id-00023@CPRed</skillNodePath>
+					</id-00005>
+					<id-00006>
+						<hasSubskills type="number">0</hasSubskills>
+						<isBase type="number">1</isBase>
+						<isBold type="number">0</isBold>
+						<listSubSkillSpecifics />
+						<skillAbility type="string">WILL</skillAbility>
+						<skillBase type="number">6</skillBase>
+						<skillEffMod type="number">0</skillEffMod>
+						<skillLvl type="number">0</skillLvl>
+						<skillLvlMod type="number">0</skillLvlMod>
+						<skillName type="string">Endurance</skillName>
+						<skillNodePath type="string">reference.skills.id-00029@CPRed</skillNodePath>
+					</id-00006>
+				</listSkillSpecifics>
+			</id-00001>
+			<id-00002>
+				<groupField type="string">Awareness Skills</groupField>
+				<inColumn type="string">col1</inColumn>
+				<isBase type="number">1</isBase>
+				<listSkillSpecifics>
+					<id-00001>
+						<hasSubskills type="number">0</hasSubskills>
+						<isBase type="number">1</isBase>
+						<isBold type="number">0</isBold>
+						<listSubSkillSpecifics />
+						<skillAbility type="string">INT</skillAbility>
+						<skillBase type="number">5</skillBase>
+						<skillEffMod type="number">0</skillEffMod>
+						<skillLvl type="number">0</skillLvl>
+						<skillLvlMod type="number">0</skillLvlMod>
+						<skillName type="string">Conceal/Reveal Object</skillName>
+						<skillNodePath type="string">reference.skills.id-00016@CPRed</skillNodePath>
+					</id-00001>
+					<id-00002>
+						<hasSubskills type="number">0</hasSubskills>
+						<isBase type="number">1</isBase>
+						<isBold type="number">1</isBold>
+						<listSubSkillSpecifics />
+						<skillAbility type="string">WILL</skillAbility>
+						<skillBase type="number">8</skillBase>
+						<skillEffMod type="number">0</skillEffMod>
+						<skillLvl type="number">2</skillLvl>
+						<skillLvlMod type="number">0</skillLvlMod>
+						<skillName type="string">Concentration</skillName>
+						<skillNodePath type="string">reference.skills.id-00017@CPRed</skillNodePath>
+					</id-00002>
+					<id-00003>
+						<hasSubskills type="number">0</hasSubskills>
+						<isBase type="number">1</isBase>
+						<isBold type="number">0</isBold>
+						<listSubSkillSpecifics />
+						<skillAbility type="string">INT</skillAbility>
+						<skillBase type="number">5</skillBase>
+						<skillEffMod type="number">0</skillEffMod>
+						<skillLvl type="number">0</skillLvl>
+						<skillLvlMod type="number">0</skillLvlMod>
+						<skillName type="string">Lip Reading</skillName>
+						<skillNodePath type="string">reference.skills.id-00042@CPRed</skillNodePath>
+					</id-00003>
+					<id-00004>
+						<hasSubskills type="number">0</hasSubskills>
+						<isBase type="number">1</isBase>
+						<isBold type="number">0</isBold>
+						<listSubSkillSpecifics />
+						<skillAbility type="string">INT</skillAbility>
+						<skillBase type="number">5</skillBase>
+						<skillEffMod type="number">0</skillEffMod>
+						<skillLvl type="number">0</skillLvl>
+						<skillLvlMod type="number">0</skillLvlMod>
+						<skillName type="string">Tracking</skillName>
+						<skillNodePath type="string">reference.skills.id-00064@CPRed</skillNodePath>
+					</id-00004>
+					<id-00005>
+						<hasSubskills type="number">0</hasSubskills>
+						<isBase type="number">1</isBase>
+						<isBold type="number">1</isBold>
+						<listSubSkillSpecifics />
+						<skillAbility type="string">INT</skillAbility>
+						<skillBase type="number">7</skillBase>
+						<skillEffMod type="number">0</skillEffMod>
+						<skillLvl type="number">2</skillLvl>
+						<skillLvlMod type="number">0</skillLvlMod>
+						<skillName type="string">Perception</skillName>
+						<skillNodePath type="string">reference.skills.id-00047@CPRed</skillNodePath>
+					</id-00005>
+				</listSkillSpecifics>
+			</id-00002>
+			<id-00003>
+				<groupField type="string">Control Skills</groupField>
+				<inColumn type="string">col1</inColumn>
+				<isBase type="number">1</isBase>
+				<listSkillSpecifics>
+					<id-00001>
+						<hasSubskills type="number">0</hasSubskills>
+						<isBase type="number">1</isBase>
+						<isBold type="number">0</isBold>
+						<listSubSkillSpecifics />
+						<skillAbility type="string">REF</skillAbility>
+						<skillBase type="number">9</skillBase>
+						<skillEffMod type="number">0</skillEffMod>
+						<skillLvl type="number">2</skillLvl>
+						<skillLvlMod type="number">0</skillLvlMod>
+						<skillName type="string">Drive Land Vehicle</skillName>
+						<skillNodePath type="string">reference.skills.id-00026@CPRed</skillNodePath>
+					</id-00001>
+					<id-00002>
+						<hasSubskills type="number">0</hasSubskills>
+						<isBase type="number">1</isBase>
+						<isBold type="number">0</isBold>
+						<listSubSkillSpecifics />
+						<skillAbility type="string">REF</skillAbility>
+						<skillBase type="number">7</skillBase>
+						<skillEffMod type="number">0</skillEffMod>
+						<skillLvl type="number">0</skillLvl>
+						<skillLvlMod type="number">0</skillLvlMod>
+						<skillName type="string">Pilot Air Vehicle (x2)</skillName>
+						<skillNodePath type="string">reference.skills.id-00053@CPRed</skillNodePath>
+					</id-00002>
+					<id-00003>
+						<hasSubskills type="number">0</hasSubskills>
+						<isBase type="number">1</isBase>
+						<isBold type="number">0</isBold>
+						<listSubSkillSpecifics />
+						<skillAbility type="string">REF</skillAbility>
+						<skillBase type="number">7</skillBase>
+						<skillEffMod type="number">0</skillEffMod>
+						<skillLvl type="number">0</skillLvl>
+						<skillLvlMod type="number">0</skillLvlMod>
+						<skillName type="string">Riding</skillName>
+						<skillNodePath type="string">reference.skills.id-00057@CPRed</skillNodePath>
+					</id-00003>
+					<id-00004>
+						<hasSubskills type="number">0</hasSubskills>
+						<isBase type="number">1</isBase>
+						<isBold type="number">0</isBold>
+						<listSubSkillSpecifics />
+						<skillAbility type="string">REF</skillAbility>
+						<skillBase type="number">7</skillBase>
+						<skillEffMod type="number">0</skillEffMod>
+						<skillLvl type="number">0</skillLvl>
+						<skillLvlMod type="number">0</skillLvlMod>
+						<skillName type="string">Pilot Sea Vehicle</skillName>
+						<skillNodePath type="string">reference.skills.id-00054@CPRed</skillNodePath>
+					</id-00004>
+				</listSkillSpecifics>
+			</id-00003>
+			<id-00004>
+				<groupField type="string">Fighting Skills</groupField>
+				<inColumn type="string">col2</inColumn>
+				<isBase type="number">1</isBase>
+				<listSkillSpecifics>
+					<id-00001>
+						<hasSubskills type="number">1</hasSubskills>
+						<isBase type="number">1</isBase>
+						<isBold type="number">0</isBold>
+						<listSubSkillSpecifics>
+							<id-00001>
+								<isBase type="number">0</isBase>
+								<isBold type="number">0</isBold>
+								<skillAbility type="string">DEX</skillAbility>
+								<skillBase type="number">7</skillBase>
+								<skillEffMod type="number">0</skillEffMod>
+								<skillLvl type="number">0</skillLvl>
+								<skillLvlMod type="number">0</skillLvlMod>
+								<skillNodePath type="string">reference.skills.id-00069@CPRed</skillNodePath>
+							</id-00001>
+						</listSubSkillSpecifics>
+						<skillBase type="number">5</skillBase>
+						<skillEffMod type="number">0</skillEffMod>
+						<skillLvl type="number">0</skillLvl>
+						<skillLvlMod type="number">0</skillLvlMod>
+						<skillName type="string">Martial Arts (x2)</skillName>
+						<skillNodePath type="string">reference.skills.id-00069@CPRed</skillNodePath>
+					</id-00001>
+					<id-00002>
+						<hasSubskills type="number">0</hasSubskills>
+						<isBase type="number">1</isBase>
+						<isBold type="number">1</isBold>
+						<listSubSkillSpecifics />
+						<skillAbility type="string">DEX</skillAbility>
+						<skillBase type="number">9</skillBase>
+						<skillEffMod type="number">0</skillEffMod>
+						<skillLvl type="number">2</skillLvl>
+						<skillLvlMod type="number">0</skillLvlMod>
+						<skillName type="string">Evasion</skillName>
+						<skillNodePath type="string">reference.skills.id-00030@CPRed</skillNodePath>
+					</id-00002>
+					<id-00003>
+						<hasSubskills type="number">0</hasSubskills>
+						<isBase type="number">1</isBase>
+						<isBold type="number">1</isBold>
+						<listSubSkillSpecifics />
+						<skillAbility type="string">DEX</skillAbility>
+						<skillBase type="number">9</skillBase>
+						<skillEffMod type="number">0</skillEffMod>
+						<skillLvl type="number">2</skillLvl>
+						<skillLvlMod type="number">0</skillLvlMod>
+						<skillName type="string">Brawling</skillName>
+						<skillNodePath type="string">reference.skills.id-00011@CPRed</skillNodePath>
+					</id-00003>
+					<id-00004>
+						<hasSubskills type="number">0</hasSubskills>
+						<isBase type="number">1</isBase>
+						<isBold type="number">0</isBold>
+						<listSubSkillSpecifics />
+						<skillAbility type="string">DEX</skillAbility>
+						<skillBase type="number">7</skillBase>
+						<skillEffMod type="number">0</skillEffMod>
+						<skillLvl type="number">0</skillLvl>
+						<skillLvlMod type="number">0</skillLvlMod>
+						<skillName type="string">Melee Weapon</skillName>
+						<skillNodePath type="string">reference.skills.id-00044@CPRed</skillNodePath>
+					</id-00004>
+				</listSkillSpecifics>
+			</id-00004>
+			<id-00005>
+				<groupField type="string">Social Skills</groupField>
+				<inColumn type="string">col2</inColumn>
+				<isBase type="number">1</isBase>
+				<listSkillSpecifics>
+					<id-00001>
+						<hasSubskills type="number">0</hasSubskills>
+						<isBase type="number">1</isBase>
+						<isBold type="number">0</isBold>
+						<listSubSkillSpecifics />
+						<skillAbility type="string">COOL</skillAbility>
+						<skillBase type="number">4</skillBase>
+						<skillEffMod type="number">0</skillEffMod>
+						<skillLvl type="number">0</skillLvl>
+						<skillLvlMod type="number">0</skillLvlMod>
+						<skillName type="string">Bribery</skillName>
+						<skillNodePath type="string">reference.skills.id-00012@CPRed</skillNodePath>
+					</id-00001>
+					<id-00002>
+						<hasSubskills type="number">0</hasSubskills>
+						<isBase type="number">1</isBase>
+						<isBold type="number">1</isBold>
+						<listSubSkillSpecifics />
+						<skillAbility type="string">COOL</skillAbility>
+						<skillBase type="number">6</skillBase>
+						<skillEffMod type="number">0</skillEffMod>
+						<skillLvl type="number">2</skillLvl>
+						<skillLvlMod type="number">0</skillLvlMod>
+						<skillName type="string">Persuasion</skillName>
+						<skillNodePath type="string">reference.skills.id-00049@CPRed</skillNodePath>
+					</id-00002>
+					<id-00003>
+						<hasSubskills type="number">0</hasSubskills>
+						<isBase type="number">1</isBase>
+						<isBold type="number">0</isBold>
+						<listSubSkillSpecifics />
+						<skillAbility type="string">COOL</skillAbility>
+						<skillBase type="number">4</skillBase>
+						<skillEffMod type="number">0</skillEffMod>
+						<skillLvl type="number">0</skillLvl>
+						<skillLvlMod type="number">0</skillLvlMod>
+						<skillName type="string">Trading</skillName>
+						<skillNodePath type="string">reference.skills.id-00065@CPRed</skillNodePath>
+					</id-00003>
+					<id-00004>
+						<hasSubskills type="number">0</hasSubskills>
+						<isBase type="number">1</isBase>
+						<isBold type="number">0</isBold>
+						<listSubSkillSpecifics />
+						<skillAbility type="string">COOL</skillAbility>
+						<skillBase type="number">7</skillBase>
+						<skillEffMod type="number">0</skillEffMod>
+						<skillLvl type="number">3</skillLvl>
+						<skillLvlMod type="number">0</skillLvlMod>
+						<skillName type="string">Streetwise</skillName>
+						<skillNodePath type="string">reference.skills.id-00062@CPRed</skillNodePath>
+					</id-00004>
+					<id-00005>
+						<hasSubskills type="number">0</hasSubskills>
+						<isBase type="number">1</isBase>
+						<isBold type="number">1</isBold>
+						<listSubSkillSpecifics />
+						<skillAbility type="string">EMP</skillAbility>
+						<skillBase type="number">9</skillBase>
+						<skillEffMod type="number">0</skillEffMod>
+						<skillLvl type="number">3</skillLvl>
+						<skillLvlMod type="number">0</skillLvlMod>
+						<skillName type="string">Human Perception</skillName>
+						<skillNodePath type="string">reference.skills.id-00036@CPRed</skillNodePath>
+					</id-00005>
+					<id-00006>
+						<hasSubskills type="number">0</hasSubskills>
+						<isBase type="number">1</isBase>
+						<isBold type="number">1</isBold>
+						<listSubSkillSpecifics />
+						<skillAbility type="string">EMP</skillAbility>
+						<skillBase type="number">8</skillBase>
+						<skillEffMod type="number">0</skillEffMod>
+						<skillLvl type="number">2</skillLvl>
+						<skillLvlMod type="number">0</skillLvlMod>
+						<skillName type="string">Conversation</skillName>
+						<skillNodePath type="string">reference.skills.id-00019@CPRed</skillNodePath>
+					</id-00006>
+					<id-00007>
+						<hasSubskills type="number">0</hasSubskills>
+						<isBase type="number">1</isBase>
+						<isBold type="number">0</isBold>
+						<listSubSkillSpecifics />
+						<skillAbility type="string">COOL</skillAbility>
+						<skillBase type="number">4</skillBase>
+						<skillEffMod type="number">0</skillEffMod>
+						<skillLvl type="number">0</skillLvl>
+						<skillLvlMod type="number">0</skillLvlMod>
+						<skillName type="string">Personal Grooming</skillName>
+						<skillNodePath type="string">reference.skills.id-00048@CPRed</skillNodePath>
+					</id-00007>
+					<id-00008>
+						<hasSubskills type="number">0</hasSubskills>
+						<isBase type="number">1</isBase>
+						<isBold type="number">0</isBold>
+						<listSubSkillSpecifics />
+						<skillAbility type="string">COOL</skillAbility>
+						<skillBase type="number">4</skillBase>
+						<skillEffMod type="number">0</skillEffMod>
+						<skillLvl type="number">0</skillLvl>
+						<skillLvlMod type="number">0</skillLvlMod>
+						<skillName type="string">Wardrobe &amp; Style</skillName>
+						<skillNodePath type="string">reference.skills.id-00066@CPRed</skillNodePath>
+					</id-00008>
+					<id-00009>
+						<hasSubskills type="number">0</hasSubskills>
+						<isBase type="number">1</isBase>
+						<isBold type="number">0</isBold>
+						<listSubSkillSpecifics />
+						<skillAbility type="string">COOL</skillAbility>
+						<skillBase type="number">4</skillBase>
+						<skillEffMod type="number">0</skillEffMod>
+						<skillLvl type="number">0</skillLvl>
+						<skillLvlMod type="number">0</skillLvlMod>
+						<skillName type="string">Interrogation</skillName>
+						<skillNodePath type="string">reference.skills.id-00037@CPRed</skillNodePath>
+					</id-00009>
+				</listSkillSpecifics>
+			</id-00005>
+			<id-00006>
+				<groupField type="string">Performance Skills</groupField>
+				<inColumn type="string">col2</inColumn>
+				<isBase type="number">1</isBase>
+				<listSkillSpecifics>
+					<id-00001>
+						<hasSubskills type="number">0</hasSubskills>
+						<isBase type="number">1</isBase>
+						<isBold type="number">0</isBold>
+						<listSubSkillSpecifics />
+						<skillAbility type="string">COOL</skillAbility>
+						<skillBase type="number">4</skillBase>
+						<skillEffMod type="number">0</skillEffMod>
+						<skillLvl type="number">0</skillLvl>
+						<skillLvlMod type="number">0</skillLvlMod>
+						<skillName type="string">Acting</skillName>
+						<skillNodePath type="string">reference.skills.id-00002@CPRed</skillNodePath>
+					</id-00001>
+					<id-00002>
+						<hasSubskills type="number">1</hasSubskills>
+						<isBase type="number">1</isBase>
+						<isBold type="number">0</isBold>
+						<listSubSkillSpecifics>
+							<id-00001>
+								<isBase type="number">0</isBase>
+								<isBold type="number">0</isBold>
+								<skillAbility type="string">TECH</skillAbility>
+								<skillBase type="number">8</skillBase>
+								<skillEffMod type="number">0</skillEffMod>
+								<skillLvl type="number">0</skillLvl>
+								<skillLvlMod type="number">0</skillLvlMod>
+								<skillNodePath type="string">reference.skills.id-00055@CPRed</skillNodePath>
+							</id-00001>
+							<id-00002>
+								<isBase type="number">0</isBase>
+								<isBold type="number">0</isBold>
+								<skillAbility type="string">TECH</skillAbility>
+								<skillBase type="number">8</skillBase>
+								<skillEffMod type="number">0</skillEffMod>
+								<skillLvl type="number">0</skillLvl>
+								<skillLvlMod type="number">0</skillLvlMod>
+								<skillNodePath type="string">reference.skills.id-00055@CPRed</skillNodePath>
+							</id-00002>
+						</listSubSkillSpecifics>
+						<skillBase type="number">5</skillBase>
+						<skillEffMod type="number">0</skillEffMod>
+						<skillLvl type="number">0</skillLvl>
+						<skillLvlMod type="number">0</skillLvlMod>
+						<skillName type="string">Play Instrument</skillName>
+						<skillNodePath type="string">reference.skills.id-00055@CPRed</skillNodePath>
+					</id-00002>
+				</listSkillSpecifics>
+			</id-00006>
+			<id-00007>
+				<groupField type="string">Education Skills</groupField>
+				<inColumn type="string">col1</inColumn>
+				<isBase type="number">1</isBase>
+				<listSkillSpecifics>
+					<id-00001>
+						<hasSubskills type="number">1</hasSubskills>
+						<isBase type="number">1</isBase>
+						<isBold type="number">0</isBold>
+						<listSubSkillSpecifics>
+							<id-00001>
+								<isBase type="number">0</isBase>
+								<isBold type="number">0</isBold>
+								<skillBase type="number">5</skillBase>
+								<skillEffMod type="number">0</skillEffMod>
+								<skillLvl type="number">0</skillLvl>
+								<skillLvlMod type="number">0</skillLvlMod>
+								<skillNodePath type="string">reference.skills.id-00058@CPRed</skillNodePath>
+							</id-00001>
+							<id-00002>
+								<isBase type="number">0</isBase>
+								<isBold type="number">0</isBold>
+								<skillBase type="number">5</skillBase>
+								<skillEffMod type="number">0</skillEffMod>
+								<skillLvl type="number">0</skillLvl>
+								<skillLvlMod type="number">0</skillLvlMod>
+								<skillNodePath type="string">reference.skills.id-00058@CPRed</skillNodePath>
+							</id-00002>
+						</listSubSkillSpecifics>
+						<skillBase type="number">5</skillBase>
+						<skillEffMod type="number">0</skillEffMod>
+						<skillLvl type="number">0</skillLvl>
+						<skillLvlMod type="number">0</skillLvlMod>
+						<skillName type="string">Science</skillName>
+						<skillNodePath type="string">reference.skills.id-00058@CPRed</skillNodePath>
+					</id-00001>
+					<id-00002>
+						<hasSubskills type="number">0</hasSubskills>
+						<isBase type="number">1</isBase>
+						<isBold type="number">0</isBold>
+						<listSubSkillSpecifics />
+						<skillAbility type="string">INT</skillAbility>
+						<skillBase type="number">5</skillBase>
+						<skillEffMod type="number">0</skillEffMod>
+						<skillLvl type="number">0</skillLvl>
+						<skillLvlMod type="number">0</skillLvlMod>
+						<skillName type="string">Tactics</skillName>
+						<skillNodePath type="string">reference.skills.id-00063@CPRed</skillNodePath>
+					</id-00002>
+					<id-00003>
+						<hasSubskills type="number">0</hasSubskills>
+						<isBase type="number">1</isBase>
+						<isBold type="number">1</isBold>
+						<listSubSkillSpecifics />
+						<skillAbility type="string">INT</skillAbility>
+						<skillBase type="number">7</skillBase>
+						<skillEffMod type="number">0</skillEffMod>
+						<skillLvl type="number">2</skillLvl>
+						<skillLvlMod type="number">0</skillLvlMod>
+						<skillName type="string">Education</skillName>
+						<skillNodePath type="string">reference.skills.id-00027@CPRed</skillNodePath>
+					</id-00003>
+					<id-00004>
+						<hasSubskills type="number">0</hasSubskills>
+						<isBase type="number">1</isBase>
+						<isBold type="number">0</isBold>
+						<listSubSkillSpecifics />
+						<skillAbility type="string">INT</skillAbility>
+						<skillBase type="number">5</skillBase>
+						<skillEffMod type="number">0</skillEffMod>
+						<skillLvl type="number">0</skillLvl>
+						<skillLvlMod type="number">0</skillLvlMod>
+						<skillName type="string">Wilderness Survival</skillName>
+						<skillNodePath type="string">reference.skills.id-00068@CPRed</skillNodePath>
+					</id-00004>
+					<id-00005>
+						<hasSubskills type="number">1</hasSubskills>
+						<isBase type="number">1</isBase>
+						<isBold type="number">1</isBold>
+						<listSubSkillSpecifics>
+							<id-00001>
+								<isBase type="number">0</isBase>
+								<isBold type="number">0</isBold>
+								<skillBase type="number">5</skillBase>
+								<skillEffMod type="number">0</skillEffMod>
+								<skillLvl type="number">0</skillLvl>
+								<skillLvlMod type="number">0</skillLvlMod>
+								<skillNodePath type="string">reference.skills.id-00043@CPRed</skillNodePath>
+							</id-00001>
+							<id-00002>
+								<isBase type="number">0</isBase>
+								<isBold type="number">0</isBold>
+								<skillBase type="number">5</skillBase>
+								<skillEffMod type="number">0</skillEffMod>
+								<skillLvl type="number">0</skillLvl>
+								<skillLvlMod type="number">0</skillLvlMod>
+								<skillNodePath type="string">reference.skills.id-00043@CPRed</skillNodePath>
+							</id-00002>
+							<id-00003>
+								<isBase type="number">1</isBase>
+								<isBold type="number">1</isBold>
+								<skillAbility type="string">INT</skillAbility>
+								<skillBase type="number">7</skillBase>
+								<skillEffMod type="number">0</skillEffMod>
+								<skillLvl type="number">2</skillLvl>
+								<skillLvlMod type="number">0</skillLvlMod>
+								<skillName type="string">Your Home</skillName>
+								<skillNodePath type="string">reference.skills.id-00043@CPRed</skillNodePath>
+							</id-00003>
+						</listSubSkillSpecifics>
+						<skillBase type="number">5</skillBase>
+						<skillEffMod type="number">0</skillEffMod>
+						<skillLvl type="number">0</skillLvl>
+						<skillLvlMod type="number">0</skillLvlMod>
+						<skillName type="string">Local Expert</skillName>
+						<skillNodePath type="string">reference.skills.id-00043@CPRed</skillNodePath>
+					</id-00005>
+					<id-00006>
+						<hasSubskills type="number">0</hasSubskills>
+						<isBase type="number">1</isBase>
+						<isBold type="number">0</isBold>
+						<listSubSkillSpecifics />
+						<skillAbility type="string">INT</skillAbility>
+						<skillBase type="number">5</skillBase>
+						<skillEffMod type="number">0</skillEffMod>
+						<skillLvl type="number">0</skillLvl>
+						<skillLvlMod type="number">0</skillLvlMod>
+						<skillName type="string">Library Search</skillName>
+						<skillNodePath type="string">reference.skills.id-00041@CPRed</skillNodePath>
+					</id-00006>
+					<id-00007>
+						<hasSubskills type="number">0</hasSubskills>
+						<isBase type="number">1</isBase>
+						<isBold type="number">0</isBold>
+						<listSubSkillSpecifics />
+						<skillAbility type="string">INT</skillAbility>
+						<skillBase type="number">5</skillBase>
+						<skillEffMod type="number">0</skillEffMod>
+						<skillLvl type="number">0</skillLvl>
+						<skillLvlMod type="number">0</skillLvlMod>
+						<skillName type="string">Bureaucracy</skillName>
+						<skillNodePath type="string">reference.skills.id-00013@CPRed</skillNodePath>
+					</id-00007>
+					<id-00008>
+						<hasSubskills type="number">0</hasSubskills>
+						<isBase type="number">1</isBase>
+						<isBold type="number">0</isBold>
+						<listSubSkillSpecifics />
+						<skillAbility type="string">INT</skillAbility>
+						<skillBase type="number">5</skillBase>
+						<skillEffMod type="number">0</skillEffMod>
+						<skillLvl type="number">0</skillLvl>
+						<skillLvlMod type="number">0</skillLvlMod>
+						<skillName type="string">Composition</skillName>
+						<skillNodePath type="string">reference.skills.id-00015@CPRed</skillNodePath>
+					</id-00008>
+					<id-00009>
+						<hasSubskills type="number">0</hasSubskills>
+						<isBase type="number">1</isBase>
+						<isBold type="number">0</isBold>
+						<listSubSkillSpecifics />
+						<skillAbility type="string">INT</skillAbility>
+						<skillBase type="number">5</skillBase>
+						<skillEffMod type="number">0</skillEffMod>
+						<skillLvl type="number">0</skillLvl>
+						<skillLvlMod type="number">0</skillLvlMod>
+						<skillName type="string">Cryptography</skillName>
+						<skillNodePath type="string">reference.skills.id-00021@CPRed</skillNodePath>
+					</id-00009>
+					<id-00010>
+						<hasSubskills type="number">0</hasSubskills>
+						<isBase type="number">1</isBase>
+						<isBold type="number">0</isBold>
+						<listSubSkillSpecifics />
+						<skillAbility type="string">INT</skillAbility>
+						<skillBase type="number">5</skillBase>
+						<skillEffMod type="number">0</skillEffMod>
+						<skillLvl type="number">0</skillLvl>
+						<skillLvlMod type="number">0</skillLvlMod>
+						<skillName type="string">Criminology</skillName>
+						<skillNodePath type="string">reference.skills.id-00020@CPRed</skillNodePath>
+					</id-00010>
+					<id-00011>
+						<hasSubskills type="number">0</hasSubskills>
+						<isBase type="number">1</isBase>
+						<isBold type="number">0</isBold>
+						<listSubSkillSpecifics />
+						<skillAbility type="string">INT</skillAbility>
+						<skillBase type="number">5</skillBase>
+						<skillEffMod type="number">0</skillEffMod>
+						<skillLvl type="number">0</skillLvl>
+						<skillLvlMod type="number">0</skillLvlMod>
+						<skillName type="string">Accounting</skillName>
+						<skillNodePath type="string">reference.skills.id-00001@CPRed</skillNodePath>
+					</id-00011>
+					<id-00012>
+						<hasSubskills type="number">0</hasSubskills>
+						<isBase type="number">1</isBase>
+						<isBold type="number">0</isBold>
+						<listSubSkillSpecifics />
+						<skillAbility type="string">INT</skillAbility>
+						<skillBase type="number">5</skillBase>
+						<skillEffMod type="number">0</skillEffMod>
+						<skillLvl type="number">0</skillLvl>
+						<skillLvlMod type="number">0</skillLvlMod>
+						<skillName type="string">Gamble</skillName>
+						<skillNodePath type="string">reference.skills.id-00033@CPRed</skillNodePath>
+					</id-00012>
+					<id-00013>
+						<hasSubskills type="number">0</hasSubskills>
+						<isBase type="number">1</isBase>
+						<isBold type="number">0</isBold>
+						<listSubSkillSpecifics />
+						<skillAbility type="string">INT</skillAbility>
+						<skillBase type="number">5</skillBase>
+						<skillEffMod type="number">0</skillEffMod>
+						<skillLvl type="number">0</skillLvl>
+						<skillLvlMod type="number">0</skillLvlMod>
+						<skillName type="string">Deduction</skillName>
+						<skillNodePath type="string">reference.skills.id-00024@CPRed</skillNodePath>
+					</id-00013>
+					<id-00014>
+						<hasSubskills type="number">0</hasSubskills>
+						<isBase type="number">1</isBase>
+						<isBold type="number">0</isBold>
+						<listSubSkillSpecifics />
+						<skillAbility type="string">INT</skillAbility>
+						<skillBase type="number">5</skillBase>
+						<skillEffMod type="number">0</skillEffMod>
+						<skillLvl type="number">0</skillLvl>
+						<skillLvlMod type="number">0</skillLvlMod>
+						<skillName type="string">Business</skillName>
+						<skillNodePath type="string">reference.skills.id-00014@CPRed</skillNodePath>
+					</id-00014>
+					<id-00015>
+						<hasSubskills type="number">1</hasSubskills>
+						<isBase type="number">1</isBase>
+						<isBold type="number">1</isBold>
+						<listSubSkillSpecifics>
+							<id-00001>
+								<isBase type="number">0</isBase>
+								<isBold type="number">0</isBold>
+								<skillBase type="number">5</skillBase>
+								<skillEffMod type="number">0</skillEffMod>
+								<skillLvl type="number">0</skillLvl>
+								<skillLvlMod type="number">0</skillLvlMod>
+								<skillNodePath type="string">reference.skills.id-00003@CPRed</skillNodePath>
+							</id-00001>
+							<id-00002>
+								<isBase type="number">0</isBase>
+								<isBold type="number">0</isBold>
+								<skillAbility type="string">INT</skillAbility>
+								<skillBase type="number">9</skillBase>
+								<skillEffMod type="number">0</skillEffMod>
+								<skillLvl type="number">4</skillLvl>
+								<skillLvlMod type="number">0</skillLvlMod>
+								<skillName type="string">English</skillName>
+								<skillNodePath type="string">reference.skills.id-00003@CPRed</skillNodePath>
+							</id-00002>
+							<id-00003>
+								<isBase type="number">1</isBase>
+								<isBold type="number">1</isBold>
+								<skillAbility type="string">INT</skillAbility>
+								<skillBase type="number">7</skillBase>
+								<skillEffMod type="number">0</skillEffMod>
+								<skillLvl type="number">2</skillLvl>
+								<skillLvlMod type="number">0</skillLvlMod>
+								<skillName type="string">Streetslang</skillName>
+								<skillNodePath type="string">reference.skills.id-00003@CPRed</skillNodePath>
+							</id-00003>
+						</listSubSkillSpecifics>
+						<skillBase type="number">5</skillBase>
+						<skillEffMod type="number">0</skillEffMod>
+						<skillLvl type="number">0</skillLvl>
+						<skillLvlMod type="number">0</skillLvlMod>
+						<skillName type="string">Language</skillName>
+						<skillNodePath type="string">reference.skills.id-00003@CPRed</skillNodePath>
+					</id-00015>
+					<id-00016>
+						<hasSubskills type="number">0</hasSubskills>
+						<isBase type="number">1</isBase>
+						<isBold type="number">0</isBold>
+						<listSubSkillSpecifics />
+						<skillAbility type="string">INT</skillAbility>
+						<skillBase type="number">5</skillBase>
+						<skillEffMod type="number">0</skillEffMod>
+						<skillLvl type="number">0</skillLvl>
+						<skillLvlMod type="number">0</skillLvlMod>
+						<skillName type="string">Animal Handling</skillName>
+						<skillNodePath type="string">reference.skills.id-00006@CPRed</skillNodePath>
+					</id-00016>
+				</listSkillSpecifics>
+			</id-00007>
+			<id-00008>
+				<groupField type="string">Ranged Weapon Skills</groupField>
+				<inColumn type="string">col2</inColumn>
+				<isBase type="number">1</isBase>
+				<listSkillSpecifics>
+					<id-00001>
+						<hasSubskills type="number">0</hasSubskills>
+						<isBase type="number">1</isBase>
+						<isBold type="number">0</isBold>
+						<listSubSkillSpecifics />
+						<skillAbility type="string">REF</skillAbility>
+						<skillBase type="number">7</skillBase>
+						<skillEffMod type="number">0</skillEffMod>
+						<skillLvl type="number">0</skillLvl>
+						<skillLvlMod type="number">0</skillLvlMod>
+						<skillName type="string">Archery</skillName>
+						<skillNodePath type="string">reference.skills.id-00007@CPRed</skillNodePath>
+					</id-00001>
+					<id-00002>
+						<hasSubskills type="number">0</hasSubskills>
+						<isBase type="number">1</isBase>
+						<isBold type="number">0</isBold>
+						<listSubSkillSpecifics />
+						<skillAbility type="string">REF</skillAbility>
+						<skillBase type="number">9</skillBase>
+						<skillEffMod type="number">0</skillEffMod>
+						<skillLvl type="number">2</skillLvl>
+						<skillLvlMod type="number">0</skillLvlMod>
+						<skillName type="string">Handgun</skillName>
+						<skillNodePath type="string">reference.skills.id-00034@CPRed</skillNodePath>
+					</id-00002>
+					<id-00003>
+						<hasSubskills type="number">0</hasSubskills>
+						<isBase type="number">1</isBase>
+						<isBold type="number">0</isBold>
+						<listSubSkillSpecifics />
+						<skillAbility type="string">REF</skillAbility>
+						<skillBase type="number">7</skillBase>
+						<skillEffMod type="number">0</skillEffMod>
+						<skillLvl type="number">0</skillLvl>
+						<skillLvlMod type="number">0</skillLvlMod>
+						<skillName type="string">Autofire (x2)</skillName>
+						<skillNodePath type="string">reference.skills.id-00009@CPRed</skillNodePath>
+					</id-00003>
+					<id-00004>
+						<hasSubskills type="number">0</hasSubskills>
+						<isBase type="number">1</isBase>
+						<isBold type="number">0</isBold>
+						<listSubSkillSpecifics />
+						<skillAbility type="string">REF</skillAbility>
+						<skillBase type="number">11</skillBase>
+						<skillEffMod type="number">0</skillEffMod>
+						<skillLvl type="number">4</skillLvl>
+						<skillLvlMod type="number">0</skillLvlMod>
+						<skillName type="string">Shoulder Arms</skillName>
+						<skillNodePath type="string">reference.skills.id-00060@CPRed</skillNodePath>
+					</id-00004>
+					<id-00005>
+						<hasSubskills type="number">0</hasSubskills>
+						<isBase type="number">1</isBase>
+						<isBold type="number">0</isBold>
+						<listSubSkillSpecifics />
+						<skillAbility type="string">REF</skillAbility>
+						<skillBase type="number">7</skillBase>
+						<skillEffMod type="number">0</skillEffMod>
+						<skillLvl type="number">0</skillLvl>
+						<skillLvlMod type="number">0</skillLvlMod>
+						<skillName type="string">Heavy Weapons (x2)</skillName>
+						<skillNodePath type="string">reference.skills.id-00035@CPRed</skillNodePath>
+					</id-00005>
+				</listSkillSpecifics>
+			</id-00008>
+			<id-00009>
+				<groupField type="string">Technique Skills</groupField>
+				<inColumn type="string">col2</inColumn>
+				<isBase type="number">1</isBase>
+				<listSkillSpecifics>
+					<id-00001>
+						<hasSubskills type="number">0</hasSubskills>
+						<isBase type="number">1</isBase>
+						<isBold type="number">0</isBold>
+						<listSubSkillSpecifics />
+						<skillAbility type="string">TECH</skillAbility>
+						<skillBase type="number">12</skillBase>
+						<skillEffMod type="number">0</skillEffMod>
+						<skillLvl type="number">4</skillLvl>
+						<skillLvlMod type="number">0</skillLvlMod>
+						<skillName type="string">Demolitions (x2)</skillName>
+						<skillNodePath type="string">reference.skills.id-00025@CPRed</skillNodePath>
+					</id-00001>
+					<id-00002>
+						<hasSubskills type="number">0</hasSubskills>
+						<isBase type="number">1</isBase>
+						<isBold type="number">0</isBold>
+						<listSubSkillSpecifics />
+						<skillAbility type="string">TECH</skillAbility>
+						<skillBase type="number">8</skillBase>
+						<skillEffMod type="number">0</skillEffMod>
+						<skillLvl type="number">0</skillLvl>
+						<skillLvlMod type="number">0</skillLvlMod>
+						<skillName type="string">Pick Pocket</skillName>
+						<skillNodePath type="string">reference.skills.id-00052@CPRed</skillNodePath>
+					</id-00002>
+					<id-00003>
+						<hasSubskills type="number">0</hasSubskills>
+						<isBase type="number">1</isBase>
+						<isBold type="number">0</isBold>
+						<listSubSkillSpecifics />
+						<skillAbility type="string">TECH</skillAbility>
+						<skillBase type="number">16</skillBase>
+						<skillEffMod type="number">4</skillEffMod>
+						<skillLvl type="number">4</skillLvl>
+						<skillLvlMod type="number">0</skillLvlMod>
+						<skillModCycler type="string">plus</skillModCycler>
+						<skillName type="string">Land Vehicle Tech</skillName>
+						<skillNodePath type="string">reference.skills.id-00040@CPRed</skillNodePath>
+					</id-00003>
+					<id-00004>
+						<hasSubskills type="number">0</hasSubskills>
+						<isBase type="number">1</isBase>
+						<isBold type="number">0</isBold>
+						<listSubSkillSpecifics />
+						<skillAbility type="string">TECH</skillAbility>
+						<skillBase type="number">12</skillBase>
+						<skillEffMod type="number">4</skillEffMod>
+						<skillLvl type="number">0</skillLvl>
+						<skillLvlMod type="number">0</skillLvlMod>
+						<skillModCycler type="string">plus</skillModCycler>
+						<skillName type="string">Sea Vehicle Tech</skillName>
+						<skillNodePath type="string">reference.skills.id-00059@CPRed</skillNodePath>
+					</id-00004>
+					<id-00005>
+						<hasSubskills type="number">0</hasSubskills>
+						<isBase type="number">1</isBase>
+						<isBold type="number">0</isBold>
+						<listSubSkillSpecifics />
+						<skillAbility type="string">TECH</skillAbility>
+						<skillBase type="number">12</skillBase>
+						<skillEffMod type="number">0</skillEffMod>
+						<skillLvl type="number">4</skillLvl>
+						<skillLvlMod type="number">0</skillLvlMod>
+						<skillName type="string">Pick Lock</skillName>
+						<skillNodePath type="string">reference.skills.id-00051@CPRed</skillNodePath>
+					</id-00005>
+					<id-00006>
+						<hasSubskills type="number">0</hasSubskills>
+						<isBase type="number">1</isBase>
+						<isBold type="number">0</isBold>
+						<listSubSkillSpecifics />
+						<skillAbility type="string">TECH</skillAbility>
+						<skillBase type="number">15</skillBase>
+						<skillEffMod type="number">4</skillEffMod>
+						<skillLvl type="number">3</skillLvl>
+						<skillLvlMod type="number">0</skillLvlMod>
+						<skillModCycler type="string">plus</skillModCycler>
+						<skillName type="string">Cybertech</skillName>
+						<skillNodePath type="string">reference.skills.id-00022@CPRed</skillNodePath>
+					</id-00006>
+					<id-00007>
+						<hasSubskills type="number">0</hasSubskills>
+						<isBase type="number">1</isBase>
+						<isBold type="number">0</isBold>
+						<listSubSkillSpecifics />
+						<skillAbility type="string">TECH</skillAbility>
+						<skillBase type="number">16</skillBase>
+						<skillEffMod type="number">4</skillEffMod>
+						<skillLvl type="number">4</skillLvl>
+						<skillLvlMod type="number">0</skillLvlMod>
+						<skillModCycler type="string">plus</skillModCycler>
+						<skillName type="string">Electronics/Security Tech (x2)</skillName>
+						<skillNodePath type="string">reference.skills.id-00028@CPRed</skillNodePath>
+					</id-00007>
+					<id-00008>
+						<hasSubskills type="number">0</hasSubskills>
+						<isBase type="number">1</isBase>
+						<isBold type="number">0</isBold>
+						<listSubSkillSpecifics />
+						<skillAbility type="string">TECH</skillAbility>
+						<skillBase type="number">8</skillBase>
+						<skillEffMod type="number">0</skillEffMod>
+						<skillLvl type="number">0</skillLvl>
+						<skillLvlMod type="number">0</skillLvlMod>
+						<skillName type="string">Photography/Film</skillName>
+						<skillNodePath type="string">reference.skills.id-00050@CPRed</skillNodePath>
+					</id-00008>
+					<id-00009>
+						<hasSubskills type="number">0</hasSubskills>
+						<isBase type="number">1</isBase>
+						<isBold type="number">0</isBold>
+						<listSubSkillSpecifics />
+						<skillAbility type="string">TECH</skillAbility>
+						<skillBase type="number">17</skillBase>
+						<skillEffMod type="number">4</skillEffMod>
+						<skillLvl type="number">5</skillLvl>
+						<skillLvlMod type="number">0</skillLvlMod>
+						<skillModCycler type="string">plus</skillModCycler>
+						<skillName type="string">Basic Tech</skillName>
+						<skillNodePath type="string">reference.skills.id-00010@CPRed</skillNodePath>
+					</id-00009>
+					<id-00010>
+						<hasSubskills type="number">0</hasSubskills>
+						<isBase type="number">1</isBase>
+						<isBold type="number">1</isBold>
+						<listSubSkillSpecifics />
+						<skillAbility type="string">TECH</skillAbility>
+						<skillBase type="number">10</skillBase>
+						<skillEffMod type="number">0</skillEffMod>
+						<skillLvl type="number">2</skillLvl>
+						<skillLvlMod type="number">0</skillLvlMod>
+						<skillName type="string">First Aid</skillName>
+						<skillNodePath type="string">reference.skills.id-00031@CPRed</skillNodePath>
+					</id-00010>
+					<id-00011>
+						<hasSubskills type="number">0</hasSubskills>
+						<isBase type="number">1</isBase>
+						<isBold type="number">0</isBold>
+						<listSubSkillSpecifics />
+						<skillAbility type="string">TECH</skillAbility>
+						<skillBase type="number">8</skillBase>
+						<skillEffMod type="number">0</skillEffMod>
+						<skillLvl type="number">0</skillLvl>
+						<skillLvlMod type="number">0</skillLvlMod>
+						<skillName type="string">Paramedic (x2)</skillName>
+						<skillNodePath type="string">reference.skills.id-00046@CPRed</skillNodePath>
+					</id-00011>
+					<id-00012>
+						<hasSubskills type="number">0</hasSubskills>
+						<isBase type="number">1</isBase>
+						<isBold type="number">0</isBold>
+						<listSubSkillSpecifics />
+						<skillAbility type="string">TECH</skillAbility>
+						<skillBase type="number">17</skillBase>
+						<skillEffMod type="number">4</skillEffMod>
+						<skillLvl type="number">5</skillLvl>
+						<skillLvlMod type="number">0</skillLvlMod>
+						<skillModCycler type="string">plus</skillModCycler>
+						<skillName type="string">Weaponstech</skillName>
+						<skillNodePath type="string">reference.skills.id-00067@CPRed</skillNodePath>
+					</id-00012>
+					<id-00013>
+						<hasSubskills type="number">0</hasSubskills>
+						<isBase type="number">1</isBase>
+						<isBold type="number">0</isBold>
+						<listSubSkillSpecifics />
+						<skillAbility type="string">TECH</skillAbility>
+						<skillBase type="number">12</skillBase>
+						<skillEffMod type="number">0</skillEffMod>
+						<skillLvl type="number">4</skillLvl>
+						<skillLvlMod type="number">0</skillLvlMod>
+						<skillName type="string">Forgery</skillName>
+						<skillNodePath type="string">reference.skills.id-00032@CPRed</skillNodePath>
+					</id-00013>
+					<id-00014>
+						<hasSubskills type="number">0</hasSubskills>
+						<isBase type="number">1</isBase>
+						<isBold type="number">0</isBold>
+						<listSubSkillSpecifics />
+						<skillAbility type="string">TECH</skillAbility>
+						<skillBase type="number">15</skillBase>
+						<skillEffMod type="number">4</skillEffMod>
+						<skillLvl type="number">3</skillLvl>
+						<skillLvlMod type="number">0</skillLvlMod>
+						<skillModCycler type="string">plus</skillModCycler>
+						<skillName type="string">Air Vehicle Tech</skillName>
+						<skillNodePath type="string">reference.skills.id-00005@CPRed</skillNodePath>
+					</id-00014>
+					<id-00015>
+						<hasSubskills type="number">0</hasSubskills>
+						<isBase type="number">1</isBase>
+						<isBold type="number">0</isBold>
+						<listSubSkillSpecifics />
+						<skillAbility type="string">TECH</skillAbility>
+						<skillBase type="number">8</skillBase>
+						<skillEffMod type="number">0</skillEffMod>
+						<skillLvl type="number">0</skillLvl>
+						<skillLvlMod type="number">0</skillLvlMod>
+						<skillName type="string">Paint/Draw/Sculpt</skillName>
+						<skillNodePath type="string">reference.skills.id-00045@CPRed</skillNodePath>
+					</id-00015>
+				</listSkillSpecifics>
+			</id-00009>
+		</skillsCol>
+		<techBase type="number">8</techBase>
+		<techCurrent type="number">8</techCurrent>
+		<techLock type="number">0</techLock>
+		<temp />
+		<throwAmmoCycler type="string">id-00002</throwAmmoCycler>
+		<throwDmg type="dice">6d6</throwDmg>
+		<throwDV type="number">0</throwDV>
+		<throwRange type="string">auto</throwRange>
+		<token type="token">portrait_id-00004_token</token>
+		<token3Dflat type="token"></token3Dflat>
+		<valuedPerson type="string">A friend</valuedPerson>
+		<valuedPosession type="string">A weapon</valuedPosession>
+		<valueMost type="string">Your word</valueMost>
+		<willBase type="number">6</willBase>
+		<willCurrent type="number">6</willCurrent>
+		<willLock type="number">0</willLock>
+	</character>
+</root>
