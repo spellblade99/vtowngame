@@ -25,7 +25,7 @@
   --green:#3ddc84;
 }
 *{box-sizing:border-box;margin:0;padding:0;}
-html,body{height:100%;}
+html,body{height:100%;overflow-x:hidden;max-width:100vw;}
 body{
   background:var(--bg);
   color:var(--text);
@@ -46,33 +46,35 @@ input,textarea,select{font-family:'JetBrains Mono',monospace;}
 ::-webkit-scrollbar-thumb{background:var(--line-bright);}
 
 /* ---------- shell ---------- */
-#app{height:100vh;width:100vw;display:flex;flex-direction:column;position:relative;}
+#app{height:100vh;width:100%;max-width:100vw;display:flex;flex-direction:column;position:relative;overflow-x:hidden;}
 
 .topbar{
-  height:52px;flex:0 0 52px;display:flex;align-items:center;gap:16px;
+  min-height:52px;flex:0 0 auto;display:flex;align-items:center;gap:10px;
   background:var(--bg-elev);border-bottom:1px solid var(--line);
-  padding:0 16px;position:relative;z-index:50;
+  padding:8px 12px;position:relative;z-index:50;
+  flex-wrap:wrap;overflow-x:hidden;max-width:100%;row-gap:8px;
 }
 .menu-tab{
   background:transparent;border:1px solid var(--line-bright);color:var(--cyan);
   padding:8px 16px;font-weight:600;letter-spacing:2px;font-size:12px;
   display:flex;align-items:center;gap:8px;transition:background .15s,color .15s;
+  flex:0 0 auto;
 }
 .menu-tab:hover{background:var(--cyan);color:#000;}
 .menu-tab .bars{display:flex;flex-direction:column;gap:3px;}
 .menu-tab .bars span{width:14px;height:2px;background:currentColor;display:block;}
 
-.brand{display:flex;align-items:baseline;gap:10px;}
+.brand{display:flex;align-items:baseline;gap:10px;flex:0 0 auto;}
 .brand .mark{color:var(--magenta);font-weight:700;font-size:16px;letter-spacing:3px;}
 .brand .sub{color:var(--text-dimmer);font-size:11px;letter-spacing:2px;}
-.crumb-slot{flex:1;color:var(--text-dim);font-size:11px;letter-spacing:1px;padding-left:8px;border-left:1px solid var(--line);}
+.crumb-slot{flex:1 1 auto;min-width:0;overflow:hidden;text-overflow:ellipsis;white-space:nowrap;color:var(--text-dim);font-size:11px;letter-spacing:1px;padding-left:8px;border-left:1px solid var(--line);}
 .crumb-slot span{color:var(--text-dim);}
 .crumb-slot b{color:var(--cyan);cursor:pointer;font-weight:600;}
 .crumb-slot b:hover{text-decoration:underline;}
 
 .admin-toggle{
   display:flex;align-items:center;gap:10px;padding:6px 12px;border:1px solid var(--line-bright);
-  font-size:11px;letter-spacing:1px;color:var(--text-dim);
+  font-size:11px;letter-spacing:1px;color:var(--text-dim);flex:0 0 auto;
 }
 .switch{width:34px;height:16px;background:var(--panel-2);border:1px solid var(--line-bright);position:relative;cursor:pointer;flex:0 0 auto;}
 .switch::after{content:'';position:absolute;top:1px;left:1px;width:12px;height:12px;background:var(--text-dimmer);transition:.15s;}
@@ -154,6 +156,11 @@ input,textarea,select{font-family:'JetBrains Mono',monospace;}
 .card p{color:var(--text-dim);font-size:12px;line-height:1.6;max-height:57px;overflow:hidden;}
 .swatch{width:10px;height:10px;display:inline-block;vertical-align:middle;margin-right:6px;border:1px solid rgba(255,255,255,.2);}
 .empty{color:var(--text-dimmer);font-size:12px;letter-spacing:1px;padding:40px 0;text-align:center;border:1px dashed var(--line);}
+.privacy-blurred{position:relative;filter:blur(7px);opacity:.5;pointer-events:none;user-select:none;}
+.frame.privacy-blurred{border:1px dashed var(--amber);}
+.privacy-blurred::after{content:'🔒 NOT YET REVEALED';position:absolute;inset:0;display:flex;align-items:center;justify-content:center;filter:none;color:var(--amber);font-family:'Chakra Petch',sans-serif;font-weight:700;letter-spacing:2px;font-size:11px;text-align:center;padding:10px;}
+.frame.privacy-frame{border:1px dashed var(--amber);}
+.privacy-inner-blur{filter:blur(5px);opacity:.55;user-select:none;}
 
 /* ---------- map ---------- */
 .map-view{position:relative;height:100%;width:100%;background:#050709;}
@@ -209,7 +216,7 @@ input,textarea,select{font-family:'JetBrains Mono',monospace;}
 
 .temp-vertex{position:absolute;width:8px;height:8px;background:var(--green);border-radius:50%;transform:translate(-50%,-50%);z-index:7;}
 
-.map-controls{position:absolute;right:14px;bottom:14px;z-index:20;display:flex;flex-direction:column;align-items:flex-end;gap:10px;}
+.map-controls{position:fixed;right:14px;bottom:14px;z-index:20;display:flex;flex-direction:column;align-items:flex-end;gap:10px;max-width:calc(100vw - 28px);}
 .map-btn{
   background:rgba(10,13,18,.9);border:1px solid var(--line-bright);color:var(--text);
   padding:10px 16px;font-size:11px;letter-spacing:1.5px;font-weight:600;min-width:150px;text-align:center;
@@ -291,6 +298,13 @@ input,textarea,select{font-family:'JetBrains Mono',monospace;}
 .admin-only{display:none;}
 body.admin .admin-only{display:inline-flex;}
 body.admin .admin-only.blk{display:block;}
+
+@media (max-width: 480px){
+  .brand .sub{display:none;}
+  .crumb-slot{display:none;}
+  .topbar{gap:8px;padding:8px 10px;}
+  #syncGroup{gap:6px;}
+}
 </style>
 </head>
 <body>
@@ -301,9 +315,9 @@ body.admin .admin-only.blk{display:block;}
     <div class="brand"><span class="mark">LORE//NET</span><span class="sub">CAMPAIGN ARCHIVE</span></div>
     <div class="crumb-slot" id="topCrumb"></div>
     <div class="admin-toggle" id="syncGroup" style="gap:8px;">
-      <button class="btn ghost" style="padding:6px 10px;font-size:10px;" onclick="exportData()">⭱ EXPORT</button>
-      <button class="btn ghost" style="padding:6px 10px;font-size:10px;" onclick="triggerImport()">⭳ GET LATEST</button>
-      <button class="btn ghost" style="padding:6px 10px;font-size:10px;" onclick="openGithubModal()" title="Sync campaign data with a GitHub repo">☁ GITHUB</button>
+      <button class="btn ghost" style="padding:6px 10px;font-size:10px;" onclick="pullFromGithub()" title="Pull the latest campaign data from GitHub">⭳ PULL LATEST</button>
+      <button class="btn ghost" style="padding:6px 10px;font-size:10px;" onclick="pushToGithub()" title="Push your changes to GitHub">⭱ PUSH UPDATE</button>
+      <button class="btn ghost" style="padding:6px 10px;font-size:10px;" onclick="openGithubModal()" title="GitHub repo settings, token, and app version">☁ GITHUB</button>
       <input type="file" id="importFileInput" accept="application/json" style="display:none;" onchange="handleImportFile(event)">
     </div>
     <div class="admin-toggle" id="adminToggleWrap"><div class="switch" id="adminSwitch"></div><span id="adminLabel">DM MODE</span></div>
@@ -572,7 +586,7 @@ let ghToken = ''; // personal, this device only — never stored in shared data
 /* Bump this on every build handed to the group. Pushed to GitHub as
    version.json whenever the DM (Admin Mode) pushes, so players get
    prompted to update if their local copy of this file is stale. */
-const APP_VERSION = '1.4.0';
+const APP_VERSION = '1.5.2';
 
 /* ============================================================
    TAG / CROSS-LINK SYSTEM
@@ -1527,17 +1541,19 @@ function renderCharacters(){
     ${searchFilterBarHTML('characters','Search characters...')}
     ${chars.length===0 ? '<div class="empty">NO CHARACTERS MATCH</div>' : `<div class="grid">
       ${chars.map(c=>`
-        <div class="frame card" onclick='viewCharacter(${JSON.stringify(c.id)})'>
-          ${entityImageThumbHTML(c.image, c.name)}
-          <h3>${esc(c.name)}</h3>
-          <div class="meta">${esc(c.aka?('AKA '+c.aka+' · '):'')}${esc(c.role||'')}</div>
-          <div style="margin-bottom:10px;">
-            ${c.characterType==='pc'?`<span class="tag green">PC</span>`:''}
-            ${c.factionId?`<span class="tag on">${esc(factionName(c.factionId)||'FACTION')}</span>`:''}
-            ${c.status?`<span class="tag ${c.status==='deceased'?'red':c.status==='unknown'?'amber':'green'}">${esc(c.status.toUpperCase())}</span>`:''}
-            ${(c.tags&&c.tags.length)?`<span class="tag">${c.tags.length} LINK${c.tags.length!==1?'S':''}</span>`:''}
+        <div class="frame card ${cardBlurClass(c)}" onclick='viewCharacter(${JSON.stringify(c.id)})'>
+          <h3>${esc(c.name)} ${privacyBadgeHTML(c)}</h3>
+          <div class="${innerPrivacyClass(c)}">
+            ${entityImageThumbHTML(c.image, c.name)}
+            <div class="meta">${esc(c.aka?('AKA '+c.aka+' · '):'')}${esc(c.role||'')}</div>
+            <div style="margin-bottom:10px;">
+              ${c.characterType==='pc'?`<span class="tag green">PC</span>`:''}
+              ${c.factionId?`<span class="tag on">${esc(factionName(c.factionId)||'FACTION')}</span>`:''}
+              ${c.status?`<span class="tag ${c.status==='deceased'?'red':c.status==='unknown'?'amber':'green'}">${esc(c.status.toUpperCase())}</span>`:''}
+              ${(c.tags&&c.tags.length)?`<span class="tag">${c.tags.length} LINK${c.tags.length!==1?'S':''}</span>`:''}
+            </div>
+            <p>${esc(c.bio||'No bio recorded.')}</p>
           </div>
-          <p>${esc(c.bio||'No bio recorded.')}</p>
         </div>`).join('')}
     </div>`}
   `;
@@ -1555,6 +1571,7 @@ function viewCharacter(id){
       ${isPC?`<span class="tag green">PC</span>`:`<span class="tag">NPC</span>`}
       ${fac?`<span class="tag on"><span class="swatch" style="background:${fac.color}"></span>${esc(fac.name)}</span>`:''}
       ${c.status?`<span class="tag ${c.status==='deceased'?'red':c.status==='unknown'?'amber':'green'}">${esc(c.status.toUpperCase())}</span>`:''}
+      ${privacyBadgeHTML(c)}
     </div>
     <div class="note-view-text">${esc(c.bio)||'<span style="color:var(--text-dimmer)">No bio recorded.</span>'}</div>
     ${isPC ? pcSheetViewHTML(sheet) : ''}
@@ -1598,6 +1615,7 @@ function editCharacter(id){
     </div>
     <div class="field"><label>BIO / NOTES</label><textarea id="cBio">${esc(c?c.bio:'')}</textarea></div>
     ${imageFieldHTML('char', entityId, c?c.image:null)}
+    ${privacyFieldHTML(c?c.isPrivate:false)}
     <div id="pcSheetSlot">${isPC ? pcSheetEditFieldsHTML(entityId, c.pcSheet||defaultPcSheet()) : ''}</div>
     ${tagPickerFieldHTML(c?{type:'character',id:c.id}:null)}
     <div class="modal-actions">
@@ -1634,6 +1652,7 @@ function saveCharacter(id, entityId){
     factionId: document.getElementById('cFaction').value || null,
     bio: document.getElementById('cBio').value.trim(),
     image: resolveEntityImage('char', entityId, existing ? existing.image : null),
+    isPrivate: readPrivacyField(),
     pcSheet: isPC ? collectPcSheetFromForm(entityId, (existing&&existing.pcSheet)||defaultPcSheet()) : (existing?existing.pcSheet:null),
     tags: _tagDraft.slice(),
     updatedAt: now()
@@ -1668,11 +1687,13 @@ function renderFactions(){
     ${factions.length===0 ? '<div class="empty">NO FACTIONS MATCH</div>' : `<div class="grid">
       ${factions.map(f=>{
         const members = DB.characters.filter(c=>c.factionId===f.id && !c.deleted).length;
-        return `<div class="frame card" onclick='viewFaction(${JSON.stringify(f.id)})'>
-          ${entityImageThumbHTML(f.image, f.name)}
-          <h3><span class="swatch" style="background:${f.color}"></span>${esc(f.name)}</h3>
-          <div class="meta">${esc(f.leader?('LED BY '+f.leader):'NO KNOWN LEADER')} · ${members} MEMBER${members!==1?'S':''}${(f.tags&&f.tags.length)?(' · '+f.tags.length+' LINK'+(f.tags.length!==1?'S':'')):''}</div>
-          <p>${esc(f.description||'No description recorded.')}</p>
+        return `<div class="frame card ${cardBlurClass(f)}" onclick='viewFaction(${JSON.stringify(f.id)})'>
+          <h3><span class="swatch" style="background:${f.color}"></span>${esc(f.name)} ${privacyBadgeHTML(f)}</h3>
+          <div class="${innerPrivacyClass(f)}">
+            ${entityImageThumbHTML(f.image, f.name)}
+            <div class="meta">${esc(f.leader?('LED BY '+f.leader):'NO KNOWN LEADER')} · ${members} MEMBER${members!==1?'S':''}${(f.tags&&f.tags.length)?(' · '+f.tags.length+' LINK'+(f.tags.length!==1?'S':'')):''}</div>
+            <p>${esc(f.description||'No description recorded.')}</p>
+          </div>
         </div>`;
       }).join('')}
     </div>`}
@@ -1683,7 +1704,7 @@ function viewFaction(id){
   const members = DB.characters.filter(c=>c.factionId===id && !c.deleted);
   openModal(`
     <h3><span class="swatch" style="background:${f.color}"></span>${esc(f.name)}</h3>
-    <div class="modal-sub">${esc(f.leader?('LED BY '+f.leader):'NO KNOWN LEADER')}</div>
+    <div class="modal-sub">${esc(f.leader?('LED BY '+f.leader):'NO KNOWN LEADER')} ${privacyBadgeHTML(f)}</div>
     ${f.image ? `<img src="${ghImageRawUrl(f.image)}" alt="${esc(f.name)}" style="width:100%;max-height:260px;object-fit:cover;border:1px solid var(--line-bright);margin-bottom:14px;" onerror="this.style.display='none'">` : ''}
     <div class="note-view-text">${esc(f.description)||'<span style="color:var(--text-dimmer)">No description.</span>'}</div>
     <div class="field"><label>MEMBERS</label>
@@ -1708,6 +1729,7 @@ function editFaction(id){
     <div class="field"><label>LEADER</label><input type="text" id="fLeader" value="${esc(f?f.leader:'')}"></div>
     <div class="field"><label>DESCRIPTION</label><textarea id="fDesc">${esc(f?f.description:'')}</textarea></div>
     ${imageFieldHTML('faction', entityId, f?f.image:null)}
+    ${privacyFieldHTML(f?f.isPrivate:false)}
     ${tagPickerFieldHTML(f?{type:'faction',id:f.id}:null)}
     <div class="modal-actions">
       <div class="left">${f?'<button class="btn danger" onclick="deleteFaction(\''+f.id+'\')">DELETE</button>':''}</div>
@@ -1725,6 +1747,7 @@ function saveFaction(id, entityId){
     leader: document.getElementById('fLeader').value.trim(),
     description: document.getElementById('fDesc').value.trim(),
     image: resolveEntityImage('faction', entityId, id ? DB.factions.find(x=>x.id===id).image : null),
+    isPrivate: readPrivacyField(),
     tags: _tagDraft.slice(),
     updatedAt: now()
   };
@@ -1758,10 +1781,12 @@ function renderCrew(){
     ${searchFilterBarHTML('crew','Search crew...')}
     ${crews.length===0 ? '<div class="empty">NO CREW MATCH</div>' : `<div class="grid">
       ${crews.map(c=>`
-        <div class="frame card" onclick='viewCrew(${JSON.stringify(c.id)})'>
-          <h3><span class="swatch" style="background:${c.color}"></span>${esc(c.name)}</h3>
-          <div class="meta">${(c.tags&&c.tags.length)?(c.tags.length+' LINK'+(c.tags.length!==1?'S':'')):'&nbsp;'}</div>
-          <p>${esc(c.description||'No description recorded.')}</p>
+        <div class="frame card ${cardBlurClass(c)}" onclick='viewCrew(${JSON.stringify(c.id)})'>
+          <h3><span class="swatch" style="background:${c.color}"></span>${esc(c.name)} ${privacyBadgeHTML(c)}</h3>
+          <div class="${innerPrivacyClass(c)}">
+            <div class="meta">${(c.tags&&c.tags.length)?(c.tags.length+' LINK'+(c.tags.length!==1?'S':'')):'&nbsp;'}</div>
+            <p>${esc(c.description||'No description recorded.')}</p>
+          </div>
         </div>`).join('')}
     </div>`}
   `;
@@ -1769,7 +1794,7 @@ function renderCrew(){
 function viewCrew(id){
   const c = DB.crews.find(x=>x.id===id);
   openModal(`
-    <h3><span class="swatch" style="background:${c.color}"></span>${esc(c.name)}</h3>
+    <h3><span class="swatch" style="background:${c.color}"></span>${esc(c.name)} ${privacyBadgeHTML(c)}</h3>
     <div class="note-view-text">${esc(c.description)||'<span style="color:var(--text-dimmer)">No description.</span>'}</div>
     ${tagChipsViewHTML(c.tags)}
     <div class="modal-actions">
@@ -1787,6 +1812,7 @@ function editCrew(id){
       <div class="field" style="max-width:90px;"><label>COLOR</label><input type="color" id="crColor" value="${c?c.color:'#2de2e6'}"></div>
     </div>
     <div class="field"><label>DESCRIPTION</label><textarea id="crDesc" placeholder="Reputation, resources, style, notable jobs...">${esc(c?c.description:'')}</textarea></div>
+    ${privacyFieldHTML(c?c.isPrivate:false)}
     ${tagPickerFieldHTML(c?{type:'crew',id:c.id}:null)}
     <div class="modal-actions">
       <div class="left">${c?'<button class="btn danger" onclick="deleteCrew(\''+c.id+'\')">DELETE</button>':''}</div>
@@ -1800,6 +1826,7 @@ function saveCrew(id){
     name: document.getElementById('crName').value.trim()||'Unnamed Crew',
     color: document.getElementById('crColor').value,
     description: document.getElementById('crDesc').value.trim(),
+    isPrivate: readPrivacyField(),
     tags: _tagDraft.slice(),
     updatedAt: now()
   };
@@ -1833,10 +1860,12 @@ function renderBase(){
     ${searchFilterBarHTML('base','Search base...')}
     ${bases.length===0 ? '<div class="empty">NO BASE MATCH</div>' : `<div class="grid">
       ${bases.map(b=>`
-        <div class="frame card" onclick='viewBase(${JSON.stringify(b.id)})'>
-          <h3>${esc(b.name)}</h3>
-          <div class="meta">${(b.tags&&b.tags.length)?(b.tags.length+' LINK'+(b.tags.length!==1?'S':'')):'&nbsp;'}</div>
-          <p>${esc(b.description||'No description recorded.')}</p>
+        <div class="frame card ${cardBlurClass(b)}" onclick='viewBase(${JSON.stringify(b.id)})'>
+          <h3>${esc(b.name)} ${privacyBadgeHTML(b)}</h3>
+          <div class="${innerPrivacyClass(b)}">
+            <div class="meta">${(b.tags&&b.tags.length)?(b.tags.length+' LINK'+(b.tags.length!==1?'S':'')):'&nbsp;'}</div>
+            <p>${esc(b.description||'No description recorded.')}</p>
+          </div>
         </div>`).join('')}
     </div>`}
   `;
@@ -1844,7 +1873,7 @@ function renderBase(){
 function viewBase(id){
   const b = DB.bases.find(x=>x.id===id);
   openModal(`
-    <h3>${esc(b.name)}</h3>
+    <h3>${esc(b.name)} ${privacyBadgeHTML(b)}</h3>
     <div class="note-view-text">${esc(b.description)||'<span style="color:var(--text-dimmer)">No description.</span>'}</div>
     ${tagChipsViewHTML(b.tags)}
     <div class="modal-actions">
@@ -1859,6 +1888,7 @@ function editBase(id){
     <h3>${b?'EDIT':'NEW'} BASE</h3>
     <div class="field"><label>NAME</label><input type="text" id="baName" value="${esc(b?b.name:'')}" placeholder="e.g. The Deck HQ"></div>
     <div class="field"><label>DESCRIPTION</label><textarea id="baDesc" placeholder="Layout, defenses, upgrades, who has access...">${esc(b?b.description:'')}</textarea></div>
+    ${privacyFieldHTML(b?b.isPrivate:false)}
     ${tagPickerFieldHTML(b?{type:'base',id:b.id}:null)}
     <div class="modal-actions">
       <div class="left">${b?'<button class="btn danger" onclick="deleteBase(\''+b.id+'\')">DELETE</button>':''}</div>
@@ -1871,6 +1901,7 @@ function saveBase(id){
   const data = {
     name: document.getElementById('baName').value.trim()||'Unnamed Base',
     description: document.getElementById('baDesc').value.trim(),
+    isPrivate: readPrivacyField(),
     tags: _tagDraft.slice(),
     updatedAt: now()
   };
@@ -1911,12 +1942,14 @@ function renderQuests(){
     ${quests.length===0 ? '<div class="empty">NO LOG ENTRIES MATCH</div>' : `<div class="grid">
       ${quests.map(q=>{
         const st = QSTATUS[q.status]||QSTATUS.active;
-        return `<div class="frame card" onclick='viewQuest(${JSON.stringify(q.id)})'>
-          ${entityImageThumbHTML(q.image, q.title)}
-          <h3>${esc(q.title)}</h3>
-          <div class="meta">${esc(q.giver?('CONTACT: '+q.giver):'')}</div>
-          <div style="margin-bottom:10px;"><span class="tag ${st.c}">${st.l}</span><span class="tag">${(q.log||[]).length} UPDATE${(q.log||[]).length!==1?'S':''}</span></div>
-          <p>${esc(q.description||'No description recorded.')}</p>
+        return `<div class="frame card ${cardBlurClass(q)}" onclick='viewQuest(${JSON.stringify(q.id)})'>
+          <h3>${esc(q.title)} ${privacyBadgeHTML(q)}</h3>
+          <div class="${innerPrivacyClass(q)}">
+            ${entityImageThumbHTML(q.image, q.title)}
+            <div class="meta">${esc(q.giver?('CONTACT: '+q.giver):'')}</div>
+            <div style="margin-bottom:10px;"><span class="tag ${st.c}">${st.l}</span><span class="tag">${(q.log||[]).length} UPDATE${(q.log||[]).length!==1?'S':''}</span></div>
+            <p>${esc(q.description||'No description recorded.')}</p>
+          </div>
         </div>`;
       }).join('')}
     </div>`}
@@ -1927,7 +1960,7 @@ function viewQuest(id){
   const st = QSTATUS[q.status]||QSTATUS.active;
   openModal(`
     <h3>${esc(q.title)}</h3>
-    <div class="modal-sub">${esc(q.giver?('CONTACT: '+q.giver):'')}</div>
+    <div class="modal-sub">${esc(q.giver?('CONTACT: '+q.giver):'')} ${privacyBadgeHTML(q)}</div>
     ${q.image ? `<img src="${ghImageRawUrl(q.image)}" alt="${esc(q.title)}" style="width:100%;max-height:260px;object-fit:cover;border:1px solid var(--line-bright);margin-bottom:14px;" onerror="this.style.display='none'">` : ''}
     <div style="margin-bottom:12px;"><span class="tag ${st.c}">${st.l}</span></div>
     <div class="note-view-text">${esc(q.description)||'<span style="color:var(--text-dimmer)">No description.</span>'}</div>
@@ -1975,6 +2008,7 @@ function editQuest(id){
     </div>
     <div class="field"><label>DESCRIPTION</label><textarea id="qDesc">${esc(q?q.description:'')}</textarea></div>
     ${imageFieldHTML('log', entityId, q?q.image:null)}
+    ${privacyFieldHTML(q?q.isPrivate:false)}
     ${tagPickerFieldHTML(q?{type:'quest',id:q.id}:null)}
     <div class="modal-actions">
       <div class="left">${q?'<button class="btn danger" onclick="deleteQuest(\''+q.id+'\')">DELETE</button>':''}</div>
@@ -1992,6 +2026,7 @@ function saveQuest(id, entityId){
     status: document.getElementById('qStatus').value,
     description: document.getElementById('qDesc').value.trim(),
     image: resolveEntityImage('log', entityId, id ? DB.quests.find(x=>x.id===id).image : null),
+    isPrivate: readPrivacyField(),
     tags: _tagDraft.slice(),
     updatedAt: now()
   };
@@ -2024,10 +2059,12 @@ function renderJournal(){
     ${searchFilterBarHTML('journal','Search journal...')}
     ${sorted.length===0 ? '<div class="empty">NO ENTRIES MATCH</div>' : `<div class="grid">
       ${sorted.map(j=>`
-        <div class="frame card" onclick='viewJournalEntry(${JSON.stringify(j.id)})'>
-          <h3>${esc(j.title)}</h3>
-          <div class="meta">by ${esc(j.author)} · ${fmtDate(j.ts)}${(j.tags&&j.tags.length)?(' · '+j.tags.length+' LINK'+(j.tags.length!==1?'S':'')):''}</div>
-          <p>${esc(j.text||'')}</p>
+        <div class="frame card ${cardBlurClass(j)}" onclick='viewJournalEntry(${JSON.stringify(j.id)})'>
+          <h3>${esc(j.title)} ${privacyBadgeHTML(j)}</h3>
+          <div class="${innerPrivacyClass(j)}">
+            <div class="meta">by ${esc(j.author)} · ${fmtDate(j.ts)}${(j.tags&&j.tags.length)?(' · '+j.tags.length+' LINK'+(j.tags.length!==1?'S':'')):''}</div>
+            <p>${esc(j.text||'')}</p>
+          </div>
         </div>`).join('')}
     </div>`}
   `;
@@ -2064,11 +2101,13 @@ function renderNoteBoxModule(mod){
 }
 function noteBoxGridHTML(mod, items){
   return `<div class="grid">${items.map((it,i)=>`
-    <div class="frame card">
+    <div class="frame card ${cardBlurClass(it)}">
       <div onclick='viewNoteBox("${mod}", ${JSON.stringify(it.id)})' style="cursor:pointer;">
-        ${entityImageThumbHTML(it.image, it.title)}
-        <h3>${esc(it.title)}</h3>
-        <p>${esc((it.text||'').slice(0,160))}${(it.text||'').length>160?'…':''}</p>
+        <h3>${esc(it.title)} ${privacyBadgeHTML(it)}</h3>
+        <div class="${innerPrivacyClass(it)}">
+          ${entityImageThumbHTML(it.image, it.title)}
+          <p>${esc((it.text||'').slice(0,160))}${(it.text||'').length>160?'…':''}</p>
+        </div>
       </div>
       <div class="admin-only" style="display:flex;gap:4px;margin-top:10px;">
         <button class="btn ghost" style="flex:1;padding:4px;font-size:10px;" onclick="moveNoteBox('${mod}','${it.id}',-1)" ${i===0?'disabled':''}>▲ UP</button>
@@ -2078,11 +2117,11 @@ function noteBoxGridHTML(mod, items){
 }
 function noteBoxListHTML(mod, items){
   return items.map((it,i)=>`
-    <div class="frame card" style="display:flex;align-items:center;gap:12px;margin-bottom:10px;cursor:pointer;" onclick='viewNoteBox("${mod}", ${JSON.stringify(it.id)})'>
-      ${it.image?`<img src="${ghImageRawUrl(it.image)}" alt="${esc(it.title)}" style="width:56px;height:56px;object-fit:cover;border:1px solid var(--line);flex:0 0 auto;" onerror="this.style.display='none'">`:''}
+    <div class="frame card ${cardBlurClass(it)}" style="display:flex;align-items:center;gap:12px;margin-bottom:10px;cursor:pointer;" onclick='viewNoteBox("${mod}", ${JSON.stringify(it.id)})'>
+      ${it.image?`<div class="${innerPrivacyClass(it)}" style="flex:0 0 auto;"><img src="${ghImageRawUrl(it.image)}" alt="${esc(it.title)}" style="width:56px;height:56px;object-fit:cover;border:1px solid var(--line);display:block;" onerror="this.style.display='none'"></div>`:''}
       <div style="flex:1;min-width:0;">
-        <h3 style="margin-bottom:4px;">${esc(it.title)}</h3>
-        <p style="color:var(--text-dim);font-size:12px;white-space:nowrap;overflow:hidden;text-overflow:ellipsis;margin:0;">${esc(it.text||'')}</p>
+        <h3 style="margin-bottom:4px;">${esc(it.title)} ${privacyBadgeHTML(it)}</h3>
+        <p class="${innerPrivacyClass(it)}" style="color:var(--text-dim);font-size:12px;white-space:nowrap;overflow:hidden;text-overflow:ellipsis;margin:0;">${esc(it.text||'')}</p>
       </div>
       <div class="admin-only" style="display:flex;flex-direction:column;gap:4px;flex:0 0 auto;" onclick="event.stopPropagation()">
         <button class="btn ghost" style="padding:2px 8px;font-size:10px;" onclick="moveNoteBox('${mod}','${it.id}',-1)" ${i===0?'disabled':''}>▲</button>
@@ -2105,7 +2144,7 @@ function viewNoteBox(mod, id){
   const it = DB[mod].find(x=>x.id===id);
   openModal(`
     <h3>${esc(it.title)}</h3>
-    <div class="modal-sub">${esc(noteBoxLabel(mod))}</div>
+    <div class="modal-sub">${esc(noteBoxLabel(mod))} ${privacyBadgeHTML(it)}</div>
     ${it.image?`<img src="${ghImageRawUrl(it.image)}" alt="${esc(it.title)}" style="width:100%;max-height:280px;object-fit:cover;border:1px solid var(--line-bright);margin-bottom:14px;" onerror="this.style.display='none'">`:''}
     <div class="note-view-text">${esc(it.text)||'<span style="color:var(--text-dimmer)">No content.</span>'}</div>
     <div class="modal-actions">
@@ -2122,6 +2161,7 @@ function editNoteBox(mod, id){
     <div class="field"><label>TITLE</label><input type="text" id="nbTitle" value="${esc(it?it.title:'')}"></div>
     <div class="field"><label>TEXT</label><textarea id="nbText" style="min-height:160px;">${esc(it?it.text:'')}</textarea></div>
     ${imageFieldHTML(mod, entityId, it?it.image:null)}
+    ${privacyFieldHTML(it?it.isPrivate:false)}
     <div class="modal-actions">
       <div class="left">${it?'<button class="btn danger" onclick="deleteNoteBox(\''+mod+'\',\''+it.id+'\')">DELETE</button>':''}</div>
       <div class="right"><button class="btn ghost" onclick="closeModal()">CANCEL</button><button class="btn primary" onclick="saveNoteBox('${mod}', ${it?"'"+it.id+"'":'null'}, '${entityId}')">SAVE</button></div>
@@ -2136,6 +2176,7 @@ function saveNoteBox(mod, id, entityId){
     title: document.getElementById('nbTitle').value.trim()||'Untitled',
     text: document.getElementById('nbText').value.trim(),
     image: resolveEntityImage(mod, entityId, existing?existing.image:null),
+    isPrivate: readPrivacyField(),
     updatedAt: now()
   };
   const save = ({homebrew:saveHomebrew, metagame:saveMetagame})[mod];
@@ -2166,7 +2207,7 @@ function viewJournalEntry(id){
   const j = DB.journal.find(x=>x.id===id);
   openModal(`
     <h3>${esc(j.title)}</h3>
-    <div class="note-view-meta">by <b>${esc(j.author)}</b> &nbsp;·&nbsp; ${fmtDate(j.ts)}</div>
+    <div class="note-view-meta">by <b>${esc(j.author)}</b> &nbsp;·&nbsp; ${fmtDate(j.ts)} ${privacyBadgeHTML(j)}</div>
     <div class="note-view-text">${esc(j.text)}</div>
     ${tagChipsViewHTML(j.tags)}
     <div class="modal-actions">
@@ -2184,6 +2225,7 @@ function editJournalEntry(id){
       <div class="field"><label>AUTHOR</label><input type="text" id="jAuthor" value="${esc(j?j.author:'')}"></div>
     </div>
     <div class="field"><label>TEXT</label><textarea id="jText" style="min-height:140px;">${esc(j?j.text:'')}</textarea></div>
+    ${privacyFieldHTML(j?j.isPrivate:false)}
     ${tagPickerFieldHTML(null)}
     <div class="modal-actions">
       <div class="left">${j?'<button class="btn danger" onclick="deleteJournalEntry(\''+j.id+'\')">DELETE</button>':''}</div>
@@ -2196,9 +2238,10 @@ function saveJournalEntry(id){
   const title = document.getElementById('jTitle').value.trim()||'Untitled Entry';
   const author = document.getElementById('jAuthor').value.trim()||'Unknown';
   const text = document.getElementById('jText').value.trim();
+  const isPrivate = readPrivacyField();
   const tags = _tagDraft.slice();
-  if(id){ const j=DB.journal.find(x=>x.id===id); j.title=title; j.author=author; j.text=text; j.tags=tags; j.updatedAt=now(); }
-  else { DB.journal.push({ id:uid(), title, author, text, tags, ts:now(), updatedAt:now() }); }
+  if(id){ const j=DB.journal.find(x=>x.id===id); j.title=title; j.author=author; j.text=text; j.tags=tags; j.isPrivate=isPrivate; j.updatedAt=now(); }
+  else { DB.journal.push({ id:uid(), title, author, text, tags, isPrivate, ts:now(), updatedAt:now() }); }
   saveJournal(); closeModal(); renderJournal();
   toast('Entry saved');
 }
@@ -2420,6 +2463,14 @@ function openGithubModal(){
       <input type="file" id="ghVersionFile" accept=".html">
       <button class="btn ghost" style="width:100%;margin-top:8px;" onclick="uploadNewVersionFile()">⭱ UPLOAD NEW VERSION</button>
     </div>
+    <div class="field" style="border-top:1px dashed var(--line-bright);padding-top:14px;">
+      <label>LOCAL FILE BACKUP — no GitHub needed</label>
+      <p style="color:var(--text-dimmer);font-size:11px;line-height:1.6;margin-bottom:8px;">Save a snapshot to your device, or load one back in. Useful as an offline backup alongside GitHub sync.</p>
+      <div class="field-row">
+        <button class="btn ghost" style="flex:1;" onclick="exportData()">⭱ EXPORT TO FILE</button>
+        <button class="btn ghost" style="flex:1;" onclick="triggerImport()">⭳ IMPORT FROM FILE</button>
+      </div>
+    </div>
     <div class="modal-actions">
       <div class="left"><button class="btn ghost" onclick="closeModal()">CLOSE</button></div>
       <div class="right"><button class="btn primary" onclick="pullFromGithub()">⭳ PULL LATEST</button><button class="btn primary" onclick="pushToGithub()">⭱ PUSH UPDATE</button></div>
@@ -2553,6 +2604,45 @@ function entityImageThumbHTML(path, alt){
   const src = ghImageRawUrl(path);
   return `<img src="${src}" alt="${esc(alt||'')}" style="width:100%;height:120px;object-fit:cover;border:1px solid var(--line);margin-bottom:10px;" onerror="this.style.display='none'">`;
 }
+
+/* ============================================================
+   PRIVACY / HIDE — shared across every card-based module.
+   A private item's card blurs into an unreadable "not yet
+   revealed" placeholder for anyone not in DM Mode; the DM still
+   sees it normally, plus a badge marking it as hidden from
+   players. This is a presentation-layer hide, same trust model
+   as DM Mode itself (a client-side toggle, not real access
+   control) — consistent with how the rest of this app works.
+   Existing items with no isPrivate field default to false, so
+   nothing already in the campaign gets hidden retroactively.
+   ============================================================ */
+function isItemPrivate(item){ return !!(item && item.isPrivate); }
+/* Outer wrapper class: full blur + lockout for players, just a dashed
+   amber frame (no blur, fully interactive) for the DM. */
+function cardBlurClass(item){
+  if(!isItemPrivate(item)) return '';
+  return ADMIN ? 'privacy-frame' : 'privacy-blurred';
+}
+/* Inner wrapper class: goes around everything EXCEPT the title/badge line
+   in a card. Only actually blurs anything when the DM is looking at a
+   private item — image, meta, description stay illegible at a glance,
+   but the name is still readable so the DM can tell what it is, and the
+   card stays fully clickable/interactive either way. Players never see
+   this class matter since their card is already fully locked via the
+   outer 'privacy-blurred' class above. */
+function innerPrivacyClass(item){
+  return (isItemPrivate(item) && ADMIN) ? 'privacy-inner-blur' : '';
+}
+function privacyBadgeHTML(item){
+  return isItemPrivate(item) ? `<span class="tag amber" title="Hidden from players until revealed">🔒 PRIVATE</span>` : '';
+}
+function privacyFieldHTML(checked){
+  return `<div class="field"><label style="display:flex;align-items:center;gap:8px;cursor:pointer;font-size:12px;color:var(--text);">
+    <input type="checkbox" id="entPrivate" ${checked?'checked':''} style="width:15px;height:15px;accent-color:var(--amber);margin:0;">
+    🔒 PRIVATE — hidden from players until revealed
+  </label></div>`;
+}
+function readPrivacyField(){ const el = document.getElementById('entPrivate'); return el ? !!el.checked : false; }
 function hasUnpushedImage(kind, entityId){
   return _pendingImage.kind===kind && _pendingImage.id===entityId && _pendingImage.dataUrl && !_pendingImage.pushed;
 }
