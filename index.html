@@ -586,7 +586,7 @@ let ghToken = ''; // personal, this device only — never stored in shared data
 /* Bump this on every build handed to the group. Pushed to GitHub as
    version.json whenever the DM (Admin Mode) pushes, so players get
    prompted to update if their local copy of this file is stale. */
-const APP_VERSION = '1.5.2';
+const APP_VERSION = '1.5.3';
 
 /* ============================================================
    TAG / CROSS-LINK SYSTEM
@@ -1151,7 +1151,7 @@ function onStageUp(e){
       if(!pinDrag.moved){
         openPinModal(pin);
       } else {
-        pin.x = pinDrag.x; pin.y = pinDrag.y; saveMaps();
+        pin.x = pinDrag.x; pin.y = pinDrag.y; pin.updatedAt = now(); saveMaps();
       }
     } else {
       if(pin.target && DB.maps[pin.target]) loadMapImage(pin.target);
