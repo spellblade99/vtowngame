@@ -213,6 +213,14 @@ input,textarea,select{font-family:'JetBrains Mono',monospace;}
   width:16px;height:16px;background:var(--magenta);clip-path:polygon(0 0,100% 0,100% 70%,50% 100%,0 70%);
   box-shadow:0 0 8px rgba(255,61,154,.7);
 }
+.journey-note-pin{
+  position:absolute;transform:translate(-50%,-100%);cursor:pointer;z-index:6;user-select:none;
+}
+.journey-note-pin .jflag{
+  width:15px;height:15px;background:var(--jcolor,var(--amber));
+  clip-path:polygon(50% 0%,100% 25%,100% 75%,50% 100%,0% 75%,0% 25%);
+  box-shadow:0 0 8px var(--jcolor,var(--amber));border:1px solid rgba(10,13,18,.6);
+}
 
 .temp-vertex{position:absolute;width:8px;height:8px;background:var(--green);border-radius:50%;transform:translate(-50%,-50%);z-index:7;}
 
@@ -241,6 +249,36 @@ input,textarea,select{font-family:'JetBrains Mono',monospace;}
 .layer-row .ldraw:hover{color:var(--green);}
 .layer-row .ldel{color:var(--text-dimmer);font-size:13px;background:none;border:none;padding:2px 5px;}
 .layer-row .ldel:hover{color:var(--red);}
+
+.hex-menu-wrap{position:relative;width:56px;height:56px;}
+.hex-btn{
+  width:56px;height:56px;position:absolute;right:0;bottom:0;box-sizing:border-box;
+  clip-path:polygon(50% 0%,100% 25%,100% 75%,50% 100%,0% 75%,0% 25%);
+  background:rgba(10,13,18,.95);border:1px solid var(--line-bright);color:var(--text);
+  display:flex;flex-direction:column;align-items:center;justify-content:center;
+  font-family:'Chakra Petch',sans-serif;font-size:8px;letter-spacing:.5px;font-weight:700;
+  line-height:1.3;cursor:pointer;transition:transform .22s ease,opacity .22s ease,border-color .15s,color .15s,background .15s;
+  padding:0;
+}
+.hex-btn .hex-icon{font-size:15px;line-height:1;margin-bottom:2px;}
+.hex-main{border-color:var(--cyan);color:var(--cyan);z-index:6;}
+.hex-main:hover{background:var(--cyan);color:#000;}
+.hex-main.active{border-color:var(--magenta);color:var(--magenta);}
+.hex-sat{opacity:0;transform:translate(0,0) scale(.3);pointer-events:none;z-index:5;}
+.hex-menu-wrap.open .hex-sat{opacity:1;pointer-events:auto;transform:translate(var(--tx),var(--ty)) scale(1);}
+.hex-btn:hover{border-color:var(--cyan);color:var(--cyan);}
+.hex-btn.on{border-color:var(--cyan);color:var(--cyan);background:rgba(45,226,230,.14);}
+.hex-btn.active-tool{border-color:var(--magenta);color:var(--magenta);background:rgba(255,61,154,.14);}
+@media (max-height: 480px){
+  .hex-btn{width:44px;height:44px;font-size:7px;}
+  .hex-btn .hex-icon{font-size:12px;}
+  .hex-menu-wrap{width:44px;height:44px;}
+  #hexBtnLayers{--ty:-46px;}
+  #hexBtnJourney{--ty:-92px;}
+  #hexBtnDropNote{--tx:-38px;--ty:-23px;}
+  #hexBtnAddPin{--tx:-38px;--ty:-69px;}
+  #hexBtnResetView{--tx:-38px;--ty:-115px;}
+}
 
 .draw-bar{
   position:absolute;bottom:14px;left:50%;transform:translateX(-50%);z-index:25;
@@ -558,7 +596,7 @@ function defaultMaps(){
       notes:[], layers:[
         {id:'lyr_dist', name:'DISTRICTS', color:'#2de2e6', visible:true},
         {id:'lyr_fac', name:'FACTIONS', color:'#ff3d9a', visible:true}
-      ], shapes:[]
+      ], shapes:[], journeys:[]
     },
     neon_city:{
       id:'neon_city', name:'NC', parent:'world', image:'assets/neon-city.png',
@@ -566,14 +604,14 @@ function defaultMaps(){
         {id:'lyr_dist2', name:'DISTRICTS', color:'#2de2e6', visible:true},
         {id:'lyr_fac2', name:'FACTIONS', color:'#ff3d9a', visible:true},
         {id:'lyr_dgr2', name:'DANGER ZONES', color:'#ffb020', visible:true}
-      ], shapes:[]
+      ], shapes:[], journeys:[]
     },
     v_town:{
       id:'v_town', name:'V-TOWN', parent:'world', image:'assets/vtown.png',
       pins:[], notes:[], layers:[
         {id:'lyr_dist3', name:'DISTRICTS', color:'#2de2e6', visible:true},
         {id:'lyr_fac3', name:'FACTIONS', color:'#ff3d9a', visible:true}
-      ], shapes:[]
+      ], shapes:[], journeys:[]
     }
   };
 }
@@ -586,7 +624,7 @@ let ghToken = ''; // personal, this device only — never stored in shared data
 /* Bump this on every build handed to the group. Pushed to GitHub as
    version.json whenever the DM (Admin Mode) pushes, so players get
    prompted to update if their local copy of this file is stale. */
-const APP_VERSION = '1.5.3';
+const APP_VERSION = '1.6.0';
 
 /* ============================================================
    TAG / CROSS-LINK SYSTEM
@@ -894,7 +932,8 @@ function mergeMapsObj(localMaps, importedMaps){
       pins: mergeArrayById(lm.pins, im.pins),
       notes: mergeArrayById(lm.notes, im.notes),
       layers: mergeArrayById(lm.layers, im.layers),
-      shapes: mergeArrayById(lm.shapes, im.shapes)
+      shapes: mergeArrayById(lm.shapes, im.shapes),
+      journeys: mergeArrayById(lm.journeys, im.journeys)
     };
   });
   return result;
@@ -953,9 +992,11 @@ function toggleAdmin(){
    MAP MODULE
    ============================================================ */
 let mapView = { current:'world', scale:1, tx:0, ty:0, imgW:0, imgH:0 };
-let mapTool = null; // null | 'addPin' | 'dropNote' | 'drawShape'
+let mapTool = null; // null | 'addPin' | 'dropNote' | 'drawShape' | 'drawJourney'
 let drawLayerId = null;
 let tempPoints = [];
+let journeyDraft = null; // { id, name, color, points:[{id,x,y,note}], resuming:bool }
+let journeyPointMode = 'waypoint'; // 'waypoint' | 'note' — what the NEXT click on the map places
 let dragState = null; // panning
 let pinDrag = null;
 let customImageCache = {}; // mapId -> data URI, for user-created sub-maps (not in IMAGES)
@@ -972,6 +1013,7 @@ function mapShell(){
         <svg class="map-svg" id="mapSvg" viewBox="0 0 100 100" preserveAspectRatio="none"></svg>
         <div id="pinsLayer"></div>
         <div id="notesLayer"></div>
+        <div id="journeyNotesLayer"></div>
       </div>
     </div>
     <div class="draw-bar" id="drawBar">
@@ -979,12 +1021,25 @@ function mapShell(){
       <button onclick="finishShape()">FINISH</button>
       <button class="cancel" onclick="cancelShape()">CANCEL</button>
     </div>
+    <div class="draw-bar" id="journeyDrawBar">
+      <span>DRAWING JOURNEY — <span id="journeyPtCount">0</span> point(s)</span>
+      <button id="journeyModeToggleBtn" onclick="toggleJourneyPointMode()">＋ WAYPOINT</button>
+      <button onclick="finishJourney()">FINISH</button>
+      <button class="cancel" onclick="cancelJourney()">CANCEL</button>
+    </div>
     <div class="map-controls">
       <div class="layers-panel" id="layersPanel"></div>
-      <button class="map-btn" id="btnLayers">LAYERS ▾</button>
-      <button class="map-btn" id="btnDropNote">＋ DROP NOTE</button>
-      <button class="map-btn admin-only" id="btnAddPin">＋ PLACE PIN</button>
-      <button class="map-btn" id="btnResetView">RESET VIEW</button>
+      <div class="layers-panel" id="journeysPanel"></div>
+      <div class="hex-menu-wrap" id="hexMenuWrap">
+        <div class="hex-cluster">
+          <button class="hex-btn hex-sat" id="hexBtnLayers" style="--tx:0px;--ty:-58px;" title="Layers"><span class="hex-icon">⛶</span>LAYERS</button>
+          <button class="hex-btn hex-sat" id="hexBtnJourney" style="--tx:0px;--ty:-116px;" title="Journey"><span class="hex-icon">🛤</span>JOURNEY</button>
+          <button class="hex-btn hex-sat" id="hexBtnDropNote" style="--tx:-48px;--ty:-29px;" title="Drop Note"><span class="hex-icon">✎</span>NOTE</button>
+          <button class="hex-btn hex-sat admin-only" id="hexBtnAddPin" style="--tx:-48px;--ty:-87px;" title="Place Pin"><span class="hex-icon">📍</span>PIN</button>
+          <button class="hex-btn hex-sat" id="hexBtnResetView" style="--tx:-48px;--ty:-145px;" title="Reset View"><span class="hex-icon">⟲</span>RESET</button>
+        </div>
+        <button class="hex-btn hex-main" id="hexMainBtn" title="Menu"><span class="hex-icon">☰</span>MENU</button>
+      </div>
     </div>
   `;
 }
@@ -996,7 +1051,7 @@ function renderMap(){
   loadMapImage(mapView.current);
 }
 
-function currentMap(){ return DB.maps[mapView.current]; }
+function currentMap(){ const m = DB.maps[mapView.current]; if(m && !m.journeys) m.journeys = []; return m; }
 
 async function loadMapImage(mapId){
   mapView.current = mapId;
@@ -1009,7 +1064,7 @@ async function loadMapImage(mapId){
     document.getElementById('mapTransform').style.height = mapView.imgH+'px';
     img.style.width = mapView.imgW+'px'; img.style.height = mapView.imgH+'px';
     fitMapToStage();
-    renderPins(); renderNotes(); renderShapes();
+    renderPins(); renderNotes(); renderShapes(); renderJourneys();
   };
   img.onerror = ()=>{ toast('Map image failed to load'); };
   let src = IMAGES[mapId];
@@ -1026,6 +1081,7 @@ async function loadMapImage(mapId){
   img.src = src || '';
   renderBreadcrumb();
   refreshLayersPanel();
+  refreshJourneysPanel();
   updateToolHint();
 }
 
@@ -1064,22 +1120,44 @@ function wireMapControls(){
   window.addEventListener('mouseup', onStageUp);
   window.addEventListener('resize', fitMapToStage);
 
-  document.getElementById('btnResetView').addEventListener('click', fitMapToStage);
-  document.getElementById('btnLayers').addEventListener('click', ()=>{
+  document.getElementById('hexMainBtn').addEventListener('click', toggleHexMenu);
+  document.getElementById('hexBtnResetView').addEventListener('click', ()=>{ fitMapToStage(); closeHexMenu(); });
+  document.getElementById('hexBtnLayers').addEventListener('click', ()=>{
+    document.getElementById('journeysPanel').classList.remove('open');
     document.getElementById('layersPanel').classList.toggle('open');
   });
-  document.getElementById('btnDropNote').addEventListener('click', ()=>{
+  document.getElementById('hexBtnJourney').addEventListener('click', ()=>{
+    document.getElementById('layersPanel').classList.remove('open');
+    document.getElementById('journeysPanel').classList.toggle('open');
+    refreshJourneysPanel();
+  });
+  document.getElementById('hexBtnDropNote').addEventListener('click', ()=>{
     setTool(mapTool==='dropNote'?null:'dropNote');
+    closeHexMenu();
   });
-  document.getElementById('btnAddPin').addEventListener('click', ()=>{
+  document.getElementById('hexBtnAddPin').addEventListener('click', ()=>{
     setTool(mapTool==='addPin'?null:'addPin');
+    closeHexMenu();
   });
+}
+function toggleHexMenu(){
+  const wrap = document.getElementById('hexMenuWrap');
+  const open = wrap.classList.toggle('open');
+  document.getElementById('hexMainBtn').classList.toggle('active', open);
+  if(!open){
+    document.getElementById('layersPanel').classList.remove('open');
+    document.getElementById('journeysPanel').classList.remove('open');
+  }
+}
+function closeHexMenu(){
+  document.getElementById('hexMenuWrap').classList.remove('open');
+  document.getElementById('hexMainBtn').classList.remove('active');
 }
 
 function setTool(t){
   mapTool = t; tempPoints=[]; drawLayerId=null;
-  document.getElementById('btnDropNote').classList.toggle('active', t==='dropNote');
-  document.getElementById('btnAddPin').classList.toggle('active', t==='addPin');
+  document.getElementById('hexBtnDropNote').classList.toggle('active-tool', t==='dropNote');
+  document.getElementById('hexBtnAddPin').classList.toggle('active-tool', t==='addPin');
   document.getElementById('mapStage').classList.toggle('tool-active', !!t);
   document.getElementById('drawBar').classList.remove('show');
   updateToolHint();
@@ -1112,12 +1190,23 @@ function onWheel(e){
 }
 
 function onStageDown(e){
-  if(e.target.closest('.pin') || e.target.closest('.note-pin')) return; // handled by their own listeners
+  if(e.target.closest('.pin') || e.target.closest('.note-pin') || e.target.closest('.journey-note-pin')) return; // handled by their own listeners
   if(mapTool==='drawShape'){
     const p = stagePointToPct(e);
     tempPoints.push(p);
     document.getElementById('ptCount').textContent = tempPoints.length;
     renderTempShape();
+    return;
+  }
+  if(mapTool==='drawJourney'){
+    const p = stagePointToPct(e);
+    const point = { id:uid(), x:p.x, y:p.y, note:null };
+    journeyDraft.points.push(point);
+    document.getElementById('journeyPtCount').textContent = journeyDraft.points.length;
+    renderTempJourney();
+    if(journeyPointMode==='note'){
+      editJourneyPointNote(point.id, true);
+    }
     return;
   }
   if(mapTool==='addPin' || mapTool==='dropNote'){
@@ -1284,7 +1373,7 @@ async function createSubMapInline(){
       {id:uid(), name:'DISTRICTS', color:'#2de2e6', visible:true, updatedAt:now()},
       {id:uid(), name:'FACTIONS', color:'#ff3d9a', visible:true, updatedAt:now()}
     ],
-    shapes:[], updatedAt:now()
+    shapes:[], journeys:[], updatedAt:now()
   };
   // Keep a local cache regardless, so the map renders immediately on this
   // device even before (or without) a GitHub push.
@@ -1430,6 +1519,7 @@ function startDrawShape(layerId){
   document.getElementById('drawBar').classList.add('show');
   document.getElementById('ptCount').textContent = '0';
   document.getElementById('layersPanel').classList.remove('open');
+  closeHexMenu();
 }
 function renderTempShape(){
   const svg = document.getElementById('mapSvg');
@@ -1513,6 +1603,258 @@ function deleteShape(shapeId){
   if(s){ s.deleted = true; s.updatedAt = now(); }
   saveMaps(); closeModal(); renderShapes();
   toast('Shape deleted');
+}
+
+/* ============================================================
+   JOURNEY — a DOT-path from one place to another. Admin draws
+   it by clicking a sequence of points (waypoints just shape the
+   route; "note" points carry a full title/text/linked-entities
+   note, same tag system as everything else). Players see the
+   path and can click note points to read them.
+   ============================================================ */
+function refreshJourneysPanel(){
+  const m = currentMap();
+  const panel = document.getElementById('journeysPanel');
+  const journeys = (m.journeys||[]).filter(j=>!j.deleted);
+  panel.innerHTML = `
+    <h4>JOURNEYS</h4>
+    ${journeys.map(j=>{
+      const noteCount = j.points.filter(p=>p.note).length;
+      return `<div class="layer-row">
+        <input type="checkbox" ${j.visible!==false?'checked':''} onchange="toggleJourneyVisibility('${j.id}')">
+        <span class="ldot" style="background:${j.color}"></span>
+        <span class="lname">${esc(j.name)} <span style="color:var(--text-dimmer);">(${j.points.length} pts${noteCount?', '+noteCount+' notes':''})</span></span>
+        <button class="ldraw admin-only" title="Add more points to this journey" onclick="resumeDrawJourney('${j.id}')">✎</button>
+        <button class="ldel admin-only" title="Delete journey" onclick="deleteJourney('${j.id}')">✕</button>
+      </div>`;
+    }).join('') || '<div style="color:var(--text-dimmer);font-size:11px;padding:8px 0;">No journeys yet.</div>'}
+    <button class="btn ghost admin-only" style="width:100%;margin-top:8px;" onclick="newJourneyModal()">＋ NEW JOURNEY</button>
+  `;
+}
+function toggleJourneyVisibility(id){
+  const m = currentMap();
+  const j = m.journeys.find(x=>x.id===id);
+  j.visible = j.visible===false ? true : false;
+  j.updatedAt = now();
+  saveMaps(); renderJourneys();
+}
+function newJourneyModal(){
+  openModal(`
+    <h3>NEW JOURNEY</h3>
+    <div class="modal-sub">${esc(currentMap().name)}</div>
+    <div class="field"><label>JOURNEY NAME</label><input type="text" id="journeyName" placeholder="e.g. The Coastal Run"></div>
+    <div class="field"><label>COLOR</label><input type="color" id="journeyColor" value="#ffb020"></div>
+    <div class="modal-actions"><div class="left"></div><div class="right"><button class="btn ghost" onclick="closeModal()">CANCEL</button><button class="btn primary" onclick="beginDrawJourney()">START DRAWING</button></div></div>
+  `);
+}
+function beginDrawJourney(){
+  const name = document.getElementById('journeyName').value.trim() || 'Untitled Journey';
+  const color = document.getElementById('journeyColor').value;
+  journeyDraft = { id:'jour_'+uid(), name, color, points:[], resuming:false };
+  closeModal();
+  startDrawJourneyMode();
+}
+function resumeDrawJourney(journeyId){
+  const m = currentMap();
+  const j = m.journeys.find(x=>x.id===journeyId);
+  if(!j) return;
+  journeyDraft = { id:j.id, name:j.name, color:j.color, points:j.points.slice(), resuming:true };
+  document.getElementById('journeysPanel').classList.remove('open');
+  startDrawJourneyMode();
+}
+function startDrawJourneyMode(){
+  setTool('drawJourney');
+  journeyPointMode = 'waypoint';
+  document.getElementById('journeyDrawBar').classList.add('show');
+  document.getElementById('journeyPtCount').textContent = journeyDraft.points.length;
+  updateJourneyModeBtn();
+  closeHexMenu();
+}
+function toggleJourneyPointMode(){
+  journeyPointMode = journeyPointMode==='waypoint' ? 'note' : 'waypoint';
+  updateJourneyModeBtn();
+}
+function updateJourneyModeBtn(){
+  const btn = document.getElementById('journeyModeToggleBtn');
+  if(!btn) return;
+  btn.textContent = journeyPointMode==='waypoint' ? '＋ WAYPOINT' : '⚑ NOTE POINT';
+  btn.style.color = journeyPointMode==='note' ? 'var(--amber)' : '';
+  btn.style.borderColor = journeyPointMode==='note' ? 'var(--amber)' : '';
+}
+function renderTempJourney(){
+  const svg = document.getElementById('mapSvg');
+  const old = svg.querySelector('#tempJourney'); if(old) old.remove();
+  document.querySelectorAll('.temp-vertex').forEach(v=>v.remove());
+  if(!journeyDraft || journeyDraft.points.length===0) return;
+  const pts = journeyDraft.points.map(p=>`${p.x},${p.y}`).join(' ');
+  const poly = document.createElementNS('http://www.w3.org/2000/svg','polyline');
+  poly.setAttribute('id','tempJourney');
+  poly.setAttribute('points', pts);
+  poly.setAttribute('fill','none');
+  poly.setAttribute('stroke', journeyDraft.color);
+  poly.setAttribute('stroke-width','0.35');
+  poly.setAttribute('stroke-dasharray','1.2,1');
+  svg.appendChild(poly);
+  const wrap = document.getElementById('pinsLayer').parentElement;
+  journeyDraft.points.forEach(p=>{
+    const v = document.createElement('div');
+    v.className='temp-vertex';
+    v.style.left=p.x+'%'; v.style.top=p.y+'%';
+    if(p.note){ v.style.background='var(--amber)'; v.style.width='11px'; v.style.height='11px'; }
+    wrap.appendChild(v);
+  });
+}
+function finishJourney(){
+  if(!journeyDraft || journeyDraft.points.length<2){ toast('A journey needs at least 2 points'); return; }
+  const m = currentMap();
+  if(journeyDraft.resuming){
+    const j = m.journeys.find(x=>x.id===journeyDraft.id);
+    j.points = journeyDraft.points; j.updatedAt = now();
+  } else {
+    m.journeys.push({ id:journeyDraft.id, name:journeyDraft.name, color:journeyDraft.color, visible:true, points:journeyDraft.points, updatedAt:now() });
+  }
+  saveMaps();
+  journeyDraft = null;
+  document.getElementById('journeyDrawBar').classList.remove('show');
+  document.querySelectorAll('.temp-vertex').forEach(v=>v.remove());
+  const t = document.getElementById('mapSvg').querySelector('#tempJourney'); if(t) t.remove();
+  setTool(null);
+  renderJourneys();
+  refreshJourneysPanel();
+  toast('Journey saved');
+}
+function cancelJourney(){
+  journeyDraft = null;
+  document.getElementById('journeyDrawBar').classList.remove('show');
+  document.querySelectorAll('.temp-vertex').forEach(v=>v.remove());
+  const t = document.getElementById('mapSvg').querySelector('#tempJourney'); if(t) t.remove();
+  setTool(null);
+}
+function renderJourneys(){
+  const svg = document.getElementById('mapSvg');
+  svg.querySelectorAll('polyline.journey-line, circle.journey-dot').forEach(e=>e.remove());
+  const notesWrap = document.getElementById('journeyNotesLayer');
+  notesWrap.innerHTML = '';
+  const m = currentMap();
+  (m.journeys||[]).filter(j=>!j.deleted && j.visible!==false).forEach(j=>{
+    const pts = j.points.map(p=>`${p.x},${p.y}`).join(' ');
+    const poly = document.createElementNS('http://www.w3.org/2000/svg','polyline');
+    poly.setAttribute('class','journey-line');
+    poly.setAttribute('points', pts);
+    poly.setAttribute('fill','none');
+    poly.setAttribute('stroke', j.color);
+    poly.setAttribute('stroke-width','0.35');
+    poly.setAttribute('stroke-dasharray','1.5,1.2');
+    svg.appendChild(poly);
+    j.points.forEach(p=>{
+      if(p.note){
+        const marker = document.createElement('div');
+        marker.className = 'journey-note-pin';
+        marker.style.left = p.x+'%'; marker.style.top = p.y+'%';
+        marker.style.setProperty('--jcolor', j.color);
+        marker.title = p.note.title;
+        marker.innerHTML = `<div class="jflag"></div>`;
+        marker.addEventListener('mousedown', e=>e.stopPropagation());
+        marker.addEventListener('click', e=>{ e.stopPropagation(); viewJourneyPointNote(j.id, p.id); });
+        notesWrap.appendChild(marker);
+      } else {
+        const dot = document.createElementNS('http://www.w3.org/2000/svg','circle');
+        dot.setAttribute('class','journey-dot');
+        dot.setAttribute('cx', p.x); dot.setAttribute('cy', p.y); dot.setAttribute('r','0.5');
+        dot.setAttribute('fill', j.color);
+        svg.appendChild(dot);
+      }
+    });
+  });
+}
+function deleteJourney(id){
+  const m = currentMap();
+  const j = m.journeys.find(x=>x.id===id);
+  if(j){ j.deleted = true; j.updatedAt = now(); }
+  saveMaps(); refreshJourneysPanel(); renderJourneys();
+  toast('Journey deleted');
+}
+
+/* ---- note attached to a journey point (reuses the standard tag system) ---- */
+function findJourneyPoint(journeyId, pointId){
+  const source = (journeyDraft && journeyDraft.id===journeyId) ? journeyDraft : currentMap().journeys.find(x=>x.id===journeyId);
+  return source ? source.points.find(p=>p.id===pointId) : null;
+}
+function editJourneyPointNote(pointId, isNewPoint){
+  const journeyId = journeyDraft ? journeyDraft.id : null;
+  const point = journeyId ? journeyDraft.points.find(p=>p.id===pointId) : findJourneyPointOnMap(pointId);
+  const note = point ? point.note : null;
+  openModal(`
+    <h3>${note?'EDIT':'ADD'} NOTE POINT</h3>
+    <div class="modal-sub">${isNewPoint?'This point on the journey':''}</div>
+    <div class="field"><label>TITLE</label><input type="text" id="jpTitle" value="${esc(note?note.title:'')}" placeholder="What happened here?"></div>
+    <div class="field"><label>TEXT</label><textarea id="jpText" placeholder="Details...">${esc(note?note.text:'')}</textarea></div>
+    ${tagPickerFieldHTML(null)}
+    <div class="modal-actions">
+      <div class="left">${note?'<button class="btn danger" onclick="removeJourneyPointNote(\''+pointId+'\')">REMOVE NOTE</button>':''}</div>
+      <div class="right"><button class="btn ghost" onclick="closeModal()">${isNewPoint?'SKIP':'CANCEL'}</button><button class="btn primary" onclick="saveJourneyPointNote('${pointId}')">SAVE</button></div>
+    </div>
+  `);
+  startTagDraft(note?note.tags:[]); renderTagDraftChips();
+}
+function findJourneyPointOnMap(pointId){
+  const m = currentMap();
+  for(const j of (m.journeys||[])){
+    const p = j.points.find(x=>x.id===pointId);
+    if(p) return p;
+  }
+  return null;
+}
+function saveJourneyPointNote(pointId){
+  const title = document.getElementById('jpTitle').value.trim();
+  const text = document.getElementById('jpText').value.trim();
+  if(!title){ toast('Give this note point a title'); return; }
+  const tags = _tagDraft.slice();
+  const noteData = { title, text, tags, author: 'DM', ts: now(), updatedAt: now() };
+  if(journeyDraft){
+    const p = journeyDraft.points.find(x=>x.id===pointId);
+    if(p) p.note = noteData;
+    closeModal();
+    renderTempJourney();
+  } else {
+    const m = currentMap();
+    for(const j of (m.journeys||[])){
+      const p = j.points.find(x=>x.id===pointId);
+      if(p){ p.note = noteData; j.updatedAt = now(); break; }
+    }
+    saveMaps(); closeModal(); renderJourneys();
+  }
+  toast('Note saved');
+}
+function removeJourneyPointNote(pointId){
+  if(journeyDraft){
+    const p = journeyDraft.points.find(x=>x.id===pointId);
+    if(p) p.note = null;
+    closeModal(); renderTempJourney();
+  } else {
+    const m = currentMap();
+    for(const j of (m.journeys||[])){
+      const p = j.points.find(x=>x.id===pointId);
+      if(p){ p.note = null; j.updatedAt = now(); break; }
+    }
+    saveMaps(); closeModal(); renderJourneys();
+  }
+  toast('Note removed');
+}
+function viewJourneyPointNote(journeyId, pointId){
+  const j = currentMap().journeys.find(x=>x.id===journeyId);
+  const p = j.points.find(x=>x.id===pointId);
+  if(!p || !p.note) return;
+  openModal(`
+    <h3>${esc(p.note.title)}</h3>
+    <div class="modal-sub">Journey: ${esc(j.name)}</div>
+    <div class="note-view-text">${esc(p.note.text)||'<span style="color:var(--text-dimmer)">(no details)</span>'}</div>
+    ${tagChipsViewHTML(p.note.tags)}
+    <div class="modal-actions">
+      <div class="left"><button class="btn danger admin-only" onclick="removeJourneyPointNote('${p.id}')">REMOVE NOTE</button></div>
+      <div class="right"><button class="btn ghost admin-only" onclick="editJourneyPointNote('${p.id}', false)">EDIT</button><button class="btn primary" onclick="closeModal()">CLOSE</button></div>
+    </div>
+  `);
 }
 
 /* ============================================================
@@ -2364,13 +2706,15 @@ function buildChangeSummaryHTML(before, after){
     const nd = diffArrayById(bm.notes, am.notes);
     const sd = diffArrayById(bm.shapes, am.shapes);
     const ld = diffArrayById(bm.layers, am.layers);
-    const any = [pd,nd,sd,ld].some(d=>d.added.length||d.updated.length||d.deleted.length);
+    const jd = diffArrayById(bm.journeys, am.journeys);
+    const any = [pd,nd,sd,ld,jd].some(d=>d.added.length||d.updated.length||d.deleted.length);
     if(!any) return;
     html += `<div class="field"><label>${esc(mapLabel)}</label><div>`
       + diffChip(pd.added.length+pd.updated.length+pd.deleted.length,'pin change(s)','on')
       + diffChip(nd.added.length+nd.updated.length+nd.deleted.length,'note change(s)','on')
       + diffChip(sd.added.length+sd.updated.length+sd.deleted.length,'shape change(s)','on')
       + diffChip(ld.added.length+ld.updated.length+ld.deleted.length,'layer change(s)','on')
+      + diffChip(jd.added.length+jd.updated.length+jd.deleted.length,'journey change(s)','on')
       + `</div></div>`;
   });
   return html || `<p style="color:var(--text-dimmer);font-size:13px;">No changes — this was already up to date.</p>`;
