@@ -624,7 +624,7 @@ let ghToken = ''; // personal, this device only — never stored in shared data
 /* Bump this on every build handed to the group. Pushed to GitHub as
    version.json whenever the DM (Admin Mode) pushes, so players get
    prompted to update if their local copy of this file is stale. */
-const APP_VERSION = '1.6.0';
+const APP_VERSION = '1.6.1';
 
 /* ============================================================
    TAG / CROSS-LINK SYSTEM
@@ -1125,11 +1125,13 @@ function wireMapControls(){
   document.getElementById('hexBtnLayers').addEventListener('click', ()=>{
     document.getElementById('journeysPanel').classList.remove('open');
     document.getElementById('layersPanel').classList.toggle('open');
+    closeHexFanOnly();
   });
   document.getElementById('hexBtnJourney').addEventListener('click', ()=>{
     document.getElementById('layersPanel').classList.remove('open');
     document.getElementById('journeysPanel').classList.toggle('open');
     refreshJourneysPanel();
+    closeHexFanOnly();
   });
   document.getElementById('hexBtnDropNote').addEventListener('click', ()=>{
     setTool(mapTool==='dropNote'?null:'dropNote');
@@ -1140,18 +1142,30 @@ function wireMapControls(){
     closeHexMenu();
   });
 }
+/* The satellite fan and a panel (Layers/Journeys) are never shown at
+   once — the fan's satellites are position:absolute + transform, so
+   they escape normal document flow and, being later in the DOM, paint
+   OVER a panel rather than respecting the flex layout's visual
+   "above it" positioning. Left both open at the same time, the fan
+   physically blocks taps meant for the panel underneath. */
 function toggleHexMenu(){
   const wrap = document.getElementById('hexMenuWrap');
-  const open = wrap.classList.toggle('open');
-  document.getElementById('hexMainBtn').classList.toggle('active', open);
-  if(!open){
+  const opening = !wrap.classList.contains('open');
+  if(opening){
     document.getElementById('layersPanel').classList.remove('open');
     document.getElementById('journeysPanel').classList.remove('open');
   }
+  const open = wrap.classList.toggle('open');
+  document.getElementById('hexMainBtn').classList.toggle('active', open);
 }
-function closeHexMenu(){
+function closeHexFanOnly(){
   document.getElementById('hexMenuWrap').classList.remove('open');
   document.getElementById('hexMainBtn').classList.remove('active');
+}
+function closeHexMenu(){
+  closeHexFanOnly();
+  document.getElementById('layersPanel').classList.remove('open');
+  document.getElementById('journeysPanel').classList.remove('open');
 }
 
 function setTool(t){
